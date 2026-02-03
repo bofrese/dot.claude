@@ -58,12 +58,21 @@ All commands follow a coaching/mentoring style — they work as thinking partner
 | `/brainstorm` | Guided ideation for new features. Diverge → converge → detail → validate against codebase → commit. | `ai/ideas/{date}-brainstorm-{slug}.md` |
 | `/plan` | Turn an idea into a concrete implementation plan. Analyzes codebase, plans steps, identifies refactoring needs. | `ai/plans/{date}-{slug}.md` |
 | `/review-plan` | Critically review an implementation plan. Find gaps, simpler solutions, security issues, codebase misalignment. | `ai/reviews/{date}-review-{slug}.md` |
+| `/implement` | Execute an approved plan autonomously. Reviews upfront, implements with engineering discipline, stops only on blockers. | `ai/implementations/{date}-{slug}.md` |
 
-### Documentation
+### Command Development
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `/new-command` | Create a new slash command. Guides through design, creates the file, updates README. | `.claude/commands/{name}.md` |
+| `/review-command` | Review a Claude command for AI optimization — token efficiency, clarity, actionability. | `ai/reviews/{date}-command-review-{slug}.md` |
+
+### Documentation & Guidelines
 
 | Command | Purpose | Output |
 |---------|---------|--------|
 | `/document` | Generate or update developer documentation for a concept/subsystem. Detects doc drift. | `docs/{concept}.md` |
+| `/guidelines` | Create and maintain project-specific best practice guidelines for languages, frameworks, and concepts. | `docs/guidelines/{topic}.md` |
 
 ### DevOps
 
@@ -76,17 +85,20 @@ All commands follow a coaching/mentoring style — they work as thinking partner
 The commands are designed to flow together:
 
 ```
-/brainstorm  →  /plan  →  /review-plan  →  implement  →  /document
-     ↓
-  ai/ideas/      ai/plans/    ai/reviews/                  docs/
+/brainstorm  →  /plan  →  /review-plan  →  /implement  →  /document
+     ↓            ↓            ↓               ↓              ↓
+  ai/ideas/    ai/plans/    ai/reviews/   ai/implementations/  docs/
 ```
 
 1. **Brainstorm** an idea until you commit to a direction
 2. **Plan** the implementation (or receive a plan from someone else)
 3. **Review** the plan critically before implementation
-4. After implementation, **document** the new concepts
+4. **Implement** the approved plan autonomously
+5. After implementation, **document** the new concepts
 
 The `/docker-setup` command stands alone — use it whenever you need to set up or update the dev environment.
+
+The `/new-command` and `/review-command` are meta-commands for extending and maintaining the command toolkit itself.
 
 ## Report Locations
 
@@ -94,9 +106,11 @@ The `/docker-setup` command stands alone — use it whenever you need to set up 
 |--------|----------|
 | `ai/ideas/` | Brainstorm session reports |
 | `ai/plans/` | Implementation plans |
-| `ai/reviews/` | Plan reviews |
+| `ai/reviews/` | Plan and command reviews |
+| `ai/implementations/` | Implementation execution reports |
 | `ai/docker/` | Docker setup logs |
 | `docs/` | Developer documentation |
+| `docs/guidelines/` | Best practice guidelines |
 
 All dated reports use `{YYYY-MM-DD}-{slug}.md` naming.
 
@@ -109,6 +123,24 @@ Commands use Python for cross-platform date resolution:
 ```
 
 Works on macOS and Linux. On Windows (where `python3` may not exist), commands include a fallback instruction for Claude to determine the date using whatever method works.
+
+## Guidelines Integration
+
+When using this command set, you can maintain project-specific guidelines in `docs/guidelines/`. The `/guidelines` command helps create and maintain them.
+
+**To enable automatic guideline loading**, add this to your project's `CLAUDE.md`:
+
+```markdown
+## Guidelines
+
+Before starting work, check `docs/guidelines/README.md` for applicable guidelines.
+Load guidelines that match:
+- File extensions you're working with (e.g., `.ts` → typescript.md)
+- Paths involved (e.g., `Frontend/` → angular.md)
+- Concepts being touched (e.g., login flow → authentication.md)
+```
+
+This makes guidelines ambient context for all commands without modifying each command file.
 
 ## Design Principles
 

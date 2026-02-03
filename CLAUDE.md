@@ -145,6 +145,7 @@ Commands write to specific folders by convention:
 | Reviews | `ai/reviews/` |
 | Docker/DevOps logs | `ai/docker/` |
 | Documentation | `docs/` |
+| Guidelines | `docs/guidelines/` |
 
 File naming: `{YYYY-MM-DD}-{slug}.md` for dated reports.
 
@@ -218,6 +219,7 @@ Some commands only analyze and produce reports:
 - `/plan` — produces an implementation plan
 - `/review-plan` — produces a review report
 - `/document` — produces/updates documentation (but doesn't change application code)
+- `/guidelines` — produces/updates best practice guidelines (but doesn't change application code)
 
 Some commands actually modify the project:
 - `/docker-setup` — creates/modifies Dockerfile, Makefile, etc.
