@@ -304,14 +304,14 @@ code example
 
 **Why this tool:** {Why this over alternatives, if there are popular alternatives}
 
-**Strictness levels explained:** {If the tool has levels/severity, explain what each catches}
+**Strictness levels explained:** {If the tool has levels/severity, explain what each catches. Omit this section if the tool doesn't have levels.}
 ```
 Level X: catches [specific issue types]
 Level Y: adds [additional checks]
 Level Z: strictest — catches [edge cases]
 ```
 
-**Recommended level:** {Level} — {Why this level is the sweet spot}
+**Recommended level:** {Level} — {Why this level is the sweet spot. Omit if no levels.}
 
 **Installation:**
 ```bash
@@ -329,8 +329,11 @@ Level Z: strictest — catches [edge cases]
 ```
 
 **Key rules/checks this enables:**
-- {Rule}: {What it catches and why it matters}
-- ...
+{List specific rules that matter most. For tools with many rules, use a table format:}
+
+| Rule | What it catches |
+|------|-----------------|
+| rule-name | Description |
 
 ### {Secondary Tool if applicable}
 
