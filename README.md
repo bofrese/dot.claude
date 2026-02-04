@@ -59,6 +59,7 @@ All commands follow a coaching/mentoring style — they work as thinking partner
 | `/plan` | Turn an idea into a concrete implementation plan. Analyzes codebase, plans steps, identifies refactoring needs. | `ai/plans/{date}-{slug}.md` |
 | `/review-plan` | Critically review an implementation plan. Find gaps, simpler solutions, security issues, codebase misalignment. | `ai/reviews/{date}-review-{slug}.md` |
 | `/implement` | Execute an approved plan autonomously. Reviews upfront, implements with engineering discipline, stops only on blockers. | `ai/implementations/{date}-{slug}.md` |
+| `/review` | Review code changes critically. Auto-detects scope, checks guidelines, assesses system health, enables ownership transfer. | `ai/reviews/{date}-review-{slug}.md` |
 
 ### Command Development
 
@@ -85,16 +86,17 @@ All commands follow a coaching/mentoring style — they work as thinking partner
 The commands are designed to flow together:
 
 ```
-/brainstorm  →  /plan  →  /review-plan  →  /implement  →  /document
-     ↓            ↓            ↓               ↓              ↓
-  ai/ideas/    ai/plans/    ai/reviews/   ai/implementations/  docs/
+/brainstorm  →  /plan  →  /review-plan  →  /implement  →  /review  →  /document
+     ↓            ↓            ↓               ↓              ↓           ↓
+  ai/ideas/    ai/plans/    ai/reviews/   ai/implementations/ ai/reviews/  docs/
 ```
 
 1. **Brainstorm** an idea until you commit to a direction
 2. **Plan** the implementation (or receive a plan from someone else)
-3. **Review** the plan critically before implementation
+3. **Review the plan** critically before implementation
 4. **Implement** the approved plan autonomously
-5. After implementation, **document** the new concepts
+5. **Review the code** — assess what was built, check system health, enable ownership transfer
+6. After review, **document** the new concepts
 
 The `/docker-setup` command stands alone — use it whenever you need to set up or update the dev environment.
 
@@ -106,7 +108,7 @@ The `/new-command` and `/review-command` are meta-commands for extending and mai
 |--------|----------|
 | `ai/ideas/` | Brainstorm session reports |
 | `ai/plans/` | Implementation plans |
-| `ai/reviews/` | Plan and command reviews |
+| `ai/reviews/` | Plan reviews, command reviews, and code reviews |
 | `ai/implementations/` | Implementation execution reports |
 | `ai/docker/` | Docker setup logs |
 | `docs/` | Developer documentation |
