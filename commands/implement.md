@@ -62,6 +62,8 @@ Refactoring must not change behavior — tests prove this.
 
 ### Phase 5 — Implementation
 
+Load `.claude/principles/bdd.md` — when writing tests, write them against the acceptance criteria in the plan (Given/When/Then). Test behaviour, not implementation.
+
 Execute each implementation step from the plan:
 
 1. Write the code — clean, tested, following platform conventions
@@ -170,3 +172,6 @@ What prevented completion and current status.
 ## Next Steps
 What remains to be done, if anything.
 ```
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

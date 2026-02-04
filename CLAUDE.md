@@ -6,14 +6,30 @@ This file guides Claude (and human contributors) in creating new commands and ma
 
 ```
 .claude/
-├── commands/
-│   ├── brainstorm.md
-│   ├── plan.md
-│   ├── review-plan.md
-│   ├── document.md
-│   └── docker-setup.md
-├── CLAUDE.md          ← You are here
-└── README.md          ← User-facing documentation
+├── commands/                  ← all slash commands (flat — no subfolders)
+│   ├── product-vision.md      ← Discovery tier
+│   ├── design-brief.md        ← Discovery tier
+│   ├── personas.md            ← Discovery tier
+│   ├── brainstorm.md          ← Engineering tier
+│   ├── plan.md                ← Engineering tier
+│   ├── review-plan.md         ← Engineering tier
+│   ├── implement.md           ← Engineering tier
+│   ├── review.md              ← Engineering tier
+│   ├── document.md            ← Knowledge tier
+│   ├── guidelines.md          ← Knowledge tier
+│   ├── new-command.md         ← Meta
+│   ├── review-command.md      ← Meta
+│   └── docker-setup.md        ← DevOps
+├── principles/                ← on-demand knowledge frameworks (see below)
+│   ├── bdd.md
+│   └── ddd.md
+├── process/                   ← interaction protocols (see below)
+│   └── done-criteria.md       ← the done system protocol + bootstrap template
+├── docs/                      ← user guide and documentation
+│   └── user-guide.md
+├── CLAUDE.md                  ← You are here
+├── README.md                  ← User-facing documentation
+└── LICENSE
 ```
 
 ## When Modifying This Repository
@@ -23,6 +39,38 @@ This file guides Claude (and human contributors) in creating new commands and ma
 - Update the Workflow section if the command fits into the flow
 - Update Report Locations if the command writes to a new folder
 - Update any other affected sections
+
+## The Two Tiers
+
+Commands fall into two conceptual tiers. Both live in the same `commands/` folder. The distinction is about what they're concerned with, not where they live.
+
+**Discovery** — What to build and why. Output is product artifacts: vision, personas, design briefs. These live in `docs/product/` (authoritative, updated in place).
+
+**Engineering** — How to build it. Output is plans, code, reviews, documentation. Session artifacts live in `ai/` (disposable). Authoritative docs live in `docs/`.
+
+The key connection: **Discovery output is input to Engineering.** A product vision grounds a brainstorm. A design brief informs a plan. Engineering commands know to look for relevant Discovery artifacts at well-known paths in `docs/product/`.
+
+## Principles — On-Demand Knowledge
+
+Small files in `principles/` that encode core thinking frameworks. Not tutorials — just enough that when a command loads one, it applies the framework consistently.
+
+**How commands use them:** A command loads a principle at the specific point in its process where the framework applies. Example: `/plan` loads `bdd.md` when defining the testing strategy. `/brainstorm` loads `ddd.md` when decomposing a problem.
+
+**What goes here vs `docs/guidelines/`:**
+- `principles/` = generic frameworks. "How to think about BDD." Works for any project. Travels with the submodule.
+- `docs/guidelines/` = project-specific application. "How we do BDD in this Angular/PHP project." Specific to the codebase.
+
+## Done Criteria Protocol
+
+Every output-producing command participates in the done system. The integration is a single line at the end of the command:
+
+> *Read `.claude/process/done-criteria.md` and follow the protocol.*
+
+The protocol file (`.claude/process/done-criteria.md`) contains everything: the bootstrap template AND the three behaviours commands follow (bootstrap the project file if missing, check criteria before finishing, register new artifact types). Commands don't each carry their own copy of the logic — they load the protocol.
+
+The project's live instance (`docs/process/done-criteria.md`) is bootstrapped automatically the first time any command runs in a fresh project. It grows as the project adopts more commands.
+
+**When creating a new command:** include the done-criteria protocol line. `/new-command` enforces this. `/review-command` flags its absence.
 
 ## Command File Structure
 
@@ -143,7 +191,10 @@ Commands write to specific folders by convention:
 | Ideation | `ai/ideas/` |
 | Planning | `ai/plans/` |
 | Reviews | `ai/reviews/` |
+| Implementation reports | `ai/implementations/` |
 | Docker/DevOps logs | `ai/docker/` |
+| Product artifacts | `docs/product/` |
+| Process contracts | `docs/process/` |
 | Documentation | `docs/` |
 | Guidelines | `docs/guidelines/` |
 
@@ -182,6 +233,7 @@ Commands that involve implementation (like `/plan` or `/docker-setup`) should in
    - Step-by-step process
    - Behavioral rules
    - Output template
+   - Done-criteria protocol line at the end: *Read `.claude/process/done-criteria.md` and follow the protocol.*
 
 5. **Test it.** Run the command on a real project. Does it flow well? Are the outputs useful?
 
@@ -214,14 +266,19 @@ Commands that involve implementation (like `/plan` or `/docker-setup`) should in
 
 ## Commands That Implement vs. Commands That Plan
 
-Some commands only analyze and produce reports:
+Some commands only analyze and produce reports or artifacts:
+- `/product-vision` — produces/updates the product vision (`docs/product/`)
+- `/design-brief` — produces/updates the design brief (`docs/product/`)
+- `/personas` — produces/updates personas (`docs/product/`)
 - `/brainstorm` — produces an idea report
 - `/plan` — produces an implementation plan
 - `/review-plan` — produces a review report
+- `/review` — produces a code review report
 - `/document` — produces/updates documentation (but doesn't change application code)
 - `/guidelines` — produces/updates best practice guidelines (but doesn't change application code)
 
 Some commands actually modify the project:
+- `/implement` — writes code, runs tests, modifies project files
 - `/docker-setup` — creates/modifies Dockerfile, Makefile, etc.
 
 For implementing commands:

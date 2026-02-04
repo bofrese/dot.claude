@@ -47,33 +47,51 @@ Copy to your home directory:
 git clone https://github.com/bofrese/dot.claude.git ~/.claude
 ```
 
+## The Full Picture
+
+For a detailed walkthrough of the vision, the philosophy, how commands connect, and how to use the toolkit across an entire product lifecycle — read the [User Guide](docs/user-guide.md).
+
+> **Note:** The user guide describes the complete vision, including commands and systems that are still being built. Not everything documented there is implemented yet. It reflects where this project is heading, not just where it is today.
+
+---
+
 ## Commands Overview
 
 All commands follow a coaching/mentoring style — they work as thinking partners, not just executors. They ask questions, challenge assumptions, and guide you through structured processes.
 
-### Ideation & Planning
+### Discovery — What to Build and Why
 
 | Command | Purpose | Output |
 |---------|---------|--------|
-| `/brainstorm` | Guided ideation for new features. Diverge → converge → detail → validate against codebase → commit. | `ai/ideas/{date}-brainstorm-{slug}.md` |
-| `/plan` | Turn an idea into a concrete implementation plan. Analyzes codebase, plans steps, identifies refactoring needs. | `ai/plans/{date}-{slug}.md` |
-| `/review-plan` | Critically review an implementation plan. Find gaps, simpler solutions, security issues, codebase misalignment. | `ai/reviews/{date}-review-{slug}.md` |
-| `/implement` | Execute an approved plan autonomously. Reviews upfront, implements with engineering discipline, stops only on blockers. | `ai/implementations/{date}-{slug}.md` |
-| `/review` | Review code changes critically. Auto-detects scope, checks guidelines, assesses system health, enables ownership transfer. | `ai/reviews/{date}-review-{slug}.md` |
+| `/product-vision` | Establish or refine the product vision. The single source of truth for what, who, and why. | `docs/product/vision.md` |
+| `/personas` | Define user personas grounded in the product vision. | `docs/product/personas.md` |
+| `/design-brief` | Create the design brief from vision and personas. | `docs/product/design-brief.md` |
 
-### Command Development
+### Engineering — How to Build It
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `/brainstorm` | Guided ideation for features. Diverge → converge → detail → validate against codebase → commit. | `ai/ideas/{date}-brainstorm-{slug}.md` |
+| `/plan` | Turn an idea into a concrete, self-contained implementation plan. | `ai/plans/{date}-{slug}.md` |
+| `/review-plan` | Critically review a plan. Checks assumptions against the actual codebase. | `ai/reviews/{date}-review-{slug}.md` |
+| `/implement` | Execute an approved plan. Tests at every step. Stops when human judgment is needed. | `ai/implementations/{date}-{slug}.md` |
+| `/review` | Code review. Auto-detects scope, checks guidelines, assesses system health. | `ai/reviews/{date}-review-{slug}.md` |
+
+### Knowledge — Documentation & Guidelines 
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `/document` | Generate or update developer documentation. Detects doc drift. | `docs/{concept}.md` |
+| `/guidelines` | Create and maintain best practice guidelines. Research-first. | `docs/guidelines/{topic}.md` |
+
+### Meta — The Toolkit Maintains Itself
 
 | Command | Purpose | Output |
 |---------|---------|--------|
 | `/new-command` | Create a new slash command. Guides through design, creates the file, updates README. | `.claude/commands/{name}.md` |
-| `/review-command` | Review a Claude command for AI optimization — token efficiency, clarity, actionability. | `ai/reviews/{date}-command-review-{slug}.md` |
+| `/review-command` | Review a command for token efficiency, clarity, actionability. | `ai/reviews/{date}-command-review-{slug}.md` |
 
-### Documentation & Guidelines
 
-| Command | Purpose | Output |
-|---------|---------|--------|
-| `/document` | Generate or update developer documentation for a concept/subsystem. Detects doc drift. | `docs/{concept}.md` |
-| `/guidelines` | Create and maintain project-specific best practice guidelines for languages, frameworks, and concepts. | `docs/guidelines/{topic}.md` |
 
 ### DevOps
 
@@ -83,20 +101,20 @@ All commands follow a coaching/mentoring style — they work as thinking partner
 
 ## Workflow
 
-The commands are designed to flow together:
+Three layers, not three stages. They form a cycle:
 
 ```
-/brainstorm  →  /plan  →  /review-plan  →  /implement  →  /review  →  /document
-     ↓            ↓            ↓               ↓              ↓           ↓
-  ai/ideas/    ai/plans/    ai/reviews/   ai/implementations/ ai/reviews/  docs/
+Discovery          →  grounds  →  Engineering pipeline
+  /product-vision                   /brainstorm  →  /plan  →  /review-plan
+  /personas                         /implement   →  /review
+  /design-brief                            ↓
+                                     Knowledge
+                                       /document  ←→  /guidelines
+                                            ↑
+                                     guides future Engineering
 ```
 
-1. **Brainstorm** an idea until you commit to a direction
-2. **Plan** the implementation (or receive a plan from someone else)
-3. **Review the plan** critically before implementation
-4. **Implement** the approved plan autonomously
-5. **Review the code** — assess what was built, check system health, enable ownership transfer
-6. After review, **document** the new concepts
+**Discovery** establishes what you're building and why. **Engineering** turns ideas into reviewed, tested code. **Knowledge** accumulates the wisdom that makes every future session better. Each layer feeds the others.
 
 The `/docker-setup` command stands alone — use it whenever you need to set up or update the dev environment.
 
@@ -111,6 +129,8 @@ The `/new-command` and `/review-command` are meta-commands for extending and mai
 | `ai/reviews/` | Plan reviews, command reviews, and code reviews |
 | `ai/implementations/` | Implementation execution reports |
 | `ai/docker/` | Docker setup logs |
+| `docs/product/` | Product vision, personas, design brief |
+| `docs/process/` | Done criteria and process contracts |
 | `docs/` | Developer documentation |
 | `docs/guidelines/` | Best practice guidelines |
 
@@ -158,6 +178,26 @@ These commands are built around several core principles:
 
 See [CLAUDE.md](CLAUDE.md) for guidelines on creating new commands or modifying existing ones.
 
+---
+
 ## License
 
-MIT
+This project is licensed under the **Apache License 2.0**.
+
+Apache 2.0 means you can use, modify, and distribute this toolkit — commercially or otherwise — for any project. The one thing that must travel with it: the copyright and attribution notice. That's it. No copyleft. No share-alike. No restrictions on what you build with it.
+
+See the [LICENSE](LICENSE) file for the full legal text.
+
+---
+
+## Attribution
+
+Created by **[Bo Frese](https://bofrese.dk)** — [bofrese.dk](https://bofrese.dk)
+
+---
+
+## About the Author
+
+Bo works at the intersection of software development and agile process design — with a particular focus on how teams can integrate AI tools effectively into their workflows without losing the things that make good development good: human judgment, architectural discipline, and the ability to actually understand what you're shipping.
+
+If you're looking for hands-on development help, or if your team wants to think more carefully about how AI fits into your process, Bo is available for both. More at [bofrese.dk](https://bofrese.dk) and [agilecoach.dk](https://agilecoach.dk).

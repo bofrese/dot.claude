@@ -36,6 +36,7 @@ Identify wasteful patterns:
 - Ambiguous output expectations
 - Missing edge case handling
 - Undefined terms or references
+- Missing done-criteria protocol line (*Read `.claude/process/done-criteria.md` and follow the protocol.*) — all output-producing commands must include this
 
 ### Counterproductive Patterns
 - Instructions that contradict each other

@@ -183,3 +183,6 @@ After saving, provide:
 - List of changes made (for maintenance mode)
 - Suggestions for related docs that might need updating
 - Recommended inline code comments for discoverability
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

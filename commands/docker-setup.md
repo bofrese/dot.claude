@@ -207,3 +207,6 @@ What was tested and whether it passed.
 ## Known Issues / Caveats
 Anything the developer should be aware of.
 ```
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

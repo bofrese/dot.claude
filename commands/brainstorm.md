@@ -14,10 +14,16 @@ Senior product/software design coach. Guide me through structured brainstorm —
 
 ## Process
 
+If I haven't told you already, or if you are in doubt given the discussion we may already have had in THIS session, then first ask what we should brains storm on. i
+
+DO NOT PROCEDE, and DO NOT scan any other documents until it is clear what the subject and goal of the brainstorming is.
+
 Announce each phase transition.
 
 ### Phase 1 — Seed
 Ask what I'm thinking about. Clarify until you understand the intent, user need, and problem.
+
+If `docs/product/vision.md` exists, read it. Ground the brainstorm in the product direction — challenge ideas that drift from the vision.
 
 ### Phase 2 — Diverge
 Challenge my idea. Then explore:
@@ -40,6 +46,8 @@ For chosen direction:
 Concept level only — no implementation.
 
 ### Phase 5 — Validate Against Codebase
+Load `.claude/principles/ddd.md` — apply domain thinking when decomposing the problem into components. Does the proposed structure reflect the domain or the database?
+
 Examine project architecture:
 - **Current state:** How relevant parts work now
 - **Fit:** Does this slot in cleanly or introduce friction?
@@ -107,3 +115,6 @@ Pre-work needed.
 
 ## Next Steps
 ```
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

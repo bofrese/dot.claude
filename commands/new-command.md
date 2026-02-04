@@ -121,3 +121,4 @@ No separate report is generated — the command file and README update are the d
 - [ ] README.md other sections updated if affected
 - [ ] Command name is kebab-case
 - [ ] Description is concise (one line)
+- [ ] Command includes the done-criteria protocol line: *Read `.claude/process/done-criteria.md` and follow the protocol.*

@@ -189,6 +189,9 @@ For each applicable guideline:
 - Were all planned steps completed?
 - Were verification criteria met?
 
+**Done Criteria**
+Read `docs/process/done-criteria.md` (bootstrap from `.claude/process/done-criteria.md` if missing). Verify each applicable item. Flag anything that isn't satisfied.
+
 ### Step 6 — Discuss Findings
 
 Walk through findings conversationally, one topic at a time. Don't dump everything at once.

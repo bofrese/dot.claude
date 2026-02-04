@@ -418,3 +418,6 @@ After writing, provide:
 - Confirmation of what was created
 - Remaining "NOT WRITTEN" guidelines
 - Suggestion for next guideline
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

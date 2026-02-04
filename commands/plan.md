@@ -80,10 +80,13 @@ For each step/chunk, include:
 - What the expected outcome is (how to verify it works)
 - AI implementation assessment: difficulty level, estimated token/effort cost, and any AI-specific hints or pitfalls
 
-**Testing is woven into the steps, not a separate phase:**
+**Testing is woven into the steps, not a separate phase.**
+
+Load `.claude/principles/bdd.md` — acceptance criteria must be written in Given/When/Then before tests are defined. Behaviour, not implementation.
+
 1. **Before any changes:** Run existing tests. Establish a green baseline. If tests are failing, stop and flag it.
 2. **After refactoring (if applicable):** Run all existing tests again. The refactoring must not change behavior — tests prove it.
-3. **New feature testing:** Define how the new feature should be tested. Add or update tests as part of implementation.
+3. **New feature testing:** Define acceptance criteria (Given/When/Then) for every new behaviour. Tests follow from those criteria.
 4. **After implementation:** Run the full test suite. The feature is not done until all tests pass — both new and existing.
 
 ### Step 6 — Save
@@ -182,3 +185,6 @@ Items needing review or approval. Edit this table directly to approve or overrid
 ## Risks & Considerations
 What could go wrong. Edge cases. Things to watch out for during implementation.
 ```
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.

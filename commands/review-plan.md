@@ -178,3 +178,6 @@ Things the plan doesn't address that it should.
 ## Recommendations
 Ordered list of what to do next — fix, rethink, or proceed.
 ```
+
+## Done
+Read `.claude/process/done-criteria.md` and follow the protocol.
