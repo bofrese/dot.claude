@@ -196,6 +196,12 @@ From your research, identify:
 - Misunderstandings about how the technology works
 - Security vulnerabilities specific to this technology
 - Performance traps
+- Over-engineering: patterns that add complexity without proportional value
+
+**Architecture & simplicity for this technology:**
+- How does this language/framework structure modules, packages, or namespaces? What are the conventions for separation of concerns?
+- What are the common ways developers over-engineer in this technology? What patterns look clever but add unnecessary complexity?
+- How do you keep solutions generic and reusable rather than full of special cases? What abstractions does the language/framework encourage?
 
 **Tooling recommendations:**
 - Which tool(s) to use and why
@@ -378,6 +384,8 @@ Before finalizing any guideline, verify:
 - [ ] No parroting of current codebase patterns
 - [ ] Anti-patterns are genuinely problematic (not just style preferences)
 - [ ] Security-relevant topics are covered if applicable
+- [ ] Covers simplicity: technology-specific guidance on avoiding over-engineering
+- [ ] Covers architecture: module boundaries, separation of concerns, coupling conventions
 
 **Tooling section:**
 - [ ] Recommends specific tools with specific configurations

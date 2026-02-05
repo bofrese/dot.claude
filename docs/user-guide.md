@@ -8,11 +8,17 @@
 
 ## Why This Exists
 
-We've all been there. You open a chat with an AI, paste in some code, get a brilliant suggestion, implement it. Next week you open a new chat. The AI has no idea what you decided last time, why you structured things the way you did, or what the product is even supposed to do. You're starting from scratch. Every single time.
+Most developers who work regularly with AI hit the same three walls.
 
-It's not that the AI isn't capable. It's that there's no structure connecting one conversation to the next. No shared memory. No discipline about what comes next. Just a series of disconnected sessions that happen to involve the same codebase.
+**AI defaults to average.** It *knows* world-class principles — BDD, DDD, clean architecture. But when you just ask it to solve a problem, it defaults to the patterns most common in its training data. Competent code. Rarely principled code. The knowledge is there. The discipline to apply it isn't — not without help.
 
-dot.claude fixes this. It's a set of slash commands that turn AI-assisted development into a **structured process** — one where each step produces a clear artifact, each artifact is input to the next step, and a human makes the call at every gate. The AI does the heavy lifting. You make the decisions. The files remember everything.
+**AI is a pleaser.** It agrees with you. The longer your conversation goes, the less likely it pushes back on a bad idea. You open a session expecting a thinking partner. You get an enthusiastic yes-person. And the quality of your decisions suffers for it.
+
+**Context disappears.** New session, start over. Decisions lost. Guidelines forgotten. Next week the AI makes the same mistake it made this week — because it has no memory of this week. Projects that start well degrade quietly as context accumulates and vanishes.
+
+These aren't edge cases. They're the default. And they compound — the longer you work with AI without structure, the worse they get.
+
+dot.claude is the structure. A set of slash commands that turn AI-assisted development into a disciplined process — one where each phase has its own command, each command loads the right principles and reads the right context, and each step produces a clear artifact that the next step builds on. The AI does the heavy lifting. You make the decisions. The files remember everything.
 
 ---
 
@@ -21,13 +27,15 @@ dot.claude fixes this. It's a set of slash commands that turn AI-assisted develo
 Four ideas that everything else is built on:
 
 ### 🎯 Human decides, AI explores
-Every command is a conversation, not a script. The AI generates options, challenges your assumptions, surfaces trade-offs you haven't thought of. You pick the direction. Nothing ships without your sign-off. This isn't automation — it's amplification.
+Every command is a conversation, not a script. The AI generates options, challenges your assumptions, surfaces trade-offs you haven't thought of. You pick the direction. Nothing ships without your sign-off. This isn't automation — it's amplification. And it means the code is yours: you understand it, you made the decisions, you could maintain it without AI if you had to.
+
+### ⚡ Explicit commands, not ambient magic
+You invoke `/plan`, `/review`, `/implement` — deliberately, knowingly. When you do, the AI knows exactly what phase you're in. It loads the right principles, reads the right context, follows the right process — reliably, every time. No hoping it guesses what you need. You're explicit about what you're doing; the AI is explicit about how it helps. This is discipline, not magic.
 
 ### 📄 Files are the memory
-Each command runs in its own session. When it finishes, it writes its output to a well-known file location. The next command reads that file. You can close your laptop, come back tomorrow, hand off to a colleague, or start completely fresh — the context lives in the files, not in the chat history. This is what makes the whole system work.
+Each command is designed to run in its own session. This way you keep your context clean and focused. When it finishes, it writes its output to a well-known file location. The next command reads that file. You can close your laptop, come back tomorrow, hand off to a colleague, or start completely fresh — the context lives in the files, not in the chat history.
 
-### 📐 Structure, not scripts
-This isn't a macro that runs a sequence of commands for you. It's discipline — the kind of structured thinking you'd do anyway on a good day, but with an AI that asks the right questions and catches the things you'd miss at 9am on a Monday.
+This is also what makes honest review possible. A plan written in one session is reviewed in another — by a fresh context with no memory of the conversation that produced it. Session boundaries kill the pleaser instinct. You get genuine critique instead of polite agreement.
 
 ### 🌱 The system learns as you use it
 The first time you run certain commands, they register what they've created into a shared process contract. From that point on, every command knows what needs to stay in sync. The toolkit gets smarter as your project grows. Nothing to configure upfront.
@@ -113,7 +121,7 @@ The idea is vague but feels important. You sit down with coffee.
 /brainstorm
 ```
 
-The AI reads your product vision to ground the conversation. Then it asks: *What's the actual problem here? Who's affected? What have users said?* You talk it through. It pushes back — *"Do users actually want granular controls, or do they just want it to stop annoying them? Those are very different features."* Good question. You hadn't thought about that. You explore options together. You pick a direction and commit.
+The AI reads your product vision to ground the conversation and loads DDD principles to decompose the problem space. Then it asks: *What's the actual problem here? Who's affected? What have users said?* You talk it through. It pushes back — *"Do users actually want granular controls, or do they just want it to stop annoying them? Those are very different features."* Good question. You hadn't thought about that. You explore options together. You pick a direction and commit.
 
 **What gets saved:** `ai/ideas/2026-02-04-brainstorm-notification-prefs.md`
 
@@ -143,7 +151,7 @@ A self-contained plan. Someone who wasn't in either conversation could pick this
 /review-plan ai/plans/2026-02-04-notification-prefs.md
 ```
 
-A different lens on the same plan. The AI re-reads the codebase *independently* — it doesn't trust the plan's assumptions. It checks for security issues, unnecessary complexity, gaps. It finds something: *"The plan assumes notification preferences are stored per-user, but the current schema stores them per-device. This needs addressing before implementation."*
+A different lens on the same plan. The AI re-reads the codebase *independently* — it doesn't trust the plan's assumptions. This is the session boundary doing its job: a fresh context has no investment in the plan being right. It checks for security issues, unnecessary complexity, gaps. It finds something: *"The plan assumes notification preferences are stored per-user, but the current schema stores them per-device. This needs addressing before implementation."*
 
 Glad someone caught that. You update the plan accordingly. Close the laptop.
 
@@ -188,6 +196,8 @@ The AI looks at what changed and what's not documented. It writes clear, honest 
 ---
 
 Five sessions. Five days. One feature, from idea to shipped code. Each session independent. Each one building on the last through files. A human made every significant decision. The AI did the heavy lifting. And the done-criteria contract verified that nothing was forgotten at the end of each step.
+
+Do it again next week with a different feature. And the week after. The tenth feature gets the same disciplined treatment as the first. That's what sustainable quality looks like.
 
 ---
 
@@ -449,11 +459,15 @@ A few things worth internalising. They're what make this work in practice.
 
 **Not automation.** You're in the loop at every decision point. The AI explores options. You decide which one.
 
-**Not a replacement for thinking.** It's an amplifier. It asks better questions than you'd think to ask yourself, and it catches things you'd miss when you're tired or rushing.
+**Not a replacement for thinking.** It's an amplifier. It asks better questions than you'd think to ask yourself, and it catches things you'd miss when you're tired or rushing. But the judgment is yours.
+
+**Not magic that writes code for you.** The goal isn't "AI does the work." The goal is "AI helps you do better work." You should understand every line. You should be able to maintain it without AI. If you can't, something went wrong.
+
+**Not just for coding.** The whole lifecycle — from first idea through shipped, tested, documented code. Discovery, planning, implementation, review, documentation. One disciplined flow, each phase feeding the next.
 
 **Not language-specific.** TypeScript, PHP, Python, Rust, Go, anything. The commands don't care about your stack. The principles and guidelines adapt to whatever you're building with.
 
-**Not all-or-nothing.** Use the whole pipeline if you want. Use just `/brainstorm` and `/plan`. Use only `/guidelines`. Start wherever makes sense for where your project is right now. The commands work independently — they just work *better* together.
+**Not all-or-nothing.** Use the whole pipeline if you want. Use just `/brainstorm` and `/plan`. Use only `/guidelines`. Start wherever makes sense. The commands work independently — they just work *better* together.
 
 ---
 

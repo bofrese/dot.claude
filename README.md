@@ -1,8 +1,24 @@
 # dot.claude
 
-A set of slash commands for Claude Code that covers the full product development lifecycle — from first idea through shipped, tested, documented code. Each command works as a thinking partner: it asks questions, challenges assumptions, and guides you through structured decisions. You stay in control. The AI does the heavy lifting.
+AI knows how to write good code. The problem is it rarely does — unless you give it a reason to.
 
-Language-agnostic, platform-agnostic. Works across any stack.
+dot.claude is a set of slash commands for Claude Code that bring discipline to AI-assisted development — from first idea through shipped, tested, documented code. Each command loads the right principles, reads the right context, follows the right process. Reliably, every time.
+
+Language-agnostic. Platform-agnostic. Works across any stack.
+
+---
+
+## The Problem
+
+Three things that happen when you work with AI without structure:
+
+**AI defaults to average.** It *knows* world-class principles — BDD, DDD, clean architecture. But when you just ask it to solve a problem, it writes like the average programmer it was trained on. Without the right frameworks loaded at the right moment, you get competent code. Not principled code.
+
+**AI is a pleaser.** It agrees with you. Applauds your thinking. Confirms you're right. The longer the conversation, the less likely it pushes back on a bad idea. You need critical distance — and you need it built into the workflow, not hoped for.
+
+**Context disappears.** New session, start over. Decisions lost. Guidelines forgotten. The AI makes the same mistakes it made last week because it has no memory of last week.
+
+dot.claude solves all three. Deliberately. By design.
 
 ---
 
@@ -10,11 +26,11 @@ Language-agnostic, platform-agnostic. Works across any stack.
 
 This isn't a toolkit that runs commands for you. It's a toolkit that thinks *with* you.
 
-- **Coaching, not executing.** Commands guide you through structured thinking, one question at a time. They challenge assumptions and suggest alternatives.
-- **Simplicity first.** Always look for the simpler, more generic solution. Code full of exceptions and complex logic means we haven't found the right abstraction.
-- **Architectural coherence.** Changes should keep the system clean. No bolted-on features, no legacy fallbacks, no hacks to clean up later.
-- **Honest documentation.** Document current state, not aspirations. If something is messy, say so.
-- **Standalone outputs.** Reports are complete enough that someone not present for the conversation can pick them up and proceed.
+- **Explicit commands, not ambient magic.** You invoke `/plan`, `/review`, `/implement` — deliberately, knowingly. When you do, the AI knows exactly what phase you're in. It loads the right principles, reads the right context, follows the right process. No hoping it guesses what you need. You're explicit about what you're doing; the AI is explicit about how it helps.
+- **Files are the memory.** Everything persists in git — vision, plans, decisions, guidelines. Context survives across sessions, branches, and people. Close your laptop. Come back tomorrow. Hand off to a colleague. The project remembers.
+- **Session boundaries create honesty.** A plan written in one session is reviewed in another — by a fresh context with no memory of the conversation that produced it. That's how you get genuine critique instead of polite agreement.
+- **Quality holds up over time.** The tenth feature gets the same disciplined treatment as the first. Guidelines get checked. Principles get applied. Technical debt doesn't silently accumulate.
+- **You own the code.** The goal isn't AI that writes code *for* you. It's AI that helps you do better work. You understand every line. You made the decisions. You could walk away from AI entirely and still maintain what you built.
 
 ---
 
@@ -28,7 +44,7 @@ The full story — how commands connect, how memory works, how a feature travels
 
 ## Commands Overview
 
-All commands follow a coaching/mentoring style — they work as thinking partners, not just executors. They ask questions, challenge assumptions, and guide you through structured processes.
+All commands follow a coaching style — they work as thinking partners, not just executors. They ask questions, challenge assumptions, and guide you through structured processes.
 
 ### Discovery — What to Build and Why
 
@@ -177,13 +193,13 @@ All dated reports use `{YYYY-MM-DD}-{slug}.md` naming.
 
 ## Contributing
 
-This is a living toolkit. I use it every day, and it's continuously evolving — new commands, sharper existing ones, better patterns. It's never finished, and that's by design.
+This is a living toolkit — continuously evolving. New commands, sharper existing ones, better patterns. Never finished, and that's by design.
 
-Pull requests are welcome — genuinely. dot.claude is opinionated, and the opinions behind it are deliberate. That means a PR might land as-is, get adapted to fit, or get a respectful decline — not because your idea is wrong, but because it doesn't match the direction I'm taking. Please don't take that personally. You're welcome to have strong opinions too; that's what makes contributions worth having.
+Pull requests are welcome. dot.claude is opinionated, and the opinions are deliberate. A PR might land as-is, get adapted, or get a respectful decline — not because your idea is wrong, but because it doesn't fit the direction. You're welcome to have strong opinions too; that's what makes contributions worth having.
 
-The reason to open a PR even if you're not sure it'll land exactly as written: it's visible. Other people using dot.claude can see it, learn from it, build on it. That has value on its own.
+Even if you're not sure a PR will land exactly as written: it's visible. Other people can see it, learn from it, build on it. That has value on its own.
 
-If you use dot.claude, I'd genuinely love to hear from you. What works well? What doesn't? What's missing? What surprised you — good or bad? All of it is useful, and it all helps shape where this goes next. Come talk about it:
+If you use dot.claude, feedback is genuinely useful. What works? What doesn't? What's missing? What surprised you? All of it helps shape where this goes:
 
 👉 [GitHub Discussions](https://github.com/bofrese/dot.claude/discussions)
 
