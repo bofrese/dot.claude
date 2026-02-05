@@ -39,6 +39,7 @@ This isn't a toolkit that runs commands for you. It's a toolkit that thinks *wit
 The full story — how commands connect, how memory works, how a feature travels from idea to shipped code — is all in one place:
 
 👉 [Read the User Guide](docs/user-guide.md)
+👉 [See the presentation](https://htmlpreview.github.io/?https://raw.githubusercontent.com/bofrese/dot.claude/main/docs/dotclaude.html)
 
 ---
 

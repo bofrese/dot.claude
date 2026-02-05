@@ -1,0 +1,247 @@
+/* ─── Variables ─── */
+:root {
+  --ac:       #4ecdc4;
+  --ac-lo:    rgba(78,205,196,.15);
+  --ac-md:    rgba(78,205,196,.35);
+  --warn:     #e74c3c;
+  --warn-lo:  rgba(231,76,60,.12);
+  --dim:      #999;
+  --dimmer:   #666;
+  --purple:   #b388ff;
+  --purple-lo:rgba(155,89,182,.14);
+  --purple-bd:rgba(155,89,182,.4);
+  --gold:     #fff176;
+  --gold-lo:  rgba(241,196,15,.14);
+  --gold-bd:  rgba(241,196,15,.4);
+}
+
+/* ─── Base overrides ─── */
+.reveal { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+.reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
+.reveal h2 { color: var(--ac); }
+.reveal h3 { color: var(--ac); font-size: 1.3em; }
+.reveal p  { color: #ccc; line-height: 1.5; margin-bottom: 0.55em; }
+.reveal a  { color: var(--ac); }
+.reveal .progress { background: var(--ac) !important; }
+.reveal section { font-size: 0.95em; }
+
+/* markdown-rendered inline styles */
+.reveal p strong { color: #fff; }
+.reveal p em     { color: #ddd; }
+.reveal p code, .reveal h2 code { color: var(--ac); background: var(--ac-lo); padding: .15em .45em; border-radius: 4px; font-size: .88em; }
+
+/* ─── Slide layout helpers ─── */
+.slide-center { text-align: center; }
+.slide-left   { text-align: left; padding: 1.8em 2.6em; }
+
+/* ─── Title slide ─── */
+.slide-title h1        { font-size: 3.4em; color: #fff; margin-bottom: .15em; }
+.slide-title .subtitle { font-size: 1.2em; color: var(--dim); margin: 0 0 .6em; }
+.slide-title hr        { border-color: var(--ac); width: 100px; margin: 0 auto .65em; }
+.slide-title .tagline  { color: var(--ac); font-style: italic; font-size: .95em; }
+
+/* ─── Warn heading (red h2) ─── */
+.slide-warn h2 { color: var(--warn) !important; font-size: 2.5em; }
+
+/* ─── Warn-title (italic warn) ─── */
+.slide-warn-title h2 { color: #fff !important; }
+.slide-warn-title h2 em { color: var(--warn); }
+
+/* ─── Aha badge slide ─── */
+.slide-aha h2       { color: #fff; }
+.slide-aha .aha-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: #fff; padding: .13em .55em; border-radius: 20px;
+  font-size: .55em; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+  vertical-align: middle; margin-right: .3em;
+}
+
+/* ─── Closing slide links ─── */
+.slide-closing a {
+  display: block; color: var(--ac); font-size: 1.15em;
+  font-weight: 600; margin: .4em 0; text-decoration: none;
+}
+.slide-closing a:hover { text-decoration: underline; }
+.slide-closing .author {
+  color: var(--dim); font-size: .82em; margin-top: 1.2em;
+  padding-top: .7em; text-align: center;
+}
+.slide-closing .author::before {
+  content: ''; display: block; width: 70px; height: 1px;
+  background: #444; margin: 0 auto .7em;
+}
+.slide-closing .author a { font-size: 1em; }
+
+/* ─── Entry-points list (Where to start) ─── */
+.entry-points p { line-height: 2.2; font-size: 1em; }
+.entry-points p code {
+  display: inline-block; border: 1px solid var(--ac-md);
+  border-radius: 6px; padding: .25em .75em;
+  font-family: 'Consolas','SF Mono',monospace;
+}
+
+/* ─── Nav hint ─── */
+.nav-hint {
+  position: fixed; bottom: 12px; right: 18px;
+  color: rgba(255,255,255,.17); font-size: .67em;
+  font-family: system-ui; pointer-events: none; z-index: 999;
+}
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Pillars (four foundations)
+   ════════════════════════════════════════════════════════ */
+.pillars {
+  display: flex; gap: 1.2em; justify-content: center;
+  flex-wrap: wrap; margin-top: .7em;
+}
+.pillar {
+  background: var(--ac-lo); border: 1px solid var(--ac-md);
+  border-radius: 12px; padding: .95em 1.1em;
+  width: 180px; text-align: center;
+}
+.pillar .ico  { font-size: 2em; display: block; margin-bottom: .2em; }
+.pillar h4    { color: var(--ac); margin: .2em 0; font-size: .9em; }
+.pillar p     { color: var(--dim); font-size: .73em; margin: 0; line-height: 1.45; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Journey rows
+   ════════════════════════════════════════════════════════ */
+.journey { margin: .4em 0; }
+.jrow { display: flex; align-items: flex-start; gap: 1.2em; margin: .55em 0; }
+.jday {
+  background: var(--ac); color: #1a1a2e; border-radius: 50%;
+  width: 52px; height: 52px; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-weight: 700; line-height: 1; font-size: .9em;
+}
+.jday .dn { font-size: .6em; text-transform: uppercase; }
+.jtxt h4  { color: #fff; margin: 0 0 .15em; font-size: .9em; }
+.jtxt p   { color: var(--dim); font-size: .78em; margin: .18em 0; line-height: 1.5; }
+.jtxt .saved { color: var(--ac); font-size: .72em; margin-top: .3em; }
+.jtxt .saved code { font-size: .92em; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Compare boxes (bad / good)
+   ════════════════════════════════════════════════════════ */
+.compare { display: flex; gap: 1.6em; justify-content: center; flex-wrap: wrap; }
+.cbox { border-radius: 12px; padding: 1.1em 1.3em; width: 265px; }
+.cbox.bad  { background: var(--warn-lo);  border: 1px solid rgba(231,76,60,.3); }
+.cbox.good { background: var(--ac-lo);    border: 1px solid var(--ac-md); }
+.cbox h4   { margin: 0 0 .6em; font-size: .94em; }
+.cbox.bad  h4 { color: var(--warn); }
+.cbox.good h4 { color: var(--ac); }
+.cbox ul   { margin: 0; padding-left: 1.1em; }
+.cbox li   { color: #bbb; font-size: .77em; margin-bottom: .3em; line-height: 1.45; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: File-tree
+   ════════════════════════════════════════════════════════ */
+.ftree {
+  background: rgba(0,0,0,.45); border: 1px solid #333; border-radius: 8px;
+  padding: .9em 1.2em; font-family: 'Consolas','SF Mono',monospace;
+  font-size: .82em; text-align: left; display: inline-block;
+  line-height: 1.9; white-space: pre;
+}
+.ftree .folder   { color: var(--ac); }
+.ftree .highlight { color: var(--ac); font-weight: 600; }
+.ftree .comment  { color: var(--dimmer); }
+.ftree .file     { color: #ccc; }
+.ftree .branch-label { color: var(--ac); font-weight: 700; margin-bottom: .25em; display: block; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Three-layer stack (tiers)
+   ════════════════════════════════════════════════════════ */
+.layers { display: flex; flex-direction: column; align-items: center; gap: .35em; }
+.lbox {
+  border-radius: 10px; padding: .6em 1.7em; text-align: center;
+  width: 430px; max-width: 88vw;
+}
+.lbox.discovery  { background: var(--purple-lo); border: 1px solid var(--purple-bd); }
+.lbox.engineering { background: var(--ac-lo);     border: 1px solid var(--ac-md); }
+.lbox.knowledge  { background: var(--gold-lo);   border: 1px solid var(--gold-bd); }
+.lbox h4         { margin: 0 0 .1em; font-size: .92em; }
+.lbox.discovery  h4 { color: var(--purple); }
+.lbox.engineering h4 { color: var(--ac); }
+.lbox.knowledge  h4 { color: var(--gold); }
+.lbox p          { margin: 0; color: #aaa; font-size: .73em; }
+.larrow          { color: var(--dimmer); font-size: .95em; line-height: 1.4; }
+.larrow.up       { color: var(--ac); font-weight: 600; }
+.larrow em       { color: var(--dim); font-size: .84em; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Bar chart (done-criteria growth)
+   ════════════════════════════════════════════════════════ */
+.bars { display: flex; gap: 1.4em; justify-content: center; align-items: flex-end; }
+.bcol { text-align: center; }
+.bcol .bar {
+  width: 64px; background: var(--ac); border-radius: 5px 5px 0 0;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: .25em; margin: 0 auto;
+}
+.bcol .bar span { color: #1a1a2e; font-weight: 700; font-size: .82em; }
+.bcol .lbl     { color: var(--dim); font-size: .71em; margin-top: .3em; line-height: 1.4; }
+.bcol .lbl em  { font-size: .84em; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Cards (generic flex row of info boxes)
+   ════════════════════════════════════════════════════════ */
+.cards { display: flex; gap: 1.4em; justify-content: center; flex-wrap: wrap; margin-top: .6em; }
+.card {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px; padding: .85em 1em; width: 200px; text-align: center;
+}
+.card h4 { color: var(--ac); margin: 0 0 .3em; font-size: .84em; }
+.card p  { color: var(--dim); font-size: .72em; margin: 0; line-height: 1.4; }
+
+/* submodule-style card variant (centre card highlighted) */
+.cards .card.highlight-card {
+  background: rgba(78,205,196,.08); border-color: var(--ac-md);
+}
+.cards .card.highlight-card h4 { color: var(--gold); }
+.cards .card.highlight-card p  { color: #aaa; }
+
+/* ─── Question slide (airplane moment) ─── */
+.slide-question h2 { color: #fff !important; font-size: 2.2em; line-height: 1.3; }
+.slide-question p strong { color: var(--warn) !important; }
+
+/* ─── Thesis slide (core statement) ─── */
+.slide-thesis h2 { color: var(--ac) !important; font-size: 2.8em; margin-bottom: 0.4em; }
+
+/* ════════════════════════════════════════════════════════
+   COMPONENT: Pipeline (phase flow with decision gates)
+   ════════════════════════════════════════════════════════ */
+.pipeline {
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 0.45em;
+  column-gap: 0.3em;
+  justify-items: center;
+  align-items: center;
+  margin-top: 0.9em;
+}
+.pbox {
+  background: var(--ac-lo); border: 1px solid var(--ac-md);
+  border-radius: 8px; padding: 0.65em 0.5em;
+  min-width: 85px; text-align: center;
+}
+.picon { font-size: 1.4em; display: block; margin-bottom: 0.1em; }
+.pname { color: var(--ac); font-size: 0.76em; font-weight: 600; display: block; }
+.pgate {
+  color: var(--gold); font-size: 0.68em;
+  line-height: 1.3; text-align: center;
+}
+.pgate::before { content: '✓ '; font-weight: 700; }
+.parrow { color: var(--dimmer); font-size: 1.3em; font-weight: 300; }
+
+/* ═══ Responsive safety ═══ */
+@media (max-width: 700px) {
+  .pillars, .compare, .cards, .bars { flex-direction: column; align-items: center; }
+  .pillar, .cbox, .card { width: 90vw; max-width: 320px; }
+  .ftree { font-size: .74em; }
+  .pipeline { font-size: .82em; }
+  .lbox  { width: 90vw; }
+  .jrow  { flex-direction: column; align-items: center; }
+  .jtxt  { text-align: center; }
+}
