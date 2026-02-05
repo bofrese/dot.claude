@@ -9,6 +9,7 @@ description: Define user personas grounded in the product vision.
 - This is an existing project. Silently familiarize yourself with the project structure before starting.
 - Read `docs/product/vision.md` if it exists — personas must be grounded in the vision.
 - Read `docs/product/design-brief.md` if it exists — personas inform the brief, but the brief may already constrain who we're designing for.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 

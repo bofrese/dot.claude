@@ -7,6 +7,7 @@ description: Execute an approved implementation plan autonomously. Reviews upfro
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - Fallback: determine date via any available command.
 - Silently familiarize yourself with project structure, build tools, test infrastructure, and linting setup before starting.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 

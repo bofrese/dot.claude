@@ -107,6 +107,8 @@ flowchart TD
 
 The distinction is deliberate. It means you always know what's important and what's temporary.
 
+Commands bridge these spaces automatically. At the start of each session, `context.md` tells them what to load — vision for Discovery and Engineering commands, relevant guidelines for Engineering commands once scope is clear. Nothing to configure. The files are the memory; the commands know where to look.
+
 ---
 
 ## A Real Journey
@@ -421,6 +423,8 @@ rm -rf dot.claude
 
 Scans your project, identifies the technologies, and helps you create best-practice guidelines. Start with whichever language or framework matters most to your project.
 
+Once created, guidelines load automatically when Engineering commands work in relevant areas — no extra configuration needed.
+
 ### 3. Pick your entry point
 
 **Brand new product?** Start with `/product-vision`. Everything else flows from there.
@@ -448,6 +452,8 @@ A few things worth internalising. They're what make this work in practice.
 **Edit the plans.** Plans include a "Questions & Decisions" table. The AI flags things it's unsure about. Your job is to review that table — approve, override, add context. Then implementation proceeds with clarity. This is the human-in-the-loop moment made explicit.
 
 **Trust the done-criteria.** If a command flags something as not done, it's probably right. The criteria exist because something slipped through before. Don't dismiss them — either fix the thing, or consciously remove the criterion if it no longer applies.
+
+**Persist important decisions.** If a session ends with a significant architectural decision or convention that isn't captured in the output artifact, done-criteria will flag it. Run `/document` to persist it into the right place — the next session will find it there automatically.
 
 **Invest in guidelines early.** Spend the time upfront. Every future session — yours, a colleague's, or the AI's — benefits from them. Good guidelines are the single highest-leverage thing you can do for long-term code quality.
 

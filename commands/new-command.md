@@ -7,6 +7,7 @@ description: Create a new slash command for this repository. Guides through desi
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
 - This is the dot.claude repository. Read CLAUDE.md for command development guidelines and README.md for current command inventory before starting.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 
@@ -122,3 +123,4 @@ No separate report is generated — the command file and README update are the d
 - [ ] Command name is kebab-case
 - [ ] Description is concise (one line)
 - [ ] Command includes the done-criteria protocol line: *Read `.claude/process/done-criteria.md` and follow the protocol.*
+- [ ] Command includes the context.md protocol line: *Read `.claude/process/context.md` and follow the protocol.*

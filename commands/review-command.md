@@ -6,6 +6,7 @@ description: Review a Claude command for AI optimization — token efficiency, c
 ## Context
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - Fallback: determine date in YYYY-MM-DD via any available command.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 
@@ -37,6 +38,7 @@ Identify wasteful patterns:
 - Missing edge case handling
 - Undefined terms or references
 - Missing done-criteria protocol line (*Read `.claude/process/done-criteria.md` and follow the protocol.*) — all output-producing commands must include this
+- Missing context.md protocol line (*Read `.claude/process/context.md` and follow the protocol.*) — all commands must include this
 
 ### Counterproductive Patterns
 - Instructions that contradict each other

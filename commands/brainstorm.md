@@ -7,6 +7,7 @@ description: Guided brainstorm for new features. Coaches through diverge -> conv
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - Fallback: determine date via any available command.
 - Silently familiarize yourself with project structure, patterns, and UI conventions before starting.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 

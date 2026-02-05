@@ -153,23 +153,14 @@ git clone https://github.com/bofrese/dot.claude.git ~/.claude
 
 ---
 
-## Guidelines Integration
+## Context Loading
 
-When using this command set, you can maintain project-specific guidelines in `docs/guidelines/`. The `/guidelines` command helps create and maintain them.
+Commands automatically load relevant context at the start of each session via `process/context.md`. No `CLAUDE.md` configuration needed:
 
-**To enable automatic guideline loading**, add this to your project's `CLAUDE.md`:
+- **Vision** (`docs/product/vision.md`) is loaded by Discovery and Engineering commands if it exists.
+- **Guidelines** (`docs/guidelines/`) are loaded by Engineering commands after scope is identified — only the guidelines matching the files and concepts in play. The `/guidelines` command creates and maintains them.
 
-```markdown
-## Guidelines
-
-Before starting work, check `docs/guidelines/README.md` for applicable guidelines.
-Load guidelines that match:
-- File extensions you're working with (e.g., `.ts` → typescript.md)
-- Paths involved (e.g., `Frontend/` → angular.md)
-- Concepts being touched (e.g., login flow → authentication.md)
-```
-
-This makes guidelines ambient context for all commands without modifying each command file.
+If important decisions emerge during a session, done-criteria will flag them for persistence via `/document`.
 
 ---
 

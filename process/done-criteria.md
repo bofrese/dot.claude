@@ -8,7 +8,7 @@ Commands integrate this with one line in their process:
 
 ---
 
-## The Protocol — Three Behaviours
+## The Protocol — Four Behaviours
 
 ### 1. Bootstrap if missing
 
@@ -38,6 +38,14 @@ Which items apply:
 If your command introduces an artifact type that isn't already tracked in `docs/process/done-criteria.md`, add a new subsection under DONE with the appropriate criteria. This is how the list grows as a project adopts more commands.
 
 **The golden rule:** criteria must be generic, not feature-specific. "Tests must pass" — yes. "The login tests must pass" — no. Feature-specific dependencies belong in the plan.
+
+### 4. Flag decisions for persistence
+
+Before finishing, consider whether important decisions or conventions emerged
+during this session that aren't already in your output artifact. If so, flag
+them briefly and suggest the user runs `/document` to persist them.
+
+If nothing to flag: skip silently.
 
 ---
 
