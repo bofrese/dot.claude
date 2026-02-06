@@ -236,6 +236,24 @@ Create the design brief — the visual direction, interaction patterns, tone, an
 | **Writes** | `docs/product/design-brief.md` |
 | **Start here when** | After vision and personas are in place |
 
+#### `/business-plan`
+Define business model and monetization strategy. Uses Alex Hormozi-style value proposition framework to articulate how the product creates and captures value.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md`, `docs/product/personas.md` |
+| **Writes** | `docs/product/business-plan.md` |
+| **Start here when** | After vision is established and you need to define the business model |
+
+#### `/art-director`
+Art direction coaching for product visuals, UI, brand, and marketing materials. Works as a creative partner to develop visual identity and design language.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md`, `docs/product/design-brief.md` (if exists) |
+| **Writes** | `docs/guidelines/visual-design.md` (optional), conversational guidance |
+| **Start here when** | You need visual design direction or creative coaching |
+
 ---
 
 ### ⚙️ Engineering
@@ -287,6 +305,15 @@ Code review of what was built. Auto-detects scope from git — uncommitted chang
 | **Writes** | `ai/reviews/{date}-review-{slug}.md` |
 | **Start here when** | After implementation. Before merging. |
 
+#### `/investigate`
+Systematic investigation of bugs and issues. Root cause analysis, not quick fixes. Explores the problem thoroughly, identifies contributing factors, and produces a clear diagnosis that can inform a proper solution.
+
+| | |
+|---|---|
+| **Reads** | Relevant codebase, error logs, related code |
+| **Writes** | `ai/investigations/{date}-{slug}.md` |
+| **Start here when** | You have a bug or issue that needs proper diagnosis before fixing |
+
 ---
 
 ### 📚 Knowledge
@@ -315,14 +342,42 @@ Create best-practice guidelines for the technologies in your project. Research-f
 
 ### 🛠️ Meta — The Toolkit Maintains Itself
 
+#### `/dot`
+Project mentor that guides you through the dot.claude workflow. Assesses project state, identifies gaps, recommends next steps, and helps optimize session context. Your go-to command when you're unsure what to do next or how to structure your work.
+
+| | |
+|---|---|
+| **Reads** | Project structure, existing artifacts, recent work |
+| **Writes** | `ai/{date}-project-status.md` (optional status report mode) |
+| **Start here when** | You're new to dot.claude, unsure what to do next, or starting a new session |
+
 #### `/new-command`
 Create a new slash command that fits the existing patterns. Guides you through design, creates the file, updates the README. Use this when the toolkit is missing something your workflow needs.
 
 #### `/review-command`
 Optimize an existing command for token efficiency and clarity. Finds bloat, ambiguity, missing guardrails. Proposes a leaner version. Use this when a command feels slow or produces inconsistent results.
 
+#### `/improve-command`
+Extract learnings from a completed session to improve a command for future use. Analyzes what worked, what didn't, and proposes specific improvements to command design, process, or output format.
+
+| | |
+|---|---|
+| **Reads** | Session history, command file, outputs produced |
+| **Writes** | `ai/reviews/{date}-improve-{command-name}.md` |
+| **Start here when** | After using a command and identifying ways it could work better |
+
+---
+
+### 🚀 DevOps
+
 #### `/docker-setup`
 Set up or update a Docker development environment. Creates Dockerfile, Makefile, install docs. Verifies everything actually works before it's done.
+
+| | |
+|---|---|
+| **Reads** | Project structure, dependencies |
+| **Writes** | `Dockerfile`, `Makefile`, `docs/install.md`, `ai/docker/{date}-docker-setup.md` |
+| **Start here when** | Setting up containerized development environment |
 
 ---
 
@@ -401,6 +456,28 @@ The first time you run a feature through the pipeline, the done-criteria contrac
 
 ## Getting Started
 
+### New to dot.claude? Start with `/dot`
+
+Before diving into individual commands, meet your guide: **`/dot`** — your project mentor.
+
+Think of `/dot` as your personal coach who understands the entire dot.claude system. Run it anytime to:
+
+- **Get oriented** — What's the current state of your project? What foundational work exists?
+- **Identify gaps** — What's missing? What needs attention?
+- **Get specific guidance** — Which command should you run next and why?
+- **Optimize context** — Starting a new session? `/dot` tells you exactly what to load and what to skip.
+
+**Try it now:**
+```
+/dot
+```
+
+It will assess where you are, what you're missing, and suggest concrete next steps with specific commands. As you work through the toolkit, come back to `/dot` whenever you're unsure what to do next. It's designed to teach you the workflow through use.
+
+New projects start with `/product-vision`, but `/dot` will tell you that — and explain why it matters.
+
+---
+
 ### 1. Add the toolkit
 
 ```bash
@@ -425,7 +502,11 @@ Scans your project, identifies the technologies, and helps you create best-pract
 
 Once created, guidelines load automatically when Engineering commands work in relevant areas — no extra configuration needed.
 
-### 3. Pick your entry point
+### 3. Let `/dot` guide you (or pick your own entry point)
+
+Not sure where to start? Just run `/dot` — it will assess your project and tell you exactly what to do first.
+
+If you prefer to jump in directly:
 
 **Brand new product?** Start with `/product-vision`. Everything else flows from there.
 
@@ -435,7 +516,7 @@ Once created, guidelines load automatically when Engineering commands work in re
 
 **Inherited a codebase with no docs?** Start with `/document`.
 
-There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/brainstorm` simply won't try to read one.
+There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/brainstorm` simply won't try to read one. But `/dot` will recommend the optimal path based on what you actually have.
 
 ---
 

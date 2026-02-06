@@ -109,7 +109,10 @@ graph TD
 
 **Discovery** establishes what you're building and why. **Engineering** turns ideas into reviewed, tested code. **Knowledge** accumulates the wisdom that makes every future session better. Each layer feeds the others.
 
-The `/docker-setup` command stands alone — use it whenever you need to set up or update the dev environment. The `/new-command` and `/review-command` are meta-commands for extending and maintaining the toolkit itself.
+**Commands outside the main flow:**
+- `/dot` — Your project mentor. Use it anytime to get oriented, identify gaps, and get guidance on what to do next.
+- `/docker-setup` — Use whenever you need to set up or update the dev environment.
+- `/new-command`, `/review-command`, `/improve-command` — Meta-commands for extending and maintaining the toolkit itself.
 
 ---
 
@@ -159,6 +162,22 @@ git clone https://github.com/bofrese/dot.claude.git ~/.claude
 
 ---
 
+## Quick Start — Your First Command
+
+After installation, start with `/dot`:
+
+```
+/dot
+```
+
+**`/dot` is your project mentor** — it assesses where you are, identifies what's missing, and suggests exactly which commands to run next.
+
+New to dot.claude? `/dot` will guide you through the workflow step by step, explaining why each command matters. Already working on a project? `/dot` identifies gaps (missing docs, unreviewed plans, patterns that should be captured) and recommends specific next steps.
+
+Think of `/dot` as the command that teaches you how to use all the other commands. Start there whenever you're unsure what to do next.
+
+---
+
 ## Context Loading
 
 Commands automatically load relevant context at the start of each session via `process/context.md`. No `CLAUDE.md` configuration needed:
@@ -180,10 +199,11 @@ If important decisions emerge during a session, done-criteria will flag them for
 | `ai/implementations/` | Implementation execution reports |
 | `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |
-| `docs/product/` | Product vision, personas, design brief |
+| `ai/` | Project status reports from `/dot` (optional) |
+| `docs/product/` | Product vision, personas, design brief, business plan |
 | `docs/process/` | Done criteria and process contracts |
 | `docs/` | Developer documentation |
-| `docs/guidelines/` | Best practice guidelines |
+| `docs/guidelines/` | Best practice guidelines (including visual-design from `/art-director`) |
 
 All dated reports use `{YYYY-MM-DD}-{slug}.md` naming.
 

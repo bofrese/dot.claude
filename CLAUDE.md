@@ -60,6 +60,16 @@ Small files in `principles/` that encode core thinking frameworks. Not tutorials
 - `principles/` = generic frameworks. "How to think about BDD." Works for any project. Travels with the submodule.
 - `docs/guidelines/` = project-specific application. "How we do BDD in this Angular/PHP project." Specific to the codebase.
 
+## Context Protocol
+
+Every command loads relevant context at session start. The integration is a single line in the Context block:
+
+> *Read `.claude/process/context.md` and follow the protocol.*
+
+The protocol file (`.claude/process/context.md`) defines what each command tier loads and when. Engineering commands load vision (if it exists) at start and guidelines (selectively) after scope is clear. Discovery commands load vision. Knowledge/Meta commands load nothing extra. This ensures commands start informed without bloating context with irrelevant files.
+
+**When creating a new command:** include the context protocol line after the familiarization instruction. `/new-command` enforces this. `/review-command` flags its absence.
+
 ## Done Criteria Protocol
 
 Every output-producing command participates in the done system. The integration is a single line at the end of the command:
@@ -86,6 +96,7 @@ description: One-line description of what this command does.
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
 - This is an existing project. Silently familiarize yourself with the project structure, key architectural patterns, and UI conventions before starting.
+- Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 Who Claude is in this context. Senior architect, coach, reviewer, etc.
@@ -132,6 +143,7 @@ The fallback instruction handles Windows where `python3` doesn't exist.
 Every command should include:
 - The date resolution (as above)
 - Instruction to silently analyze the project before starting
+- The context protocol line: `Read .claude/process/context.md and follow the protocol.`
 
 This ensures Claude has context before engaging with the user.
 
