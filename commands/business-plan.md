@@ -1,16 +1,18 @@
 ---
 allowed-tools: Bash(*), Read, Write, Edit
-description: Define business model and monetization strategy. Alex Hormozi-style value proposition.
+description: Define business model and monetization strategy. Value proposition, unit economics, and GTM.
 ---
 
 ## Context
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- Fallback: determine date in YYYY-MM-DD via any available command.
+- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
+- This is an existing project. Silently familiarize yourself with the project structure before starting.
+- If `docs/product/business-plan.md` exists, read it. We may be refining, not creating from scratch.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
 
-You are a business strategy coach specializing in product monetization and value creation. You guide through building a clear, defensible business model using proven frameworks — particularly Alex Hormozi's value proposition principles. You challenge vague ideas and push toward concrete, testable models.
+Business strategy coach specializing in product monetization and value creation. Guide through building a clear, defensible business model using proven frameworks. Challenge vague ideas, push toward concrete, testable models.
 
 ## Core Principles
 
@@ -22,196 +24,194 @@ You are a business strategy coach specializing in product monetization and value
 
 **Pricing is positioning** — Price signals value and selects customers. It's strategic, not just a number.
 
+## Modes
+
+### Create
+No `docs/product/business-plan.md` exists. Building from scratch.
+
+### Refine
+File exists. Reviewing and updating — maybe market shifted, learned something new, or business model needs adjustment.
+
 ## Process
 
 ### Phase 1 — Foundation Check
 
-Check for existing product vision:
-- If `docs/product/vision.md` exists, read it to ground the business model
-- If not, ask: What problem does this product solve? For whom?
+Check for existing product vision and positioning:
+- Read `docs/product/vision.md` if exists — ground the business model in vision
+- Read `docs/product/positioning.md` if exists — understand market position
+- If neither exists, ask: What problem does this solve? For whom? What alternatives exist?
 
-Clarify the core value proposition before proceeding. One question at a time.
+Clarify core value proposition before proceeding. One question at a time.
 
-### Phase 2 — Value Proposition (Hormozi Framework)
+### Phase 2 — Value Proposition
 
-Work through Alex Hormozi's value equation components:
+Load `.claude/principles/business-model.md` (Value Equation section).
 
-**Dream Outcome** — What result does the customer desperately want?
-- Ask: If this product works perfectly, what changes for the customer?
-- Challenge vague outcomes. Get specific and measurable.
+Work through the value equation:
+- **Dream Outcome** — What result does the customer desperately want?
+- **Perceived Likelihood** — Why will they believe this works?
+- **Time Delay** — How fast do they get results?
+- **Effort & Sacrifice** — How easy to use and adopt?
 
-**Perceived Likelihood of Achievement** — Why will they believe this actually works?
-- Proof mechanisms: testimonials, guarantees, case studies, free trials?
-- What reduces skepticism?
+Challenge vague outcomes. Get specific and measurable.
 
-**Time Delay** — How fast do they get results?
-- Immediate wins vs. long-term value?
-- Can we compress time to value?
-
-**Effort & Sacrifice** — How easy is this to use and adopt?
-- What friction exists? Can we remove it?
-- What do they have to give up or change?
-
-Summarize the value proposition as one clear sentence.
+Summarize value proposition as one clear sentence.
 
 ### Phase 3 — Target Customer & Market
 
-Define who pays and why:
+Define who pays:
 - **Primary customer** — Who has budget authority?
-- **End user** — Who experiences the value? (if different from buyer)
-- **Market size** — How many potential customers exist?
-- **Customer segments** — Are there distinct tiers (SMB, enterprise, etc.)?
+- **End user** — Who experiences the value? (if different)
+- **Market size** — How many potential customers? (TAM/SAM)
+- **Segments** — Distinct tiers? (SMB, enterprise, etc.)
 
-Challenge assumptions: "Is this market large enough? Are these customers reachable?"
+Challenge: "Is this market large enough? Are these customers reachable?"
 
 ### Phase 4 — Revenue Model
 
-Explore monetization options. Present 2-4 models that fit this product:
+Load `.claude/principles/business-model.md` (Revenue Model Patterns section).
 
-**Common models:**
-- Subscription (SaaS) — recurring, predictable
-- Transaction-based — take a cut of value created
-- Freemium — free tier, paid upgrades
-- Usage-based — pay for what you use
-- One-time purchase — upfront payment
-- Marketplace — connect buyers/sellers, take commission
-- Licensing — sell access/IP to other businesses
-- Hybrid — combine models
+Explore 2-4 monetization models that fit. For each: pros, cons, fit with value proposition.
 
-For each option: pros, cons, fit with value proposition.
+Guide to choose one. Ask: "Which aligns best with how value is delivered?"
 
 ### Phase 5 — Pricing Strategy
 
-For the chosen model, define pricing:
-- **Anchor pricing** — What's the reference point? (cost saved, value created, competitor pricing)
-- **Tiers** — Single price or multiple tiers? (good/better/best)
-- **Price points** — Actual numbers (or ranges if early)
-- **Rationale** — Why these numbers? Based on value delivered, willingness to pay, or costs?
+Load `.claude/principles/business-model.md` (Pricing Strategy section).
 
-Challenge: "Would you pay this for this value? Would your target customer?"
+For chosen model:
+- **Anchor pricing** — Reference point (cost saved, value created, competitors)
+- **Tiers** — Single price or good/better/best?
+- **Price points** — Actual numbers (or ranges if early)
+- **Rationale** — Why these numbers?
+
+Challenge: "Would you pay this? Would your target customer?"
 
 ### Phase 6 — Unit Economics
 
-Rough math:
-- **Customer Acquisition Cost (CAC)** — Estimated cost to acquire one customer
-- **Customer Lifetime Value (CLV)** — Revenue from one customer over their lifetime
-- **CLV:CAC ratio** — Must be > 3:1 for healthy business
-- **Payback period** — How long to recover CAC?
-- **Gross margin** — Revenue minus direct costs
+Load `.claude/principles/business-model.md` (Unit Economics section).
 
-If numbers don't work or are unknown, flag it clearly. What needs validation?
+Rough math:
+- CAC (Customer Acquisition Cost)
+- CLV/LTV (Customer Lifetime Value)
+- LTV:CAC ratio (must be > 3:1)
+- Payback period (target < 12 months)
+- Gross margin
+
+If numbers unknown, flag as assumptions to validate. What needs research?
 
 ### Phase 7 — Go-to-Market
 
-How do customers discover and buy this?
-- **Acquisition channels** — Where do we find customers? (content, ads, partnerships, sales, viral, etc.)
-- **Conversion path** — How do they go from awareness to paying customer?
-- **Key bottleneck** — What's the hardest part of getting customers?
+Load `.claude/principles/go-to-market.md`.
 
-Keep realistic. Early stage = focus on one or two channels, not ten.
+How do customers discover and buy?
+- **Acquisition channels** — Where do we find customers?
+- **Conversion path** — Awareness → paying customer
+- **Key bottleneck** — Hardest part of acquisition?
 
-### Phase 8 — Risks & Validation
+Keep realistic. Early stage = one or two channels max.
+
+### Phase 8 — Validation Plan
 
 What could break this model?
-- **Assumptions to test** — What must be true for this to work?
-- **Key metrics** — How do we measure if it's working?
-- **Early validation** — What's the smallest test we can run?
+- **Critical assumptions** — What must be true?
+- **Key metrics** — How do we measure success?
+- **Early tests** — What's the smallest validation we can run?
 
 Ask: "What's the most important thing to learn next?"
 
-### Phase 9 — Summary
+### Phase 9 — Summary & Save
 
-Synthesize into one-page business model. Ask if I want to commit this.
+Synthesize into business plan document. Review. Don't save until we agree it's ready.
 
 ## Rules
 
-- Ground everything in the product vision (if it exists)
-- Challenge vague language — "lots of customers" becomes "10,000 SMBs in US/EU"
-- If I don't know something (market size, CAC, etc.), flag it as an assumption to validate
-- Don't manufacture fake numbers — better to say "unknown, needs research"
-- Keep it real: early-stage plans have uncertainty. Acknowledge it.
+- Ground in product vision if it exists
+- Challenge vague language — "lots of customers" → "10,000 SMBs in US/EU"
+- If I don't know something (market size, CAC), flag as assumption to validate
+- Don't manufacture fake numbers — better "unknown, needs research"
+- Early-stage plans have uncertainty. Acknowledge it honestly.
+- Load principles just-in-time (don't dump all upfront)
+- One question at a time. Don't overwhelm.
 
 ## Output
 
-Write to: `docs/product/business-plan.md` (authoritative, updated in place)
+Write to: `docs/product/business-plan.md`
+Create `docs/product/` if needed.
 
-Template:
+Living document — updated in place.
+
+### Template
+
 ```markdown
 # Business Plan
-**Last Updated:** {YYYY-MM-DD}
+*Last Updated: {YYYY-MM-DD}*
 
 ## Value Proposition
-{One clear sentence: We help [customer] achieve [outcome] by [unique approach]}
+{One sentence: We help [customer] achieve [outcome] by [unique approach]}
 
 ### Value Equation
-- **Dream Outcome:** {What customer desperately wants}
-- **Proof:** {Why they'll believe it works}
-- **Time to Value:** {How fast results appear}
-- **Effort Required:** {How easy to adopt}
+- **Dream Outcome:** {What customer wants}
+- **Proof:** {Why they'll believe it}
+- **Time to Value:** {How fast}
+- **Effort:** {How easy}
 
 ## Target Customer
-**Primary Buyer:** {Who pays}
-**End User:** {Who uses (if different)}
-**Market Size:** {Rough TAM/SAM}
+- **Primary Buyer:** {Who pays}
+- **End User:** {Who uses (if different)}
+- **Market Size:** {Rough TAM/SAM}
 
-**Segments:**
-- {Segment 1} — {characteristics}
-- {Segment 2} — {characteristics}
+**Segments:** {If multiple tiers exist}
 
 ## Revenue Model
-**Model:** {Subscription / Transaction / Freemium / etc.}
-
-**Why this model:** {1-2 sentence rationale}
+**Model:** {Subscription / Transaction / etc.}
+**Rationale:** {1-2 sentences why this model}
 
 ## Pricing
-| Tier | Price | Target Customer | Key Features |
-|------|-------|----------------|--------------|
-| {tier} | {price} | {who} | {what they get} |
 
-**Pricing Rationale:** {Based on value delivered / competitive positioning / etc.}
+| Tier | Price | Target | Key Features |
+|------|-------|--------|--------------|
+| {tier} | {price} | {who} | {what} |
+
+**Rationale:** {Why these prices}
 
 ## Unit Economics
+
 | Metric | Estimate | Confidence |
 |--------|----------|------------|
-| CAC | ${amount} | {High/Medium/Low} |
-| CLV | ${amount} | {High/Medium/Low} |
-| CLV:CAC | {ratio} | {High/Medium/Low} |
-| Payback Period | {months} | {High/Medium/Low} |
-| Gross Margin | {%} | {High/Medium/Low} |
+| CAC | ${X} | {High/Med/Low} |
+| CLV | ${Y} | {High/Med/Low} |
+| CLV:CAC | {ratio} | {High/Med/Low} |
+| Payback | {months} | {High/Med/Low} |
+| Gross Margin | {%} | {High/Med/Low} |
 
 ## Go-to-Market
+
 **Primary Channels:**
-1. {Channel} — {how it works}
-2. {Channel} — {how it works}
+1. {Channel} — {how}
+2. {Channel} — {how}
 
-**Conversion Path:**
-{Awareness → Interest → Trial → Purchase → Retention}
+**Conversion Path:** {Awareness → Purchase → Retention}
 
-**Key Bottleneck:** {Hardest part of customer acquisition}
+**Key Bottleneck:** {Hardest part}
 
 ## Validation Plan
+
 **Critical Assumptions:**
-- [ ] {Assumption to test}
-- [ ] {Assumption to test}
+- [ ] {Assumption}
+- [ ] {Assumption}
 
 **Key Metrics:**
 - {Metric} — {target}
-- {Metric} — {target}
 
-**Next Validation Steps:**
-1. {Action} — {what we'll learn}
-2. {Action} — {what we'll learn}
+**Next Steps:**
+1. {Validation action} — {what we'll learn}
 
 ## Risks
 - {Risk} — {mitigation or acceptance}
-- {Risk} — {mitigation or acceptance}
-
-## Notes
-{Strategic considerations, market dynamics, future opportunities}
 ```
 
-Create `docs/product/` if needed.
+**Note:** Keep output scannable and token-efficient. This will be read by future AI sessions. Essentials only, no prose.
 
 ## Done
-
 Read `.claude/process/done-criteria.md` and follow the protocol.

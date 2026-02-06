@@ -51,10 +51,14 @@ All commands follow a coaching style — they work as thinking partners, not jus
 
 | Command | Purpose | Output |
 |---------|---------|--------|
+| `/product-coach` | **Product and business development coach. Guides through comprehensive discovery or targeted sessions. Maintains product docs. (Start here for discovery)** | `docs/product/*` |
 | `/product-vision` | Establish or refine the product vision. The single source of truth for what, who, and why. | `docs/product/vision.md` |
+| `/problem-space` | Validate and document the problem space before building solutions. | `docs/product/problem-space.md` |
 | `/personas` | Define user personas grounded in the product vision. | `docs/product/personas.md` |
-| `/design-brief` | Create the design brief from vision and personas. | `docs/product/design-brief.md` |
-| `/business-plan` | Define business model and monetization strategy. Alex Hormozi-style value proposition. | `docs/product/business-plan.md` |
+| `/business-plan` | Define business model and monetization strategy. Value proposition, unit economics, GTM. | `docs/product/business-plan.md` |
+| `/positioning` | Define market positioning, competitive strategy, and go-to-market approach. | `docs/product/positioning.md` |
+| `/validation-plan` | Identify assumptions, rank risks, design validation experiments before building. | `docs/product/validation-plan.md` |
+| `/design-brief` | Create the design brief from vision and personas. Bridges product intent and implementation. | `docs/product/design-brief.md` |
 | `/art-director` | Art direction coaching for product visuals, UI, brand, and marketing materials. | `docs/guidelines/visual-design.md` (optional) |
 
 ### Engineering — How to Build It
@@ -108,6 +112,8 @@ graph TD
 ```
 
 **Discovery** establishes what you're building and why. **Engineering** turns ideas into reviewed, tested code. **Knowledge** accumulates the wisdom that makes every future session better. Each layer feeds the others.
+
+**Discovery Flow:** Start with `/product-coach` for comprehensive guidance, or use individual commands (`/product-vision`, `/problem-space`, `/business-plan`, etc.) for targeted work. The coach maintains `docs/product/README.md` to track what's done and what's missing.
 
 **Commands outside the main flow:**
 - `/dot` — Your project mentor. Use it anytime to get oriented, identify gaps, and get guidance on what to do next.
@@ -200,7 +206,7 @@ If important decisions emerge during a session, done-criteria will flag them for
 | `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |
 | `ai/` | Project status reports from `/dot` (optional) |
-| `docs/product/` | Product vision, personas, design brief, business plan |
+| `docs/product/` | Product vision, problem space, personas, business plan, positioning, validation plan, design brief. `README.md` tracks status. |
 | `docs/process/` | Done criteria and process contracts |
 | `docs/` | Developer documentation |
 | `docs/guidelines/` | Best practice guidelines (including visual-design from `/art-director`) |
