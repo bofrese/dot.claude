@@ -47,6 +47,33 @@ them briefly and suggest the user runs `/document` to persist them.
 
 If nothing to flag: skip silently.
 
+### 5. Track discovered issues (if applicable)
+
+If your command discovered code issues, technical debt, or improvement opportunities:
+
+**Step 1: Show brief summary** to user:
+- List issues found with severity (🔴 Critical / 🟡 Important / 🟢 Nice to Have)
+- Keep it concise (one line per issue)
+
+**Step 2: Ask user**: "Should I add these to the issues backlog?"
+
+**Step 3: If yes**:
+- Read `ai/issues/backlog.md` (create if missing, use bootstrap template below)
+- Add new issues to appropriate severity section
+- Include: brief description, link to details, date
+- Remove any issues that are now resolved
+- Update "Last updated" date
+
+**Step 4: If no**: Skip tracking, just report in your output
+
+**Commands this applies to**:
+- `/review`, `/implement`, `/plan`, `/document`, `/investigate`, `/review-plan`
+- Engineering tier commands that touch or read code
+
+**Commands that skip this**:
+- Discovery commands (`/product-vision`, `/personas`, `/design-brief`)
+- Commands focused on product/business artifacts, not code
+
 ---
 
 ## Bootstrap Template
@@ -94,6 +121,37 @@ Every command checks applicable items before finishing.
 ### Reviews (`/review`, `/review-plan`)
 - [ ] Findings categorised by severity
 - [ ] Action items are actionable and prioritised
+
+---
+
+## BACKLOG — Issues & Technical Debt Tracking
+
+Commands that discover code issues use `ai/issues/backlog.md` to track them.
+
+**Bootstrap template for** `ai/issues/backlog.md`:
+
+---
+
+# Issues & Technical Debt Backlog
+
+> Discovered issues awaiting resolution. Auto-maintained by commands.
+> Brief index to ensure nothing is forgotten.
+
+## 🔴 Critical
+
+{High-priority issues that should be addressed soon}
+
+## 🟡 Important
+
+{Medium-priority issues worth tracking}
+
+## 🟢 Nice to Have
+
+{Low-priority improvements and optimizations}
+
+---
+
+*Last updated: {date}*
 
 ---
 
