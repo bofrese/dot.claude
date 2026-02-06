@@ -8,6 +8,7 @@ description: Create a new slash command for this repository. Guides through desi
 - If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
 - This is the dot.claude repository. Read CLAUDE.md for command development guidelines and README.md for current command inventory before starting.
 - Read `.claude/process/context.md` and follow the protocol.
+- Load `.claude/principles/prompt-engineering.md` — new command must follow these.
 
 ## Role
 
@@ -34,31 +35,15 @@ Before designing, review:
 
 Briefly summarize what patterns the new command should follow based on this review.
 
-### Step 3 — Design the Command
+### Step 3 — Design
 
-Walk me through the proposed design conversationally:
+Discuss conversationally (one topic at a time):
+- Name (kebab-case), description, role
+- Process phases (conversational vs. output-generating)
+- Output location and template
+- Guardrails and special considerations
 
-**Basics**
-- Command name (kebab-case, e.g., `review-plan`, `docker-setup`)
-- One-line description for the frontmatter
-- Role definition — who is Claude in this context?
-
-**Process Phases**
-- What steps does the command go through?
-- Which phases are conversational (ask questions, discuss)?
-- Which phases produce output?
-
-**Output**
-- Where does output go? (Follow conventions: `ai/{command}/`, `docs/`, or project files)
-- What's the file naming pattern?
-- What does the report template look like?
-
-**Rules & Guardrails**
-- What should the command never do?
-- What requires user approval?
-- Any special considerations?
-
-Challenge my ideas. Suggest improvements. Look for ways to keep it simple and consistent with existing commands.
+Challenge ideas. Prefer simplicity. Match existing command patterns.
 
 ### Step 4 — Create the Command
 
@@ -75,6 +60,8 @@ Once we agree on the design, create the command file:
 - Rules
 - Output (location and template)
 
+Remember to add instrutions on keeping the output efficient and effective. It will frequently be used as context in a new session. So make sure it conserves tokens and context space, while efficiently and effectively communicate the important details.
+
 Ensure consistency with existing commands in tone, formatting, and level of detail.
 
 ### Step 5 — Update README.md
@@ -85,13 +72,12 @@ After creating the command, update README.md:
 - Update Report Locations table if it writes to a new folder
 - Update any other affected sections
 
-### Step 6 — Summary
+### Step 6 — Confirm
 
-After everything is created, provide:
-- Confirmation of files created/modified
-- The new command name and how to invoke it
-- How it fits with existing commands
-- Any follow-up suggestions (e.g., "you might also want a command for X")
+After everything is created, confirm:
+- Command path and how to invoke (`/{name}`)
+- How it fits existing workflow
+- Follow-up suggestions (if applicable)
 
 ## Rules
 - One question at a time during design. Don't rush.
@@ -103,24 +89,11 @@ After everything is created, provide:
 
 ## Output
 
-Command file: `.claude/commands/{command-name}.md`
-
-Also updates: `README.md` (Commands Overview table and related sections)
+Creates: `.claude/commands/{command-name}.md`
+Updates: `README.md` (Commands Overview table and related sections)
 
 No separate report is generated — the command file and README update are the deliverables.
 
-## Checklist Before Finishing
+## Before Finishing
 
-- [ ] Command file follows structure from CLAUDE.md
-- [ ] Frontmatter has `allowed-tools` and `description`
-- [ ] Context block includes date resolution and project analysis instruction
-- [ ] Role is clearly defined
-- [ ] Process has clear, numbered steps
-- [ ] Output section includes location and template (if applicable)
-- [ ] Rules section includes guardrails
-- [ ] README.md Commands Overview table updated
-- [ ] README.md other sections updated if affected
-- [ ] Command name is kebab-case
-- [ ] Description is concise (one line)
-- [ ] Command includes the done-criteria protocol line: *Read `.claude/process/done-criteria.md` and follow the protocol.*
-- [ ] Command includes the context.md protocol line: *Read `.claude/process/context.md` and follow the protocol.*
+Verify against CLAUDE.md command structure and done-criteria.md requirements.

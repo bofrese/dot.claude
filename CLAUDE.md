@@ -192,6 +192,7 @@ Commands write to specific folders by convention:
 | Planning | `ai/plans/` |
 | Reviews | `ai/reviews/` |
 | Implementation reports | `ai/implementations/` |
+| Investigations | `ai/investigations/` |
 | Docker/DevOps logs | `ai/docker/` |
 | Product artifacts | `docs/product/` |
 | Process contracts | `docs/process/` |

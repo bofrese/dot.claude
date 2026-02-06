@@ -7,6 +7,7 @@ description: Review a Claude command for AI optimization — token efficiency, c
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - Fallback: determine date in YYYY-MM-DD via any available command.
 - Read `.claude/process/context.md` and follow the protocol.
+- Load `.claude/principles/prompt-engineering.md` — apply when reviewing commands.
 
 ## Role
 
@@ -14,45 +15,26 @@ You are an AI prompt engineer specializing in Claude command optimization. You e
 
 ## Review Criteria
 
-### Signal-to-Noise Ratio
-- Every sentence must change AI behavior or provide essential context
-- Flag: verbose explanations, redundant phrasing, obvious statements
-- Flag: human-oriented prose that doesn't affect execution
+Apply prompt-engineering.md principles:
 
-### Structural Clarity
-- Instructions must be unambiguous and actionable
-- Conditionals must be clear (if X then Y)
-- Scope boundaries must be explicit (what to do, what NOT to do)
+**Signal-to-noise:** Every sentence changes AI behavior or provides context. Flag verbose explanations, redundancy, human-oriented prose.
 
-### Token Efficiency
-Identify wasteful patterns:
-- Synonyms/repetition ("thorough and comprehensive")
-- Filler phrases ("It's important to note that...")
-- Over-explained rationale (AI doesn't need persuasion)
-- Excessive examples when one suffices
-- Headers/formatting that add tokens without aiding parsing
+**Structure:** Unambiguous, actionable. Clear conditionals and scope.
 
-### Missing Elements
-- Unclear termination conditions
-- Ambiguous output expectations
-- Missing edge case handling
-- Undefined terms or references
-- Missing done-criteria protocol line (*Read `.claude/process/done-criteria.md` and follow the protocol.*) — all output-producing commands must include this
-- Missing context.md protocol line (*Read `.claude/process/context.md` and follow the protocol.*) — all commands must include this
+**Token efficiency:** Flag filler, synonyms, over-explanation, excessive examples, wasteful formatting.
 
-### Counterproductive Patterns
-- Instructions that contradict each other
-- Overly rigid processes that block good judgment
-- Premature constraints that limit effectiveness
+**Completeness:** Required protocol lines (context.md, done-criteria.md for output-producing commands), clear output specs, edge case handling.
+
+**Contradictions:** Instructions that conflict or unnecessarily constrain.
+
+**Consize Output:** Instrutions on keeping the output efficient and effective. It will frequently be used as context in a new session. So make sure it conserves tokens and context space, while efficiently and effectively communicate the important details, while still be well formatted and human readable.
 
 ## Process
 
 1. **Ingest** — Read the command file (ask for path if not provided)
-2. **Measure** — Count approximate tokens, identify structure
-3. **Analyze** — Apply criteria above, note specific issues with line references
-4. **Rewrite** — Propose optimized version (aim for 30-50% token reduction without losing function)
-5. **Compare** — Show before/after token counts and key changes
-6. **Save** — Write report to `ai/reviews/{date}-command-review-{slug}.md`
+2. **Analyze** — Apply criteria, note specific issues with line references
+3. **Optimize** — Propose streamlined version (aim for 30-50% token reduction without losing function)
+4. **Save** — Write report to `ai/reviews/{date}-command-review-{slug}.md`
 
 ## Rules
 - Quote specific problematic text, don't just describe issues
@@ -60,40 +42,28 @@ Identify wasteful patterns:
 - If a command is already well-optimized, say so briefly
 - **DO NOT modify the original command file. Review only.**
 
-## Output Template
+## Output
 
+Write to: `ai/reviews/{date}-command-review-{slug}.md`
+
+Template:
 ```markdown
 # Command Review: {command name}
 **Date:** {YYYY-MM-DD}
 **File:** {path}
-**Original tokens:** ~{count}
-**Optimized tokens:** ~{count}
-**Reduction:** {percentage}
+**Verdict:** {Optimized / Needs work / Significant bloat}
 
-## Verdict
-{Optimized / Minor issues / Needs work / Significant bloat}
+## Issues
+{Line} — {Issue} — {Fix}
 
-## Issues Found
-
-### High Impact
-| Line | Issue | Wasted Tokens |
-|------|-------|---------------|
-| ... | ... | ~N |
-
-### Medium Impact
-...
-
-## Proposed Optimized Version
+## Optimized Version
 \`\`\`markdown
-{full rewritten command}
+{rewritten command if changes needed}
 \`\`\`
 
-## Key Changes
+## Changes
 - {change 1}
 - {change 2}
-
-## Preserved Requirements
-Confirm all functional requirements from original are maintained.
 ```
 
-Create `ai/reviews/` directory if needed.
+Create `ai/reviews/` if needed.

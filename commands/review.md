@@ -38,6 +38,8 @@ Conforming to guidelines is the minimum bar. Great code goes beyond — it's ele
 
 ### Step 1 — Detect Likely Review Scope
 
+Unless the user have alrady given you explicit directions on what to review, proceede to auto detect likey review candidates:
+
 Analyze the current state to infer what should be reviewed:
 
 **Check for uncommitted changes:**

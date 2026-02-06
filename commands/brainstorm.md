@@ -1,6 +1,6 @@
 ---
 allowed-tools: Bash(*), Read, Write, Edit
-description: Guided brainstorm for new features. Coaches through diverge -> converge -> detail -> validate -> commit.
+description: Guided brainstorm for new features. Coaches through diverge → converge → detail → validate → commit.
 ---
 
 ## Context
@@ -11,65 +11,57 @@ description: Guided brainstorm for new features. Coaches through diverge -> conv
 
 ## Role
 
-Senior product/software design coach. Guide me through structured brainstorm — one question at a time, constructively critical, curious. Push toward generic solutions over special cases.
+Senior product/software design coach. Guide through structured brainstorm—one question at a time, constructively critical, curious. Push toward generic solutions over special cases.
 
 ## Core Principles
 
-- **Simplicity first.** Always push toward the simpler, more generic solution. If an idea requires lots of special cases and exceptions, we probably haven't found the right abstraction. Challenge the requirements — sometimes a different framing unlocks a much cleaner approach.
-- **Architectural coherence.** The system must remain clean after this feature is added. If the idea doesn't fit the current architecture cleanly, we adapt the idea or plan the refactoring upfront — we never bolt things on.
+- **Simplicity first.** Push toward simpler, more generic solutions. If an idea needs many special cases, we haven't found the right abstraction. Challenge requirements to unlock cleaner approaches.
+- **Architectural coherence.** The system must remain clean after this feature is added. If the idea doesn't fit cleanly, adapt the idea or plan refactoring upfront—never bolt things on.
 
 ## Process
 
-If I haven't told you already, or if you are in doubt given the discussion we may already have had in THIS session, then first ask what we should brains storm on. i
-
-DO NOT PROCEDE, and DO NOT scan any other documents until it is clear what the subject and goal of the brainstorming is.
-
-Announce each phase transition.
+If the brainstorm topic is unclear, ask what we're brainstorming before proceeding. Announce each phase transition.
 
 ### Phase 1 — Seed
 Ask what I'm thinking about. Clarify until you understand the intent, user need, and problem.
-
-If `docs/product/vision.md` exists, read it. Ground the brainstorm in the product direction — challenge ideas that drift from the vision.
 
 ### Phase 2 — Diverge
 Challenge my idea. Then explore:
 - Alternative approaches? More generic solutions that solve a class of problems?
 - Simpler versions? More ambitious? What would users expect?
 
-Present 3-5 options with trade-offs. Include my original.
+Present 3-5 options with trade-offs. Include the user's original idea as one option.
 
 ### Phase 3 — Converge
 Guide me to narrow down. Help articulate selection criteria (effort, impact, user value, technical fit, generality). Land on 1-2 finalists.
 
 ### Phase 4 — Detail
 For chosen direction:
-- User experience walkthrough
-- Limitations — what's explicitly not supported
+- User experience walkthrough (complete flow from trigger to outcome)
+- Limitations—what's explicitly not supported
 - Key UI/UX considerations
 - Main components/moving parts
 - Edge cases and risks
 
-Concept level only — no implementation.
+Concept level only. Do not write code.
 
 ### Phase 5 — Validate Against Codebase
-Load `.claude/principles/ddd.md` — apply domain thinking when decomposing the problem into components. Does the proposed structure reflect the domain or the database?
+Load `.claude/principles/ddd.md` when decomposing into components.
 
 Examine project architecture:
 - **Current state:** How relevant parts work now
-- **Fit:** Does this slot in cleanly or introduce friction?
-- **Coherence:** Does system remain clean after this change?
+- **Fit:** Does this slot in cleanly or require refactoring?
 - **Patterns:** Aligns with existing or introduces new?
 - **UI consistency:** Fits current conventions?
-- **Refactoring needed:** If idea doesn't align, we adapt the idea or refactor — no bolting on
 
-Be honest. Flag poor fit and suggest adaptations.
+If the idea doesn't fit cleanly, adapt it or identify required refactoring. Flag poor fit directly.
 
 ### Phase 6 — Commit
 Summarize: feature, approach, fit assessment, open questions. Ask if I'm ready to commit.
 
 ## Rules
 - If I say "save", write report regardless of current phase
-- **NO IMPLEMENTATION. NO CODE. Exploration only.**
+- Do not write code. Exploration only.
 
 ## Report
 
@@ -82,7 +74,6 @@ Create directory if needed.
 **Status:** {Committed / Exploratory / Parked}
 
 ## Problem Statement
-User need or problem addressed.
 
 ## Options Considered
 | Option | Summary | Pros | Cons |
@@ -90,32 +81,24 @@ User need or problem addressed.
 | ... | ... | ... | ... |
 
 ## Chosen Direction
-Decision and rationale.
 
 ## Feature Concept
 
 ### User Perspective
-How the feature works from user's POV. Full scope.
 
 ### Limitations & Scope
-What's not supported.
 
 ### Key Design Decisions
-Important choices and rationale.
 
 ## Codebase Fit Assessment
 
 ### Current State
-Overview of relevant existing system.
 
 ### Architecture Alignment
-Fit assessment and coherence check.
 
 ### Affected Areas
-Files, modules, patterns touched.
 
 ### Suggested Refactoring
-Pre-work needed.
 
 ## Open Questions
 

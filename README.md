@@ -54,6 +54,8 @@ All commands follow a coaching style — they work as thinking partners, not jus
 | `/product-vision` | Establish or refine the product vision. The single source of truth for what, who, and why. | `docs/product/vision.md` |
 | `/personas` | Define user personas grounded in the product vision. | `docs/product/personas.md` |
 | `/design-brief` | Create the design brief from vision and personas. | `docs/product/design-brief.md` |
+| `/business-plan` | Define business model and monetization strategy. Alex Hormozi-style value proposition. | `docs/product/business-plan.md` |
+| `/art-director` | Art direction coaching for product visuals, UI, brand, and marketing materials. | `docs/guidelines/visual-design.md` (optional) |
 
 ### Engineering — How to Build It
 
@@ -64,6 +66,7 @@ All commands follow a coaching style — they work as thinking partners, not jus
 | `/review-plan` | Critically review a plan. Checks assumptions against the actual codebase. | `ai/reviews/{date}-review-{slug}.md` |
 | `/implement` | Execute an approved plan. Tests at every step. Stops when human judgment is needed. | `ai/implementations/{date}-{slug}.md` |
 | `/review` | Code review. Auto-detects scope, checks guidelines, assesses system health. | `ai/reviews/{date}-review-{slug}.md` |
+| `/investigate` | Systematic investigation of bugs and issues. Root cause analysis, not quick fixes. | `ai/investigations/{date}-{slug}.md` |
 
 ### Knowledge — Documentation & Guidelines
 
@@ -76,8 +79,10 @@ All commands follow a coaching style — they work as thinking partners, not jus
 
 | Command | Purpose | Output |
 |---------|---------|--------|
+| `/dot` | Project mentor that guides you through dot.claude workflow and optimizes session context. | Conversational or `ai/{date}-project-status.md` |
 | `/new-command` | Create a new slash command. Guides through design, creates the file, updates README. | `.claude/commands/{name}.md` |
 | `/review-command` | Review a command for token efficiency, clarity, actionability. | `ai/reviews/{date}-command-review-{slug}.md` |
+| `/improve-command` | Extract learnings from a session to improve a command for future use. | `ai/reviews/{date}-improve-{command-name}.md` |
 
 ### DevOps
 
@@ -171,8 +176,9 @@ If important decisions emerge during a session, done-criteria will flag them for
 |--------|----------|
 | `ai/ideas/` | Brainstorm session reports |
 | `ai/plans/` | Implementation plans |
-| `ai/reviews/` | Plan reviews, command reviews, and code reviews |
+| `ai/reviews/` | Plan reviews, command reviews, code reviews, and command improvement reports |
 | `ai/implementations/` | Implementation execution reports |
+| `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |
 | `docs/product/` | Product vision, personas, design brief |
 | `docs/process/` | Done criteria and process contracts |
