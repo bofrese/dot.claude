@@ -30,14 +30,47 @@ The codebase is no longer something one person — or one AI — can hold in the
 
 ===
 
+## The discovery problem {.center}
+
+Code dependencies? Sure, it finds those.
+
+But it misses:
+- That utility someone wrote last month
+- How this component is *supposed* to be used
+- The pattern everyone follows
+
+**It reinvents the wheel. Every time.**
+
+===
+
+## The amnesia problem {.center}
+
+Code describes **WHAT** the system does.
+
+Rarely **WHY**.
+
+*All those discussions, trade-offs, decisions?*
+*Gone.*
+
+===
+
 ## A developer who's been here for months just knows {.center}
 
 How the pieces connect. What the conventions are.
 Why something was built that way last quarter.
 
-**The AI starts fresh. Every single time.**
+They build that knowledge **over time**.
+
+===
+
+## Day one. Every. Single. Time. {.center .warn}
+
+The AI starts fresh. Every single session.
+
+No memory. No context. No understanding.
 
 *That's not a bug. It's a fundamental limit.*
+
 
 ===
 
@@ -65,13 +98,41 @@ with no engineer reviewing it?
 
 **Your software isn't different.**
 
----
+===
 
-## AI is a thinking tool {.center .thesis}
+## AI is a thinking tool {.center}
 
 It should **amplify** your thinking. Not replace it.
 
 *Structure is what makes that possible.*
+
+---
+
+
+## The documentation gap {.center}
+
+For humans: Documentation helps you get up to speed.
+
+For AI: **Documentation IS the context.**
+
+*It needs structured knowledge. Discoverable. Systematic.*
+
+But vibe coding AIs don't read docs.
+They don't write docs.
+They don't maintain docs.
+
+**Unless you tell them to.**
+
+===
+
+## dot.claude is that structure {.center .thesis}
+
+The discipline. The documentation. The commands.
+
+**AI that reads context. Updates context. Builds on context.**
+
+*Not vibe coding. Engineering.*
+
 
 ---
 
