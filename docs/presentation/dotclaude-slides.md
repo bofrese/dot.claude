@@ -51,6 +51,13 @@ It tells you your plan is great. Even when it isn't.
 
 ---
 
+
+<section data-state="full-image">
+  <img src="plane.png" class="full-image">
+</section>
+
+===
+
 ## Would you board a plane… {.center .question}
 
 …designed and built entirely by AI,
@@ -86,7 +93,7 @@ Each phase reads what the last one wrote.
 :::pipeline
 💡 | Explore | Pick direction
 📐 | Plan | Approve approach
-🔍 | Stress-test | Verify assumptions
+🔍 | Review | Verify assumptions
 ⚙️ | Build | Sign off
 📝 | Review | Own the result
 :::
