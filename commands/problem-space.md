@@ -44,31 +44,19 @@ Clarify the problem space before proceeding. One question at a time.
 
 Load `.claude/principles/problem-validation.md` (Problem Before Solution section).
 
-Separate problem space from solution space:
-- **Problem space:** The pain, cost, friction users experience
-- **Solution space:** How we might fix it (save this for later)
+Separate problem space (pain, cost, friction) from solution space (how we fix it — save for later).
 
-Ask:
-- What is the user trying to accomplish?
-- What's blocking them or slowing them down?
-- What does it cost them (time, money, frustration)?
-- What workarounds have they invented?
+Ask: What is user trying to accomplish? What's blocking them? What does it cost? What workarounds exist?
 
-Challenge solution-jumping. Stay in the problem space.
+Challenge solution-jumping. Stay in problem space.
 
 ### Phase 3 — Jobs-to-be-Done
 
 Load `.claude/principles/problem-validation.md` (JTBD section).
 
-Understand the job users are trying to accomplish:
-- **Functional:** What task are they trying to complete?
-- **Emotional:** How do they want to feel doing it?
-- **Social:** How does this affect how others perceive them?
+Understand the job: Functional (task), Emotional (feeling), Social (perception).
 
-Example questions:
-- "Walk me through the last time you experienced this problem"
-- "What were you trying to achieve?"
-- "How did it make you feel when [problem] happened?"
+Example questions: "Walk me through last time you experienced this." "What were you trying to achieve?" "How did it make you feel?"
 
 ### Phase 4 — Problem Severity Assessment
 
@@ -76,68 +64,39 @@ Load `.claude/principles/problem-validation.md` (Problem Severity section).
 
 Assess: Frequency × Intensity = Priority
 
-Ask:
-- **Frequency:** How often does this problem occur?
-- **Intensity:** How painful is it when it happens?
+Classify: High/High = urgent (worth solving), High/Low = annoyance (maybe), Low/High = edge case (deprioritize), Low/Low = not real (kill).
 
-Classify:
-- High frequency + high intensity = urgent problem (worth solving)
-- High frequency + low intensity = annoyance (maybe worth solving)
-- Low frequency + high intensity = edge case (deprioritize)
-- Low frequency + low intensity = not a real problem (kill idea)
-
-Be direct about the classification.
+Be direct about classification.
 
 ### Phase 5 — Current Alternatives
 
 Load `.claude/principles/problem-validation.md` (Current Alternatives section).
 
-What are people doing TODAY?
-- **Existing solutions:** Competitor products, tools
-- **Workarounds:** Manual processes, spreadsheets, hacks
-- **Nothing:** They live with the pain
+What are people doing TODAY? Existing solutions, workarounds, nothing.
 
-Critical questions:
-- "Why aren't existing solutions good enough?"
-- "If using workarounds, why haven't they adopted a product?"
-- "If they do nothing, is the problem real or hypothetical?"
+Critical questions: "Why aren't existing solutions good enough?" "If workarounds, why not adopt product?" "If nothing, is problem real or hypothetical?"
 
-**Warning sign:** If people say "I wish something existed" but haven't tried alternatives, the problem may not be painful enough.
+**Warning sign:** "I wish something existed" but haven't tried alternatives = problem may not be painful enough.
 
 ### Phase 6 — Validation Evidence
 
 Load `.claude/principles/problem-validation.md` (Validation Tests section).
 
-What evidence do we have that this problem is real?
+What evidence that problem is real?
 
-**Evidence hierarchy (strongest to weakest):**
-1. They're paying for an alternative
-2. They've built a workaround
-3. They complain about it unprompted
-4. They agree it's a problem when asked
-5. They say "that would be nice"
+**Evidence hierarchy (strongest → weakest):** 1. Paying for alternative, 2. Built workaround, 3. Complain unprompted, 4. Agree when asked, 5. "That would be nice". **Only 1-3 are strong signals.**
 
-**Only 1-3 are strong signals.**
-
-Ask:
-- "Have you talked to people who've experienced this problem?"
-- "What did they say?"
-- "Are they paying for a solution today?"
+Ask: "Talked to people with this problem?" "What did they say?" "Paying for solution today?"
 
 ### Phase 7 — The Mom Test
 
 Load `.claude/principles/problem-validation.md` (The Mom Test section).
 
-If validation evidence is weak, suggest better questions to ask users:
+If validation evidence weak, suggest better questions.
 
-**Good questions:**
-- "Tell me about the last time you..."
-- "What have you tried to solve this?"
-- "How much does this cost you (time/money)?"
+**Good:** "Tell me about last time..." "What have you tried?" "How much does this cost you?"
 
-**Bad questions:**
-- "Would you use a product that..."
-- "Do you think this is a good idea?"
+**Bad:** "Would you use..." "Do you think this is good idea?"
 
 Guide toward evidence-based validation.
 
@@ -145,20 +104,13 @@ Guide toward evidence-based validation.
 
 Load `.claude/principles/problem-validation.md` (When to Kill Ideas section).
 
-Based on evidence, should we kill this idea or proceed?
+Based on evidence, kill this idea or proceed?
 
-**Kill if:**
-- No one is paying for alternatives
-- Workarounds are "good enough"
-- Problem only exists in hypotheticals
-- Can't find 10 people who've felt the pain in the last month
+**Kill if:** No one paying for alternatives, workarounds "good enough", problem only hypothetical, can't find 10 people felt pain in last month.
 
-**Proceed if:**
-- Strong evidence (hierarchy level 1-3)
-- Problem is frequent AND intense
-- Clear gap in existing solutions
+**Proceed if:** Strong evidence (level 1-3), frequent AND intense, clear gap in existing solutions.
 
-Be direct. If the idea should be killed, say so.
+Be direct. If idea should be killed, say so.
 
 ### Phase 9 — Document & Save
 
@@ -184,62 +136,62 @@ Living document — updated as validation progresses.
 
 ```markdown
 # Problem Space
-*Last Updated: {YYYY-MM-DD}*
+*Updated: {YYYY-MM-DD}*
 *Status: {Exploring / Validated / Invalidated}*
 
 ## Problem Statement
 
-{Clear, specific description of the problem. No solutions, just the pain.}
+{Brief description}
 
 ## Who Has This Problem
 
-{Specific description of who experiences this. Not "users" — real people.}
+{Specific people, not "users"}
 
 ## Jobs-to-be-Done
 
-- **Functional:** {Task they're trying to complete}
-- **Emotional:** {How they want to feel}
-- **Social:** {How this affects perception}
+- **Functional:** {Task}
+- **Emotional:** {Feeling}
+- **Social:** {Perception}
 
 ## Problem Severity
 
-- **Frequency:** {How often this happens}
-- **Intensity:** {How painful when it happens}
-- **Classification:** {Urgent / Annoyance / Edge case / Not real}
+- **Frequency:** {How often}
+- **Intensity:** {How painful}
+- **Classification:** {Urgent/Annoyance/Edge case/Not real}
 
 ## Current Alternatives
 
 ### Existing Solutions
-{What products/tools exist? Why aren't they good enough?}
+{What exists? Why inadequate?}
 
 ### Workarounds
-{What hacks have people invented? Why haven't they adopted a product?}
+{What hacks? Why not product?}
 
 ### Doing Nothing
-{If they do nothing, why? Is the problem real?}
+{If nothing, why? Problem real?}
 
 ## Validation Evidence
 
 **What we know:**
-- {Evidence item 1} — {Evidence type: paying, workaround, complaint, etc.}
-- {Evidence item 2}
+- {Evidence 1} — {Type: paying/workaround/complaint}
+- {Evidence 2}
 
-**Strength:** {Strong / Moderate / Weak}
+**Strength:** {Strong/Moderate/Weak}
 
 ## Validation Gaps
 
-**What we need to learn:**
-- [ ] {Question to answer}
-- [ ] {Validation experiment to run}
+**Need to learn:**
+- [ ] {Question}
+- [ ] {Experiment}
 
 ## Decision
 
-**Status:** {Kill idea / Needs more validation / Proceed to solution}
+**Status:** {Kill/Needs validation/Proceed}
 
-**Rationale:** {1-2 sentences why}
+**Rationale:** {1-2 sentences}
 ```
 
-**Note:** Keep output scannable and token-efficient. Future sessions will read this to understand if the problem is worth solving.
+**Note:** Token-efficient output. Future sessions read this to understand if problem worth solving.
 
 ## Done
 Read `.claude/process/done-criteria.md` and follow the protocol.

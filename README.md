@@ -2,7 +2,9 @@
 
 AI knows how to write good code. The problem is it rarely does — unless you give it a reason to.
 
-dot.claude is a set of slash commands for Claude Code that bring discipline to AI-assisted development — from first idea through shipped, tested, documented code. Each command loads the right principles, reads the right context, follows the right process. Reliably, every time.
+dot.claude is a set of slash commands for Claude Code that bring discipline to AI-assisted product development — from strategic discovery through shipped, tested, documented code. Each command loads the right principles, reads the right context, follows the right process. Reliably, every time.
+
+**Two independent layers:** Product strategy commands (vision, validation, business model, positioning) and engineering commands (brainstorm, plan, implement, review). Use one, use both, or start where it matters most to you.
 
 Language-agnostic. Platform-agnostic. Works across any stack.
 
@@ -26,6 +28,7 @@ dot.claude solves all three. Deliberately. By design.
 
 This isn't a toolkit that runs commands for you. It's a toolkit that thinks *with* you.
 
+- **Use what you need.** Discovery and Engineering are independent layers. Use Discovery commands for product strategy work. Use Engineering commands for development workflows. Use both together for the full lifecycle. They amplify each other but don't require each other.
 - **Explicit commands, not ambient magic.** You invoke `/plan`, `/review`, `/implement` — deliberately, knowingly. When you do, the AI knows exactly what phase you're in. It loads the right principles, reads the right context, follows the right process. No hoping it guesses what you need. You're explicit about what you're doing; the AI is explicit about how it helps.
 - **Files are the memory.** Everything persists in git — vision, plans, decisions, guidelines. Context survives across sessions, branches, and people. Close your laptop. Come back tomorrow. Hand off to a colleague. The project remembers.
 - **Session boundaries create honesty.** A plan written in one session is reviewed in another — by a fresh context with no memory of the conversation that produced it. That's how you get genuine critique instead of polite agreement.
@@ -98,11 +101,11 @@ All commands follow a coaching style — they work as thinking partners, not jus
 
 ## Workflow
 
-Three layers, not three stages. They form a cycle:
+Three layers, not three stages. They form a cycle. **Use any layer independently or connect them together.**
 
 ```mermaid
 graph TD
-    D["Discovery<br/>/product-vision · /personas · /design-brief"]
+    D["Discovery<br/>/product-coach · /product-vision · /problem-space<br/>/personas · /business-plan · /positioning · /validation-plan"]
     E["Engineering<br/>/brainstorm → /plan → /review-plan<br/>/implement → /review"]
     K["Knowledge<br/>/document · /guidelines"]
 
@@ -111,7 +114,11 @@ graph TD
     K -->|guides| E
 ```
 
-**Discovery** establishes what you're building and why. **Engineering** turns ideas into reviewed, tested code. **Knowledge** accumulates the wisdom that makes every future session better. Each layer feeds the others.
+**Discovery** (optional) — Product strategy and validation. Vision, problem validation, business model, market positioning, validation planning. Start with `/product-coach` for comprehensive guidance through the full discovery process, or jump to specific commands for targeted work. The coach maintains `docs/product/README.md` to track progress and gaps. **Works standalone** — use these for pure strategy work without writing any code.
+
+**Engineering** — Disciplined development pipeline. Brainstorm → Plan → Review Plan → Implement → Review. Each command loads the right principles, follows the right process. If Discovery artifacts exist, they ground the work. If not, Engineering commands work fine without them. **Works standalone** — use these for better development workflows without doing formal Discovery.
+
+**Knowledge** — Documentation and guidelines that accumulate over time. Every Engineering session can feed back into docs and guidelines, making future sessions better.
 
 **Discovery Flow:** Start with `/product-coach` for comprehensive guidance, or use individual commands (`/product-vision`, `/problem-space`, `/business-plan`, etc.) for targeted work. The coach maintains `docs/product/README.md` to track what's done and what's missing.
 
@@ -180,6 +187,11 @@ After installation, start with `/dot`:
 
 New to dot.claude? `/dot` will guide you through the workflow step by step, explaining why each command matters. Already working on a project? `/dot` identifies gaps (missing docs, unreviewed plans, patterns that should be captured) and recommends specific next steps.
 
+**Common starting points:**
+- **Product strategy work?** Run `/product-coach` for comprehensive discovery guidance
+- **Just better development?** Run `/brainstorm` for your first feature
+- **Inherited codebase?** Run `/document` to capture what exists
+
 Think of `/dot` as the command that teaches you how to use all the other commands. Start there whenever you're unsure what to do next.
 
 ---
@@ -206,7 +218,7 @@ If important decisions emerge during a session, done-criteria will flag them for
 | `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |
 | `ai/` | Project status reports from `/dot` (optional) |
-| `docs/product/` | Product vision, problem space, personas, business plan, positioning, validation plan, design brief. `README.md` tracks status. |
+| `docs/product/` | Product vision, problem space, personas, business plan, positioning, validation plan, design brief. `README.md` (maintained by `/product-coach`) tracks status and gaps. |
 | `docs/process/` | Done criteria and process contracts |
 | `docs/` | Developer documentation |
 | `docs/guidelines/` | Best practice guidelines (including visual-design from `/art-director`) |

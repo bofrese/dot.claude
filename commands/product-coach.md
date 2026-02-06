@@ -31,101 +31,75 @@ Determine mode based on user request or by asking:
 ### Mode 1: Comprehensive Discovery
 User wants to work through product discovery from start. Guide through all areas systematically.
 
-**Process:**
-1. Understand scope (tool? product? business?)
-2. Work through areas in order (see Comprehensive Discovery Flow below)
-3. Create/update documents as we go
-4. Maintain `docs/product/README.md` throughout
+**Process:** Understand scope (tool/product/business?), work through areas in order (see Comprehensive Discovery Flow below), create/update documents, maintain `docs/product/README.md` throughout.
 
 ### Mode 2: Targeted Session
 User wants to work on specific area or document.
 
-**Examples:**
-- "Help me define the business model"
-- "Let's work on positioning"
-- "I need to update the vision"
+**Examples:** "Help me define business model," "Let's work on positioning," "Update vision."
 
-**Process:**
-1. Identify which document(s) to work on
-2. Load relevant principles for that area
-3. Read related docs for context
-4. Guide through that specific area (defer to the specific command if it exists)
-5. Update the document
-6. Update `docs/product/README.md` to reflect changes
+**Process:** Identify which document(s), load relevant principles, read related docs for context, guide through that area (defer to specific command if exists), update document, update `docs/product/README.md`.
 
 ### Mode 3: Gap Analysis
-User asks what's missing or wants a review.
+User asks what's missing or wants review.
 
-**Examples:**
-- "What am I missing?"
-- "Review my product docs"
-- "What should I work on next?"
+**Examples:** "What am I missing?" "Review my product docs," "What should I work on next?"
 
-**Process:**
-1. Bootstrap `docs/product/README.md` if missing
-2. Read all existing product docs
-3. Assess gaps based on project type and stage
-4. Flag inconsistencies or drift between documents
-5. Recommend priorities for what to work on next
+**Process:** Bootstrap `docs/product/README.md` if missing, read all existing product docs, assess gaps based on project type and stage, flag inconsistencies or drift, recommend priorities.
 
 ### Mode 4: Maintenance
 User wants to review or update existing docs.
 
-**Process:**
-1. Read all relevant product docs
-2. Check for drift (do they still align?)
-3. Check against reality (if codebase exists, does vision match product?)
-4. Guide updates
-5. Update README with last-modified dates
+**Process:** Read all relevant product docs, check for drift (still align?), check against reality (if codebase exists, vision match product?), guide updates, update README with last-modified dates.
 
 ## Comprehensive Discovery Flow
 
 When guiding comprehensive discovery, work through areas in this order:
 
 ### Phase 1: Foundation (Always Required)
-**Vision:** What are we building? Who for? Why?
-- Use `/product-vision` or guide through vision definition
-- Load `.claude/principles/problem-validation.md` if needed for problem framing
+**Vision:** What, who, why?
+- Use `/product-vision` or guide through definition
+- Load `.claude/principles/problem-validation.md` if needed for framing
 - Create/update `docs/product/vision.md`
 
 ### Phase 2: Problem Validation (If Building for Others)
-**Problem Space:** Is the problem real and painful enough?
-- Use `/problem-space` or guide through problem validation
+**Problem Space:** Is problem real and painful enough?
+- Use `/problem-space` or guide through validation
 - Load `.claude/principles/problem-validation.md`
 - Create/update `docs/product/problem-space.md`
-- **Kill decision:** If problem isn't validated, stop here. Recommend pivot or kill.
+- **Kill decision:** If problem not validated, stop. Recommend pivot or kill.
 
 ### Phase 3: Users (Always Required)
-**Personas:** Who specifically are we serving?
-- Use `/personas` or guide through persona definition
+**Personas:** Who specifically?
+- Use `/personas` or guide through definition
 - Create/update `docs/product/personas.md`
 
 ### Phase 4: Business Model (If Building a Business)
-**Business Plan:** How does this make money?
-- Use `/business-plan` or guide through business model
+**Business Plan:** How make money?
+- Use `/business-plan` or guide through model
 - Load `.claude/principles/business-model.md`
 - Create/update `docs/product/business-plan.md`
 
 ### Phase 5: Market Position (If Building a Business)
-**Positioning:** How do we win in the market?
+**Positioning:** How win in market?
 - Use `/positioning` or guide through positioning
 - Load `.claude/principles/positioning-strategy.md` and `.claude/principles/go-to-market.md`
 - Create/update `docs/product/positioning.md`
 
 ### Phase 6: Validation Strategy (If Building a Business or Complex Product)
-**Validation Plan:** What are we betting on? How do we test it?
-- Use `/validation-plan` or guide through validation planning
+**Validation Plan:** What betting on? How test?
+- Use `/validation-plan` or guide through planning
 - Load `.claude/principles/assumption-testing.md`
 - Create/update `docs/product/validation-plan.md`
 
 ### Phase 7: Design Direction (If Building a Product)
 **Design Brief:** How should it feel?
-- Use `/design-brief` or guide through design direction
+- Use `/design-brief` or guide through direction
 - Create/update `docs/product/design-brief.md`
 
 ### After Each Phase
-- Update `docs/product/README.md` with what was created/updated
-- Ask if they want to continue or stop here
+- Update `docs/product/README.md` with what created/updated
+- Ask if continue or stop
 
 ## Selective Principle Loading
 
@@ -143,22 +117,22 @@ Don't load all principles upfront — load when context is clear.
 
 ## README.md Management
 
-Always maintain `docs/product/README.md` as the navigation layer.
+Always maintain `docs/product/README.md` as navigation layer.
 
 ### Bootstrap README if Missing
 
-If `docs/product/README.md` doesn't exist, create it with this structure:
+If `docs/product/README.md` doesn't exist, create:
 
 ```markdown
 # Product Documentation Index
 
-*This index helps maintain context across product discovery documents.*
+*Maintains context across product discovery documents.*
 
 ## Status Overview
 
-| Document | Status | Last Updated | Purpose |
-|----------|--------|--------------|---------|
-| vision.md | ❌ Missing | — | What, who, and why |
+| Document | Status | Updated | Purpose |
+|----------|--------|---------|---------|
+| vision.md | ❌ Missing | — | What, who, why |
 | problem-space.md | ❌ Missing | — | Problem validation |
 | personas.md | ❌ Missing | — | User personas |
 | business-plan.md | ❌ Missing | — | Revenue and unit economics |
@@ -166,42 +140,32 @@ If `docs/product/README.md` doesn't exist, create it with this structure:
 | validation-plan.md | ❌ Missing | — | Assumptions and validation |
 | design-brief.md | ❌ Missing | — | Design direction |
 
-**Legend:** ✅ Complete | ⚠️ Draft/Needs Update | ❌ Missing
+**Legend:** ✅ Complete | ⚠️ Draft | ❌ Missing
 
 ## Gaps and Next Steps
 
-- [ ] Start with vision — establishes foundation
-- [ ] Define problem space — validate the problem
-- [ ] Create personas — who are we serving
+- [ ] Start with vision — foundation
+- [ ] Define problem space — validate
+- [ ] Create personas — who we serve
 ```
 
 ### Update README After Changes
 
-After creating/updating any document:
-1. Update status (✅ Complete or ⚠️ Draft)
-2. Update last-modified date
-3. Update gaps section to reflect what's done and what's next
+After creating/updating any document: update status (✅/⚠️), update date, update gaps section.
 
 ## Recommending Next Steps
 
 Based on what exists and project type:
 
-**For personal tools:**
-- Vision (maybe) → jump to implementation
+**Personal tools:** Vision (maybe) → implementation
 
-**For open-source projects:**
-- Vision → Personas → Design Brief → implementation
+**Open-source projects:** Vision → Personas → Design Brief → implementation
 
-**For products to launch:**
-- Vision → Problem Space → Personas → Business Plan → Positioning → Validation Plan → Design Brief
+**Products to launch:** Vision → Problem Space → Personas → Business Plan → Positioning → Validation Plan → Design Brief
 
-**For businesses:**
-- Full discovery (all phases)
+**Businesses:** Full discovery (all phases)
 
-Adapt recommendations to:
-- What exists already
-- Project stage (idea vs. launched)
-- User goals (validate vs. ship vs. scale)
+Adapt to: what exists, project stage (idea vs. launched), user goals (validate vs. ship vs. scale).
 
 ## Rules
 

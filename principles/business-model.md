@@ -6,244 +6,147 @@ Compact reference for business model thinking, value proposition, and unit econo
 
 ## Core Truth
 
-**Value creation before value capture.** First, create immense value for customers. Then, capture a fair portion of it. Get this order wrong and no business model will save you.
+**Value creation before value capture.** First, create immense value for customers. Then, capture a fair portion. Get order wrong = no business model saves you.
 
 ---
 
-## The Value Equation (Alex Hormozi)
+## The Value Equation
 
-How customers perceive value:
+**Value = (Dream Outcome × Perceived Likelihood) ÷ (Time Delay × Effort)**
 
-```
-           (Dream Outcome × Perceived Likelihood)
-Value = ──────────────────────────────────────────
-         (Time Delay × Effort & Sacrifice)
-```
+Maximize numerator, minimize denominator.
 
-**Maximize the numerator, minimize the denominator.**
-
-### Dream Outcome
-What result does the customer desperately want?
-- Be specific: "Save 2 hours per week" beats "be more productive"
-- Make it measurable and tangible
-
-### Perceived Likelihood of Achievement
-Why will they believe this actually works?
-- Proof: testimonials, case studies, guarantees
-- Reduce skepticism before they buy
-
-### Time Delay
-How fast do they get results?
-- Immediate wins build trust
-- Long-term value sustains retention
-- Compress time to value wherever possible
-
-### Effort & Sacrifice
-How easy is it to use and adopt?
-- Lower friction = higher perceived value
-- What do they have to give up or change?
-- Automate, simplify, eliminate steps
+- **Dream Outcome:** Specific result customer wants. "Save 2h/week" > "be productive"
+- **Perceived Likelihood:** Why they'll believe it works. Proof: testimonials, guarantees, case studies
+- **Time Delay:** How fast they get results. Immediate wins build trust
+- **Effort & Sacrifice:** How easy to use/adopt. Lower friction = higher value
 
 ---
 
 ## Revenue Model Patterns
 
-Choose the model that aligns with value delivery:
+| Model | Best When | Metrics | Pros/Cons |
+|-------|-----------|---------|-----------|
+| **Subscription** | Ongoing value, high retention | MRR/ARR, churn, LTV | Predictable revenue / Churn kills |
+| **Transaction** | Value tied to transactions | Volume, take rate, GMV | Aligns with success / Revenue volatility |
+| **Freemium** | Low marginal cost, viral | Free→paid conversion | Fast acquisition / Most never pay |
+| **Usage-Based** | Value scales with usage | Units consumed, $/unit | Flexible, aligns value / Unpredictable |
+| **One-Time** | Fixed value, no ongoing service | CAC, conversion | Upfront cash / Must keep acquiring |
+| **Marketplace** | Connect buyers/sellers | Take rate, GMV, liquidity | Network effects / Chicken-egg problem |
+| **Hybrid** | Strategic combination | Combined | Best of both / More complex |
 
-### Subscription (SaaS)
-- **Best when:** Ongoing value, retention is high, predictable usage
-- **Metrics:** MRR/ARR, churn, LTV
-- **Pros:** Predictable revenue, compounds over time
-- **Cons:** Churn kills you, slow initial growth
-
-### Transaction-Based
-- **Best when:** Value is tied to transactions or events
-- **Metrics:** Transaction volume, take rate, GMV
-- **Pros:** Aligns revenue with customer success
-- **Cons:** Revenue volatility
-
-### Freemium
-- **Best when:** Low marginal cost, viral growth, conversion funnel is proven
-- **Metrics:** Free-to-paid conversion, upgrade rate
-- **Pros:** Fast user acquisition
-- **Cons:** Most users never pay, support costs
-
-### Usage-Based
-- **Best when:** Value scales with usage, customers want flexibility
-- **Metrics:** Units consumed, revenue per unit
-- **Pros:** Aligns with customer value
-- **Cons:** Revenue unpredictability
-
-### One-Time Purchase
-- **Best when:** Fixed value delivery, no ongoing service
-- **Metrics:** CAC, conversion rate
-- **Pros:** Upfront cash
-- **Cons:** No recurring revenue, must keep acquiring
-
-### Marketplace
-- **Best when:** You connect buyers and sellers
-- **Metrics:** Take rate, GMV, liquidity
-- **Pros:** Network effects
-- **Cons:** Chicken-and-egg problem
-
-### Hybrid
-Combine models strategically (e.g., subscription + usage overages)
+Choose model that aligns with value delivery.
 
 ---
 
 ## Unit Economics
 
-The math must work at the individual customer level:
+Math must work at individual customer level.
 
 ### Critical Metrics
 
-**Customer Acquisition Cost (CAC)**
-- Total marketing + sales spend ÷ new customers acquired
-- Includes all costs to acquire: ads, sales salaries, tools
+**CAC (Customer Acquisition Cost)**
+- Marketing + sales spend ÷ new customers
+- Include: ads, salaries, tools
 
-**Customer Lifetime Value (CLV or LTV)**
-- Average revenue per customer × gross margin × average customer lifespan
-- Or: ARPU × gross margin ÷ churn rate
+**LTV (Lifetime Value)**
+- ARPU × gross margin ÷ churn rate
+- Or: avg revenue per customer × gross margin × lifespan
 
 **LTV:CAC Ratio**
-- **Target:** > 3:1 (make $3 for every $1 spent acquiring)
-- **Minimum:** > 1:1 (don't lose money on each customer)
-- **Ideal:** 4:1 to 5:1 (healthy, scalable)
+- Target: > 3:1
+- Minimum: > 1:1
+- Ideal: 4:1 to 5:1
 
 **Payback Period**
-- How long to recover CAC from customer revenue
-- **Target:** < 12 months
-- **Ideal:** < 6 months
+- Time to recover CAC
+- Target: < 12 months
+- Ideal: < 6 months
 
 **Gross Margin**
-- Revenue minus direct costs (COGS)
-- **SaaS target:** > 70%
-- **Marketplace target:** > 40%
-- **Physical goods:** > 30%
+- Revenue - COGS
+- SaaS: > 70%
+- Marketplace: > 40%
+- Physical: > 30%
 
-### The Brutal Truth
-
-If LTV:CAC < 3:1, you don't have a business. You have a hobby that burns money.
+**Brutal truth: LTV:CAC < 3:1 = no business, just expensive hobby.**
 
 ---
 
 ## Pricing Strategy
 
-Pricing is positioning. It signals value and selects customers.
+Pricing = positioning. Signals value and selects customers.
 
 ### Pricing Psychology
 
-**Anchor high**
-- First number seen becomes the reference point
-- Show the most expensive option first
-- Discounts feel valuable against a high anchor
+**Anchor high:** First number = reference point. Show expensive option first.
 
-**Good / Better / Best (3-tier model)**
-- Most people choose the middle
-- Top tier makes middle feel reasonable
-- Bottom tier exists to make middle feel premium
+**Good/Better/Best:** 3 tiers. Most choose middle. Top makes middle feel reasonable.
 
-**Value-based pricing**
-- Price on value delivered, not cost incurred
-- Ask: "What's this worth to them?" not "What does it cost us?"
-- Capture a fraction of the value you create
+**Value-based:** Price on value delivered, not cost incurred. "What's worth to them?" not "What costs us?"
 
-**Decoy effect**
-- A slightly worse option at a similar price makes the better option look like a steal
-- Example: $99/mo for 10 users vs. $119/mo for unlimited users
+**Decoy effect:** Slightly worse option at similar price makes better option look like steal.
 
 ### Common Mistakes
 
-**Pricing too low**
-- Signals low value
-- Attracts price-sensitive customers who churn
-- Makes it impossible to hit good unit economics
+- **Too low:** Signals low value, attracts churners, breaks unit economics
+- **"Competitive":** Assumes you're same as competitors (you're not), race to bottom
+- **Cost-plus:** Ignores value perception, leaves money on table
 
-**Pricing "competitively"**
-- Assumes you're the same as competitors (you're not)
-- Race to the bottom
-
-**Cost-plus pricing**
-- Ignores customer value perception
-- Leaves money on the table
-
-### The Test
-
-"Would I pay this price for this value?"
-If you hesitate, either the value isn't clear or the price is wrong.
+**The test:** "Would I pay this for this value?" If you hesitate, value unclear or price wrong.
 
 ---
 
-## Business Model Canvas (Lean)
+## Business Model Canvas (Compact)
 
-Map the core components:
+**Value Proposition:** What value for whom? Why them?
 
-### Value Proposition
-What value do you create? For whom? Why them?
+**Customer Segments:** Distinct groups served
 
-### Customer Segments
-Who are the distinct groups you serve?
+**Revenue Streams:** How money flows (subscription, transaction, etc.)
 
-### Revenue Streams
-How does money flow to you? (subscription, transaction, etc.)
+**Cost Structure:** Fixed and variable costs
 
-### Cost Structure
-What are the fixed and variable costs?
+**Key Activities:** What must you do to deliver value?
 
-### Key Activities
-What must you do to deliver value?
+**Key Resources:** Essential assets (team, IP, infrastructure)
 
-### Key Resources
-What assets (team, IP, infrastructure) are essential?
+**Channels:** How customers discover and buy
 
-### Channels
-How do customers discover and buy?
+**Customer Relationships:** Acquire, retain, grow
 
-### Customer Relationships
-How do you acquire, retain, and grow customers?
-
-### Key Partnerships
-Who helps you deliver value? (suppliers, platforms, etc.)
+**Key Partnerships:** Who helps deliver value?
 
 ---
 
 ## Validation Questions
 
-Before locking in a business model:
-
-**Does the economics work?**
 - [ ] LTV:CAC > 3:1?
-- [ ] Payback period < 12 months?
+- [ ] Payback < 12 months?
 - [ ] Gross margin > 40%?
-
-**Does the model align with value?**
-- [ ] Do customers get value before we capture revenue?
-- [ ] Does our revenue grow as customer success grows?
-
-**Is this defensible?**
-- [ ] Is there a moat (network effects, IP, brand, switching costs)?
-- [ ] Can we sustain margins if competitors enter?
-
-**Can we execute this?**
-- [ ] Do we have the resources to support this model?
-- [ ] Do we understand the customer acquisition motion?
+- [ ] Customers get value before we capture revenue?
+- [ ] Revenue grows as customer success grows?
+- [ ] Defensible moat (network effects, IP, brand, switching costs)?
+- [ ] Can sustain margins if competitors enter?
+- [ ] Have resources to support this model?
+- [ ] Understand customer acquisition motion?
 
 ---
 
 ## Red Flags
 
-**"We'll figure out monetization later"** — No. Business model is core strategy, not an afterthought.
+**"Monetization later"** → No. Business model = core strategy, not afterthought.
 
-**"We'll make it up on volume"** — If unit economics don't work, volume makes the problem bigger.
+**"Make it up on volume"** → If unit economics broken, volume makes problem bigger.
 
-**"Everyone will want to pay for this"** — Most won't. Design for who actually pays.
+**"Everyone will pay"** → Most won't. Design for who actually pays.
 
-**"Just need to reduce churn"** — If LTV is fundamentally too low, churn isn't the problem — the product is.
+**"Just reduce churn"** → If LTV fundamentally low, churn isn't problem—product is.
 
 ---
 
 ## Key Insight
 
-**The best business models create a virtuous cycle:** Customer success → your revenue → reinvestment in product → more customer success.
+**Best business models create virtuous cycle:** Customer success → revenue → reinvestment → more success.
 
-If the model doesn't align incentives (you win when customers win), it's fragile.
+If model doesn't align incentives (you win when customers win), it's fragile.

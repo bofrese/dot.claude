@@ -49,13 +49,9 @@ Load `.claude/principles/positioning-strategy.md` (Positioning Framework section
 
 What would customers use if your product didn't exist?
 
-Ask about:
-- **Direct competitors:** Similar products
-- **Indirect solutions:** Different approach, same job
-- **Manual workarounds:** Spreadsheets, email, paper
-- **Doing nothing:** Often the real competition
+Ask: direct competitors, indirect solutions, manual workarounds, doing nothing (often real competition).
 
-Critical question: "What did you use before this?" (or "what would they use?")
+Critical question: "What did you use before this?"
 
 ### Phase 3 — Unique Attributes
 
@@ -63,10 +59,7 @@ Load `.claude/principles/positioning-strategy.md` (Differentiation Strategies se
 
 What capabilities do you have that alternatives don't?
 
-Characteristics of strong attributes:
-- Provable and demonstrable
-- Defensible (hard to copy quickly)
-- Valued by customers (not just technically interesting)
+Strong attributes: provable, defensible, valued by customers.
 
 Challenge: Features aren't attributes. "Machine learning powered" is not positioning. "10x faster than manual analysis" is.
 
@@ -76,25 +69,15 @@ Guide to identify 2-3 truly unique attributes.
 
 What can customers do with your unique attributes that they couldn't before?
 
-Translate attributes into outcomes:
-- Not: "Real-time sync across devices"
-- Instead: "Never lose work when switching from phone to laptop"
-
-Focus on outcomes, not features.
+Translate attributes into outcomes. Focus on outcomes, not features.
 
 ### Phase 5 — Target Customer (Positioning Angle)
 
 Load `.claude/principles/positioning-strategy.md` (The Wedge Strategy section).
 
-Who cares most about this value?
+Who cares most about this value? Not "anyone who needs X" — the segment where your unique value matters most.
 
-**Not:** "Anyone who needs X"
-**Instead:** The segment where your unique value matters most
-
-Ask:
-- Who feels the pain most acutely?
-- Who values the differentiation most?
-- Who can you reach and serve well?
+Ask: Who feels pain most acutely? Who values differentiation most? Who can you reach and serve well?
 
 **The wedge:** Start narrow, expand from strength.
 
@@ -102,10 +85,7 @@ Ask:
 
 What market do you want to be evaluated in?
 
-**Three options:**
-- **Existing category:** Join established market (easier to explain, harder to differentiate)
-- **Adjacent category:** Reframe ("Not CRM, revenue intelligence")
-- **New category:** Create new (hardest to explain, highest potential if you win)
+**Three options:** Existing (easier explain, harder differentiate), Adjacent (reframe), New (hardest explain, highest potential).
 
 Ask: "When a customer describes you to someone else, what category do they put you in?"
 
@@ -116,37 +96,23 @@ Load `.claude/principles/positioning-strategy.md` (Messaging Hierarchy section).
 Craft positioning statement (internal):
 "For [target customer] who [statement of need], [product name] is a [market category] that [key benefit]. Unlike [competitive alternatives], our product [unique differentiator]."
 
-Then distill into value proposition (external):
-One sentence that captures what you do and why it matters.
-
-- **Bad:** "AI-powered productivity platform"
-- **Good:** "Turn meeting notes into action items automatically, so nothing falls through the cracks"
+Then distill into value proposition (external): One sentence that captures what you do and why it matters.
 
 ### Phase 8 — Go-to-Market Strategy
 
 Load `.claude/principles/go-to-market.md`.
 
-How will customers discover and buy this?
+How will customers discover and buy?
 
-**Channel selection:**
-- Where does your target customer hang out?
-- What channels do you have unfair advantage in?
-- Pick ONE channel to start, make it work, then expand
+Ask: Where does target customer hang out? What channels do you have unfair advantage in? Pick ONE channel to start, make it work, then expand.
 
-**Distribution advantage:**
-- Network effects?
-- Brand?
-- Organic channels?
-- Platform integration?
+Distribution advantage: network effects, brand, organic channels, platform integration?
 
 Keep realistic. One or two channels max for early stage.
 
 ### Phase 9 — Competitive Analysis (Optional)
 
-If competitive landscape is crowded, create 2×2 positioning matrix:
-- Pick two dimensions that matter to customers
-- Plot yourself and alternatives
-- Find whitespace where needs aren't well served
+If competitive landscape crowded, create 2×2 positioning matrix: Pick two dimensions that matter, plot yourself and alternatives, find whitespace where needs aren't well served.
 
 **The goal:** Identify where you can win.
 
@@ -174,7 +140,7 @@ Living document — updated as market understanding evolves.
 
 ```markdown
 # Positioning Strategy
-*Last Updated: {YYYY-MM-DD}*
+*Updated: {YYYY-MM-DD}*
 
 ## Positioning Statement (Internal)
 
@@ -182,81 +148,81 @@ For [target customer] who [statement of need], [product name] is a [market categ
 
 ## Value Proposition (External)
 
-{One sentence: what you do and why it matters}
+{One sentence}
 
 ## Competitive Alternatives
 
 **What customers use today:**
-- {Alternative 1} — {why it's not good enough}
-- {Alternative 2} — {why it's not good enough}
-- {Doing nothing} — {cost of inaction}
+- {Alternative 1} — {why inadequate}
+- {Alternative 2} — {why inadequate}
+- {Doing nothing} — {cost}
 
 ## Unique Attributes
 
-1. **{Attribute}** — {Why it's defensible}
-2. **{Attribute}** — {Why it's defensible}
-3. **{Attribute}** — {Why it's defensible}
+1. **{Attribute}** — {Defensibility}
+2. **{Attribute}** — {Defensibility}
+3. **{Attribute}** — {Defensibility}
 
 ## Value (What Attributes Enable)
 
-- {Attribute 1} enables {outcome customers care about}
-- {Attribute 2} enables {outcome customers care about}
+- {Attribute 1} enables {outcome}
+- {Attribute 2} enables {outcome}
 
 ## Target Customer
 
-**Primary segment:** {Who we're optimizing for}
+**Primary segment:** {Who}
 
 **Why this segment:**
-- They care most about {value we deliver}
-- We can reach them via {channel}
-- They're underserved by {existing alternatives}
+- Care most about {value}
+- Reach via {channel}
+- Underserved by {alternatives}
 
-**The wedge:** {Narrow entry point, specific use case}
+**Wedge:** {Entry}
 
 ## Market Category
 
-**Category:** {Existing / Adjacent / New category name}
+**Category:** {Existing/Adjacent/New}
 
-**Why this category:** {1-2 sentences}
+**Rationale:** {1-2 sentences}
 
 ## Messaging Pillars
 
-1. **{Theme}** — {How this addresses customer pain}
-2. **{Theme}** — {How this addresses customer pain}
-3. **{Theme}** — {How this addresses customer pain}
+1. **{Theme}** — {Pain addressed}
+2. **{Theme}** — {Pain addressed}
+3. **{Theme}** — {Pain addressed}
 
 ## Go-to-Market
 
 **Primary Channels:**
-1. {Channel} — {Why we have advantage here}
-2. {Channel} — {Backup/complement}
+1. {Channel} — {Advantage}
+2. {Channel} — {Backup}
 
 **Customer Acquisition:**
-- {How they discover us}
-- {How they evaluate us}
-- {How they buy}
+- {Discovery}
+- {Evaluation}
+- {Purchase}
 
 **Distribution Advantage:**
-{Network effects / Brand / Organic / Platform integration / etc.}
+{Network/Brand/Organic/Platform}
 
 ## Competitive Position
 
-**Our differentiation:** {How we're genuinely different}
+**Differentiation:** {How genuinely different}
 
-**Trade-offs we make:** {What we're NOT optimizing for}
+**Trade-offs:** {What we're NOT optimizing}
 
-**Positioning vs. doing nothing:** {Why inaction is costlier than switching}
+**vs. Doing Nothing:** {Why inaction costlier}
 
 ## When to Reposition
 
-**Signals to watch:**
+**Signals:**
 - Customers don't understand what we do
 - Losing to alternatives we're better than
 - Attracting wrong customers
-- Market has shifted
+- Market shifted
 ```
 
-**Note:** Keep output scannable and token-efficient. This will inform marketing, sales, and product decisions.
+**Note:** Token-efficient output. Informs marketing, sales, and product decisions.
 
 ## Done
 Read `.claude/process/done-criteria.md` and follow the protocol.

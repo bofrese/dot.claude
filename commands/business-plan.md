@@ -37,7 +37,7 @@ File exists. Reviewing and updating — maybe market shifted, learned something 
 ### Phase 1 — Foundation Check
 
 Check for existing product vision and positioning:
-- Read `docs/product/vision.md` if exists — ground the business model in vision
+- Read `docs/product/vision.md` if exists — ground business model in vision
 - Read `docs/product/positioning.md` if exists — understand market position
 - If neither exists, ask: What problem does this solve? For whom? What alternatives exist?
 
@@ -47,11 +47,7 @@ Clarify core value proposition before proceeding. One question at a time.
 
 Load `.claude/principles/business-model.md` (Value Equation section).
 
-Work through the value equation:
-- **Dream Outcome** — What result does the customer desperately want?
-- **Perceived Likelihood** — Why will they believe this works?
-- **Time Delay** — How fast do they get results?
-- **Effort & Sacrifice** — How easy to use and adopt?
+Work through value equation: Dream Outcome (what customer wants?), Perceived Likelihood (why believe?), Time Delay (how fast?), Effort & Sacrifice (how easy?).
 
 Challenge vague outcomes. Get specific and measurable.
 
@@ -59,13 +55,9 @@ Summarize value proposition as one clear sentence.
 
 ### Phase 3 — Target Customer & Market
 
-Define who pays:
-- **Primary customer** — Who has budget authority?
-- **End user** — Who experiences the value? (if different)
-- **Market size** — How many potential customers? (TAM/SAM)
-- **Segments** — Distinct tiers? (SMB, enterprise, etc.)
+Define who pays: Primary customer (budget authority?), End user (who uses, if different?), Market size (TAM/SAM?), Segments (tiers?).
 
-Challenge: "Is this market large enough? Are these customers reachable?"
+Challenge: "Market large enough? Customers reachable?"
 
 ### Phase 4 — Revenue Model
 
@@ -79,24 +71,15 @@ Guide to choose one. Ask: "Which aligns best with how value is delivered?"
 
 Load `.claude/principles/business-model.md` (Pricing Strategy section).
 
-For chosen model:
-- **Anchor pricing** — Reference point (cost saved, value created, competitors)
-- **Tiers** — Single price or good/better/best?
-- **Price points** — Actual numbers (or ranges if early)
-- **Rationale** — Why these numbers?
+For chosen model: Anchor pricing (reference point), Tiers (single or good/better/best?), Price points (actual numbers or ranges), Rationale (why?).
 
-Challenge: "Would you pay this? Would your target customer?"
+Challenge: "Would you pay this? Would target customer?"
 
 ### Phase 6 — Unit Economics
 
 Load `.claude/principles/business-model.md` (Unit Economics section).
 
-Rough math:
-- CAC (Customer Acquisition Cost)
-- CLV/LTV (Customer Lifetime Value)
-- LTV:CAC ratio (must be > 3:1)
-- Payback period (target < 12 months)
-- Gross margin
+Rough math: CAC, CLV/LTV, LTV:CAC ratio (must be > 3:1), Payback period (target < 12 months), Gross margin.
 
 If numbers unknown, flag as assumptions to validate. What needs research?
 
@@ -104,21 +87,15 @@ If numbers unknown, flag as assumptions to validate. What needs research?
 
 Load `.claude/principles/go-to-market.md`.
 
-How do customers discover and buy?
-- **Acquisition channels** — Where do we find customers?
-- **Conversion path** — Awareness → paying customer
-- **Key bottleneck** — Hardest part of acquisition?
+How do customers discover and buy? Acquisition channels (where find?), Conversion path (awareness → paying), Key bottleneck (hardest part?).
 
 Keep realistic. Early stage = one or two channels max.
 
 ### Phase 8 — Validation Plan
 
-What could break this model?
-- **Critical assumptions** — What must be true?
-- **Key metrics** — How do we measure success?
-- **Early tests** — What's the smallest validation we can run?
+What could break this model? Critical assumptions (what must be true?), Key metrics (how measure?), Early tests (smallest validation?).
 
-Ask: "What's the most important thing to learn next?"
+Ask: "What's most important thing to learn next?"
 
 ### Phase 9 — Summary & Save
 
@@ -145,35 +122,35 @@ Living document — updated in place.
 
 ```markdown
 # Business Plan
-*Last Updated: {YYYY-MM-DD}*
+*Updated: {YYYY-MM-DD}*
 
 ## Value Proposition
-{One sentence: We help [customer] achieve [outcome] by [unique approach]}
+{One sentence}
 
 ### Value Equation
-- **Dream Outcome:** {What customer wants}
-- **Proof:** {Why they'll believe it}
+- **Dream Outcome:** {What}
+- **Proof:** {Why believe}
 - **Time to Value:** {How fast}
 - **Effort:** {How easy}
 
 ## Target Customer
 - **Primary Buyer:** {Who pays}
-- **End User:** {Who uses (if different)}
-- **Market Size:** {Rough TAM/SAM}
+- **End User:** {Who uses}
+- **Market Size:** {TAM/SAM}
 
-**Segments:** {If multiple tiers exist}
+**Segments:** {Tiers}
 
 ## Revenue Model
-**Model:** {Subscription / Transaction / etc.}
-**Rationale:** {1-2 sentences why this model}
+**Model:** {Subscription/Transaction/etc.}
+**Rationale:** {1-2 sentences}
 
 ## Pricing
 
-| Tier | Price | Target | Key Features |
-|------|-------|--------|--------------|
+| Tier | Price | Target | Features |
+|------|-------|--------|----------|
 | {tier} | {price} | {who} | {what} |
 
-**Rationale:** {Why these prices}
+**Rationale:** {Why}
 
 ## Unit Economics
 
@@ -193,7 +170,7 @@ Living document — updated in place.
 
 **Conversion Path:** {Awareness → Purchase → Retention}
 
-**Key Bottleneck:** {Hardest part}
+**Key Bottleneck:** {Hardest}
 
 ## Validation Plan
 
@@ -205,13 +182,13 @@ Living document — updated in place.
 - {Metric} — {target}
 
 **Next Steps:**
-1. {Validation action} — {what we'll learn}
+1. {Validation action} — {learn}
 
 ## Risks
-- {Risk} — {mitigation or acceptance}
+- {Risk} — {mitigation/acceptance}
 ```
 
-**Note:** Keep output scannable and token-efficient. This will be read by future AI sessions. Essentials only, no prose.
+**Note:** Token-efficient output. Essentials only, no prose.
 
 ## Done
 Read `.claude/process/done-criteria.md` and follow the protocol.

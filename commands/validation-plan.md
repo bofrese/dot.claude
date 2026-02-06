@@ -48,17 +48,9 @@ Clarify before proceeding. One question at a time.
 
 Load `.claude/principles/assumption-testing.md` (Thinking in Assumptions section).
 
-List every assumption we're making. Make it exhaustive.
+List every assumption. Two types: **Desirability** (want, pay, pain) and **Feasibility** (build, scale, support, distribute).
 
-**Two types:**
-1. **Desirability:** Do customers want this? Will they pay? Is the problem painful enough?
-2. **Feasibility:** Can we build it? Scale it? Support it? Distribute it?
-
-Ask:
-- "What must be true for this product to succeed?"
-- "What are we assuming about customers?"
-- "What are we assuming about the market?"
-- "What are we assuming about our ability to execute?"
+Ask: "What must be true for this to succeed?" (customers, market, execution)
 
 Build comprehensive list.
 
@@ -66,18 +58,7 @@ Build comprehensive list.
 
 Load `.claude/principles/assumption-testing.md` (Risk Ranking section).
 
-Rank assumptions by: **Impact × Uncertainty = Risk**
-
-**Impact:**
-- Critical: Product fails completely if wrong
-- High: Major pivot required
-- Medium: Delays or scope reduction
-- Low: Minor adjustment
-
-**Uncertainty:**
-- High: Pure guess, no evidence
-- Medium: Some signals, not conclusive
-- Low: Strong evidence, confident
+Rank by **Impact × Uncertainty = Risk**. Impact: Critical/High/Med/Low. Uncertainty: High/Med/Low.
 
 Create priority matrix. Focus on high uncertainty + high/critical impact.
 
@@ -85,89 +66,37 @@ Create priority matrix. Focus on high uncertainty + high/critical impact.
 
 Load `.claude/principles/assumption-testing.md` (Validation Experiments section).
 
-For top 3-5 riskiest assumptions, design experiments:
+For top 3-5 riskiest: design hypothesis, test, success criteria, timeline, cost.
 
-**Structure per assumption:**
-1. **Hypothesis:** "We believe [assumption]"
-2. **Test:** "To verify, we will [experiment]"
-3. **Success criteria:** "We'll know we're right if [specific result]"
-4. **Timeline:** "In [X days/weeks]"
-5. **Cost:** {estimate}
+Use validation hierarchy (cheapest → expensive): conversations, landing page, prototype, concierge, wizard of oz, working MVP.
 
-**Validation hierarchy (cheapest to most expensive):**
-1. Customer conversations
-2. Landing page test
-3. Prototype/mockup
-4. Concierge MVP
-5. Wizard of Oz MVP
-6. Working MVP
-
-**Start cheap.** Only move down the list when cheaper tests validate.
+**Start cheap.** Only move down when cheaper tests validate.
 
 ### Phase 5 — Define Success Criteria
 
 Load `.claude/principles/assumption-testing.md` (Success Criteria section).
 
-For each experiment, define what "validated" means BEFORE running it.
+Define "validated" BEFORE running. Good criteria: specific, measurable, achievable, meaningful signal (commitment not interest).
 
-**Good criteria:**
-- Specific and measurable
-- Achievable in timeframe
-- Meaningful signal (commitment, not just interest)
-
-**Examples:**
-- "10 customers pre-pay for beta access" ✅
-- "People seem interested" ❌
-
-**Commitment ladder:**
-1. Said they like it (weakest)
-2. Gave email
-3. Signed up for trial
-4. Used it repeatedly
-5. Paid for it
-6. Referred others (product-market fit signal)
-
-Optimize for climbing the ladder.
+Optimize for commitment ladder: like → email → trial → repeat use → paid → referrals.
 
 ### Phase 6 — MVP Scope Definition
 
 Load `.claude/principles/assumption-testing.md` (MVP Scope Definition section).
 
-Define minimum product needed to test top 3 riskiest assumptions:
+Define minimum to test top 3 riskiest assumptions. Include: features to test assumptions, minimum core value, usable quality. Cut: non-testing features, nice-to-haves, polish.
 
-**Include:**
-- Features needed to test core assumptions
-- Minimum to deliver core value
-- Enough quality that people would actually use it
-
-**Cut:**
-- Features that don't test assumptions
-- Nice-to-haves
-- Optimizations and polish
-
-**The test:** "If we remove this, can we still validate our riskiest assumption?"
-- If yes: Cut it
-- If no: Keep it
+**Test:** "Remove this, still validate assumption?" Yes = cut, No = keep.
 
 ### Phase 7 — Sequence the Plan
 
-Order validation experiments:
-1. Cheapest tests first
-2. Desirability before feasibility
-3. Critical assumptions before low-impact assumptions
-
-Timeline: When will we run each test? In what order?
+Order experiments: cheapest first, desirability before feasibility, critical before low-impact. Define timeline and order.
 
 ### Phase 8 — Define Learning Milestones
 
-What will we learn at each stage?
+For each: If validated → next step. If invalidated → pivot/kill/modify. If inconclusive → more data/different test.
 
-For each milestone:
-- **If validated:** Next step is...
-- **If invalidated:** We will... (pivot, kill, modify)
-- **If inconclusive:** We need... (more data, different test)
-
-Be honest about kill criteria. What would make us stop?
+Be honest about kill criteria.
 
 ### Phase 9 — Document & Save
 
@@ -193,99 +122,70 @@ Living document — updated as experiments run and we learn.
 
 ```markdown
 # Validation Plan
-*Last Updated: {YYYY-MM-DD}*
-*Status: {Planning / In Progress / Validated / Pivot Required}*
+*Updated: {YYYY-MM-DD}*
+*Status: {Planning / In Progress / Validated / Pivot}*
 
 ## Core Idea
-
-{One sentence: what we're trying to validate}
+{One sentence}
 
 ## Assumption Stack
 
-### Desirability Assumptions
-- [ ] {Assumption} — {Impact: Critical/High/Med/Low} | {Uncertainty: High/Med/Low}
+### Desirability
 - [ ] {Assumption} — {Impact} | {Uncertainty}
 
-### Feasibility Assumptions
-- [ ] {Assumption} — {Impact} | {Uncertainty}
+### Feasibility
 - [ ] {Assumption} — {Impact} | {Uncertainty}
 
 ## Top Risks
-
-**Ranked by Impact × Uncertainty:**
-
-1. **{Assumption}** — {Why this is riskiest}
-2. **{Assumption}** — {Why this is risky}
-3. **{Assumption}** — {Why this is risky}
+1. **{Assumption}** — {Why riskiest}
+2. **{Assumption}** — {Why risky}
 
 ## Validation Experiments
 
 ### Experiment 1: {Name}
-- **Hypothesis:** We believe {assumption}
-- **Test:** {How we'll validate}
-- **Success Criteria:** {Specific, measurable result}
+- **Hypothesis:** {Belief}
+- **Test:** {Method}
+- **Success:** {Measurable result}
 - **Timeline:** {When}
-- **Cost:** {Rough estimate}
+- **Cost:** {Estimate}
 - **Status:** {Not Started / In Progress / Done}
-- **Result:** {What we learned}
+- **Result:** {Learned}
 
 ### Experiment 2: {Name}
-{Same structure}
-
-### Experiment 3: {Name}
-{Same structure}
+{Same}
 
 ## MVP Scope
+**Include:**
+- {Feature} — {Tests assumption}
 
-**Minimum features to test top 3 assumptions:**
-- {Feature} — {Which assumption it tests}
-- {Feature} — {Which assumption it tests}
-
-**Explicitly cut (not in MVP):**
-- {Feature} — {Why it's not needed for validation}
+**Cut:**
+- {Feature} — {Why not needed}
 
 ## Validation Sequence
-
 | Step | Experiment | Timeline | Cost | Validates |
 |------|------------|----------|------|-----------|
-| 1 | {Experiment} | {Week 1-2} | ${cost} | {Assumption} |
-| 2 | {Experiment} | {Week 3-4} | ${cost} | {Assumption} |
-| 3 | {Experiment} | {Week 5-8} | ${cost} | {Assumption} |
+| 1 | {Name} | {Week} | $ | {Assumption} |
 
 ## Learning Milestones
-
 ### After Experiment 1
-- **If validated:** {Next step}
-- **If invalidated:** {Pivot/kill decision}
-- **If inconclusive:** {What we need}
-
-### After Experiment 2
-{Same structure}
-
-### After Experiment 3
-{Same structure}
+- **Validated:** {Next}
+- **Invalidated:** {Pivot/kill}
+- **Inconclusive:** {Need}
 
 ## Kill Criteria
+- {Result invalidating core}
+- {Evidence market missing}
+- {CAC > LTV threshold}
 
-**We will stop if:**
-- {Specific result that would invalidate core assumption}
-- {Evidence that market doesn't exist}
-- {Cost to acquire > LTV by more than X}
-
-## Success Criteria (Overall)
-
-**We'll know we have product-market fit when:**
-- {Metric} reaches {target}
-- {Behavioral signal} occurs
-- {Commitment level} is consistent
+## Success (PMF)
+- {Metric} → {target}
+- {Behavioral signal}
 
 ## Next Actions
-
-1. [ ] {Immediate next step}
-2. [ ] {Following step}
+1. [ ] {Step}
 ```
 
-**Note:** Keep output scannable and token-efficient. This will guide what to build and what to test first.
+**Note:** Token-efficient output. Guides build and test priorities.
 
 ## Done
 Read `.claude/process/done-criteria.md` and follow the protocol.

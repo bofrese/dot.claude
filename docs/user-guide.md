@@ -22,6 +22,18 @@ dot.claude is the structure. A set of slash commands that turn AI-assisted devel
 
 ---
 
+## Use What You Need
+
+dot.claude has two independent layers:
+
+**Discovery** — Product strategy and validation. Vision, personas, business model, positioning, validation planning. Use these if you're figuring out *what* to build and *why*. Perfect for founders, product people, or anyone thinking through strategy. Works standalone — no code required.
+
+**Engineering** — Disciplined development workflows. Brainstorm, plan, implement, review, document, test. Use these if you're building software and want AI assistance that maintains quality over time. Works standalone — no Discovery required, though it's better when grounded in a vision.
+
+Use one, use both, or start with whichever fits your current need. They're designed to connect but don't depend on each other. Discovery artifacts (when they exist) automatically feed into Engineering workflows to ground decisions. But if you just want better development workflows, start with `/brainstorm` and ignore Discovery entirely.
+
+---
+
 ## The Philosophy
 
 Four ideas that everything else is built on:
@@ -205,9 +217,30 @@ Do it again next week with a different feature. And the week after. The tenth fe
 
 ## The Commands
 
-### 💡 Discovery
+### 💡 Discovery — What to Build and Why
 
-These commands produce the product artifacts that ground everything else. Their output lives in `docs/product/` — authoritative, not disposable. Not every project needs all of them. Start where it makes sense.
+**These commands are completely optional.** You can use dot.claude purely for engineering workflows (brainstorm → plan → implement → review) without ever touching Discovery. Or use Discovery to design and validate your product strategy without implementing any code. Or use both together. They're independent layers that work better when connected.
+
+Discovery commands produce product artifacts that answer strategic questions: What are we building? Who is it for? Why does it matter? Is the problem real? How will we make money? How will we win in the market? Their output lives in `docs/product/` — authoritative documents that ground all future work, whether done by humans or AI.
+
+**Start with `/product-coach`** if you want comprehensive guidance through the discovery process. It's a world-class product and business coach that guides you through validation, helps you think through hard questions, and maintains all your product documentation. It works in multiple modes:
+- **Comprehensive discovery** — guides you through the full process from vision to validation plan
+- **Targeted sessions** — work on specific areas (business model, positioning, etc.)
+- **Gap analysis** — reviews what exists and recommends what's missing
+- **Maintenance** — keeps existing docs current and consistent
+
+Or jump directly to individual commands if you know exactly what you need.
+
+---
+
+#### `/product-coach`
+Product and business development coach. Your primary guide through comprehensive discovery or targeted product strategy work. Maintains `docs/product/README.md` as a navigation layer showing what exists and what's missing.
+
+| | |
+|---|---|
+| **Reads** | All existing `docs/product/` artifacts |
+| **Writes** | Any/all product docs based on mode, maintains `docs/product/README.md` |
+| **Start here when** | You want guidance through discovery, gap analysis, or doc maintenance |
 
 #### `/product-vision`
 Establish or refine your product vision. The single source of truth for *what* you're building, *who* it's for, and *why*. Has two modes: create from scratch, or revisit and update an existing vision.
@@ -218,6 +251,15 @@ Establish or refine your product vision. The single source of truth for *what* y
 | **Writes** | `docs/product/vision.md` |
 | **Start here when** | Beginning a new product, or the direction needs revisiting |
 
+#### `/problem-space`
+Validate and document the problem space before building solutions. Is this problem real? Painful enough? Worth solving? Helps you avoid building solutions looking for problems.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md` |
+| **Writes** | `docs/product/problem-space.md` |
+| **Start here when** | After vision, before committing resources to building |
+
 #### `/personas`
 Define the people you're building for. Not demographics on a slide — real characters with real problems, real behaviours, and real frustrations. Grounded in your product vision.
 
@@ -227,6 +269,33 @@ Define the people you're building for. Not demographics on a slide — real char
 | **Writes** | `docs/product/personas.md` |
 | **Start here when** | After vision is established, before design work begins |
 
+#### `/business-plan`
+Define business model and monetization strategy. Uses value proposition frameworks to articulate how the product creates and captures value. Unit economics, pricing, revenue model.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md`, `docs/product/personas.md` |
+| **Writes** | `docs/product/business-plan.md` |
+| **Start here when** | After vision is established and you need to define the business model |
+
+#### `/positioning`
+Define market positioning, competitive strategy, and go-to-market approach. How you win in your market, how you differentiate, how you reach customers.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md`, `docs/product/business-plan.md` (if exists) |
+| **Writes** | `docs/product/positioning.md` |
+| **Start here when** | After business model is clear and you need GTM strategy |
+
+#### `/validation-plan`
+Identify assumptions, rank risks, and design validation experiments before building. What are you betting on? How will you test those bets? Reduces risk of building the wrong thing.
+
+| | |
+|---|---|
+| **Reads** | All existing product docs |
+| **Writes** | `docs/product/validation-plan.md` |
+| **Start here when** | After strategy is defined, before major resource commitment |
+
 #### `/design-brief`
 Create the design brief — the visual direction, interaction patterns, tone, and feel of the product. Informed by who you're building for and what they need.
 
@@ -235,15 +304,6 @@ Create the design brief — the visual direction, interaction patterns, tone, an
 | **Reads** | `docs/product/vision.md`, `docs/product/personas.md` |
 | **Writes** | `docs/product/design-brief.md` |
 | **Start here when** | After vision and personas are in place |
-
-#### `/business-plan`
-Define business model and monetization strategy. Uses Alex Hormozi-style value proposition framework to articulate how the product creates and captures value.
-
-| | |
-|---|---|
-| **Reads** | `docs/product/vision.md`, `docs/product/personas.md` |
-| **Writes** | `docs/product/business-plan.md` |
-| **Start here when** | After vision is established and you need to define the business model |
 
 #### `/art-director`
 Art direction coaching for product visuals, UI, brand, and marketing materials. Works as a creative partner to develop visual identity and design language.
@@ -508,7 +568,11 @@ Not sure where to start? Just run `/dot` — it will assess your project and tel
 
 If you prefer to jump in directly:
 
-**Brand new product?** Start with `/product-vision`. Everything else flows from there.
+**Brand new product from scratch?** Start with `/product-coach` for comprehensive discovery — it'll guide you through vision, validation, business model, and more. Or jump to `/product-vision` if you just want to establish strategic direction.
+
+**Want product strategy help without writing code?** Use the Discovery commands (`/product-coach`, `/product-vision`, `/problem-space`, `/business-plan`, `/positioning`) independently. dot.claude works as a pure product strategy toolkit if that's all you need.
+
+**Want to skip Discovery and just build better?** Start with `/brainstorm` for your first feature. Engineering commands work standalone — they'll just work better if you have a vision to ground them.
 
 **Existing product, new feature idea?** Start with `/brainstorm`.
 
@@ -554,7 +618,7 @@ A few things worth internalising. They're what make this work in practice.
 
 **Not language-specific.** TypeScript, PHP, Python, Rust, Go, anything. The commands don't care about your stack. The principles and guidelines adapt to whatever you're building with.
 
-**Not all-or-nothing.** Use the whole pipeline if you want. Use just `/brainstorm` and `/plan`. Use only `/guidelines`. Start wherever makes sense. The commands work independently — they just work *better* together.
+**Not all-or-nothing.** Use the whole pipeline if you want. Use just Discovery commands for product strategy work. Use just Engineering commands for better development workflows. Use only `/guidelines`. Start wherever makes sense. The commands work independently — they just work *better* together. Discovery and Engineering are separate layers that amplify each other but don't require each other.
 
 ---
 
