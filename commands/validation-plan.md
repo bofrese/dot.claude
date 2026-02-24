@@ -4,7 +4,7 @@ description: Identify assumptions, rank risks, and design validation experiments
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -42,7 +42,7 @@ Clarify before proceeding. One question at a time.
 
 ### Phase 2 — Build the Assumption Stack
 
-Load `.claude/principles/assumption-testing.md` (Thinking in Assumptions section).
+Invoke the `bob:assumption-testing` skill (focus on Assumption Types section).
 
 List every assumption. Two types: **Desirability** (want, pay, pain) and **Feasibility** (build, scale, support, distribute).
 
@@ -52,7 +52,7 @@ Build comprehensive list.
 
 ### Phase 3 — Risk Ranking
 
-Load `.claude/principles/assumption-testing.md` (Risk Ranking section).
+Invoke the `bob:assumption-testing` skill (focus on Risk Ranking section).
 
 Rank by **Impact × Uncertainty = Risk**. Impact: Critical/High/Med/Low. Uncertainty: High/Med/Low.
 
@@ -60,7 +60,7 @@ Create priority matrix. Focus on high uncertainty + high/critical impact.
 
 ### Phase 4 — Design Validation Experiments
 
-Load `.claude/principles/assumption-testing.md` (Validation Experiments section).
+Invoke the `bob:assumption-testing` skill (focus on Validation Experiments section).
 
 For top 3-5 riskiest: design hypothesis, test, success criteria, timeline, cost.
 
@@ -70,7 +70,7 @@ Use validation hierarchy (cheapest → expensive): conversations, landing page, 
 
 ### Phase 5 — Define Success Criteria
 
-Load `.claude/principles/assumption-testing.md` (Success Criteria section).
+Invoke the `bob:assumption-testing` skill (focus on Success Criteria section).
 
 Define "validated" BEFORE running. Good criteria: specific, measurable, achievable, meaningful signal (commitment not interest).
 
@@ -78,7 +78,7 @@ Optimize for commitment ladder: like → email → trial → repeat use → paid
 
 ### Phase 6 — MVP Scope Definition
 
-Load `.claude/principles/assumption-testing.md` (MVP Scope Definition section).
+Invoke the `bob:assumption-testing` skill (focus on MVP Scope Definition section).
 
 Define minimum to test top 3 riskiest assumptions. Include: features to test assumptions, minimum core value, usable quality. Cut: non-testing features, nice-to-haves, polish.
 
@@ -184,4 +184,4 @@ Living document — updated as experiments run and we learn.
 **Note:** Token-efficient output. Guides build and test priorities.
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

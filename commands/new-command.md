@@ -4,7 +4,7 @@ description: Create a new slash command for this repository. Guides through desi
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 - Also read `CLAUDE.md` (command dev guidelines) and `README.md` (current command inventory).
 
 ## Role

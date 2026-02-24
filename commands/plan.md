@@ -4,7 +4,7 @@ description: Create an implementation plan from an idea or feature spec. Analyze
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -23,7 +23,7 @@ Senior architect. Turn ideas into concrete, reviewable plans. Always push for th
 **5 — Break down:** Simple work → one unit. Complex → testable chunks, each leaving the system working.
 Per chunk: what, why, files, verification, AI difficulty (Easy/Medium/Hard).
 
-Load `.claude/principles/bdd.md` — Given/When/Then acceptance criteria before tests.
+Invoke the `bob:bdd` skill — Given/When/Then acceptance criteria before tests.
 - Green baseline before any changes
 - Full suite after refactoring (no behavior change)
 - Acceptance criteria + tests for new behavior
@@ -80,4 +80,4 @@ Load `.claude/principles/bdd.md` — Given/When/Then acceptance criteria before 
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

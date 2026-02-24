@@ -4,7 +4,7 @@ description: Set up or maintain a Docker dev environment. Creates Dockerfile, Ma
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 - Focus project exploration on: build system, dependencies, and runtime requirements.
 
 ## Role
@@ -208,4 +208,4 @@ Anything the developer should be aware of.
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

@@ -5,7 +5,9 @@ This file guides Claude (and human contributors) in creating new commands and ma
 ## Repository Structure
 
 ```
-.claude/
+.claude/                       ← bob plugin root
+├── .claude-plugin/
+│   └── plugin.json            ← plugin manifest
 ├── commands/                  ← all slash commands (flat — no subfolders)
 │   ├── product-vision.md      ← Discovery tier
 │   ├── design-brief.md        ← Discovery tier
@@ -20,11 +22,23 @@ This file guides Claude (and human contributors) in creating new commands and ma
 │   ├── new-command.md         ← Meta
 │   ├── review-command.md      ← Meta
 │   └── docker-setup.md        ← DevOps
-├── principles/                ← on-demand knowledge frameworks (see below)
-│   ├── bdd.md
-│   └── ddd.md
-├── process/                   ← interaction protocols (see below)
-│   └── done-criteria.md       ← the done system protocol + bootstrap template
+├── skills/                    ← framework skills (loaded by commands via Skill tool)
+│   ├── context-protocol/      ← what context each command loads
+│   ├── done-criteria/         ← done system protocol + bootstrap template
+│   ├── bdd/                   ← Behaviour-Driven Development
+│   ├── ddd/                   ← Domain-Driven Design
+│   ├── prompt-engineering/    ← principles for writing commands
+│   ├── problem-validation/    ← problem validation framework
+│   ├── assumption-testing/    ← assumption testing + MVP
+│   ├── business-model/        ← unit economics + revenue models
+│   ├── go-to-market/          ← distribution + channel strategy
+│   ├── positioning-strategy/  ← market positioning + differentiation
+│   ├── ui-design/             ← UI/UX evaluation framework
+│   └── domain-knowledge/      ← captures project-specific domain nuance
+├── agents/                    ← subagent definitions
+│   └── gemini.md              ← Gemini as a helper agent
+├── principles/                ← DEPRECATED: superseded by skills/
+├── process/                   ← DEPRECATED: superseded by skills/context-protocol and skills/done-criteria
 ├── docs/                      ← user guide and documentation
 │   └── user-guide.md
 ├── CLAUDE.md                  ← You are here
@@ -50,37 +64,41 @@ Commands fall into two conceptual tiers. Both live in the same `commands/` folde
 
 The key connection: **Discovery output is input to Engineering.** A product vision grounds a brainstorm. A design brief informs a plan. Engineering commands know to look for relevant Discovery artifacts at well-known paths in `docs/product/`.
 
-## Principles — On-Demand Knowledge
+## Skills — On-Demand Knowledge
 
-Small files in `principles/` that encode core thinking frameworks. Not tutorials — just enough that when a command loads one, it applies the framework consistently.
+Skills in `skills/` encode core thinking frameworks and interaction protocols. Not tutorials — just enough that when a command invokes one, it applies the framework consistently.
 
-**How commands use them:** A command loads a principle at the specific point in its process where the framework applies. Example: `/plan` loads `bdd.md` when defining the testing strategy. `/brainstorm` loads `ddd.md` when decomposing a problem.
+**How commands use them:** A command invokes a skill at the specific point in its process where the framework applies using the Skill tool. Example: `/bob:plan` invokes `bob:bdd` when defining the testing strategy. `/bob:brainstorm` invokes `bob:ddd` when decomposing a problem.
+
+**Framework skills** (bdd, ddd, prompt-engineering, etc.) — generic thinking frameworks. Work for any project.
+
+**Protocol skills** (context-protocol, done-criteria) — define how commands interact with the project context and done system.
 
 **What goes here vs `docs/guidelines/`:**
-- `principles/` = generic frameworks. "How to think about BDD." Works for any project. Travels with the submodule.
+- `skills/` = generic frameworks. "How to think about BDD." Works for any project. Ships with the plugin.
 - `docs/guidelines/` = project-specific application. "How we do BDD in this Angular/PHP project." Specific to the codebase.
 
 ## Context Protocol
 
 Every command loads relevant context at session start. The integration is a single line in the Context block:
 
-> *Read `.claude/process/context.md` and follow the protocol.*
+> *Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.*
 
-The protocol file (`.claude/process/context.md`) defines what each command tier loads and when. Engineering commands load vision (if it exists) at start and guidelines (selectively) after scope is clear. Discovery commands load vision. Knowledge/Meta commands load nothing extra. This ensures commands start informed without bloating context with irrelevant files.
+The skill (`skills/context-protocol/SKILL.md`) defines what each command tier loads and when. Engineering commands load vision (if it exists) at start and guidelines (selectively) after scope is clear. Discovery commands load vision. Knowledge/Meta commands load nothing extra. This ensures commands start informed without bloating context with irrelevant files.
 
-**When creating a new command:** include the context protocol line after the familiarization instruction. `/new-command` enforces this. `/review-command` flags its absence.
+**When creating a new command:** include the context protocol line after the familiarization instruction. `/bob:new-command` enforces this. `/bob:review-command` flags its absence.
 
 ## Done Criteria Protocol
 
 Every output-producing command participates in the done system. The integration is a single line at the end of the command:
 
-> *Read `.claude/process/done-criteria.md` and follow the protocol.*
+> *Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.*
 
-The protocol file (`.claude/process/done-criteria.md`) contains everything: the bootstrap template AND the three behaviours commands follow (bootstrap the project file if missing, check criteria before finishing, register new artifact types). Commands don't each carry their own copy of the logic — they load the protocol.
+The skill (`skills/done-criteria/SKILL.md`) contains everything: the bootstrap template AND the behaviours commands follow (bootstrap the project file if missing, check criteria before finishing, register new artifact types, track discovered issues). Commands don't each carry their own copy of the logic — they invoke the skill.
 
 The project's live instance (`docs/process/done-criteria.md`) is bootstrapped automatically the first time any command runs in a fresh project. It grows as the project adopts more commands.
 
-**When creating a new command:** include the done-criteria protocol line. `/new-command` enforces this. `/review-command` flags its absence.
+**When creating a new command:** include the done-criteria protocol line. `/bob:new-command` enforces this. `/bob:review-command` flags its absence.
 
 ## Command File Structure
 
@@ -96,7 +114,7 @@ description: One-line description of what this command does.
 - Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
 - If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
 - This is an existing project. Silently familiarize yourself with the project structure, key architectural patterns, and UI conventions before starting.
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 Who Claude is in this context. Senior architect, coach, reviewer, etc.
@@ -143,7 +161,7 @@ The fallback instruction handles Windows where `python3` doesn't exist.
 Every command should include:
 - The date resolution (as above)
 - Instruction to silently analyze the project before starting
-- The context protocol line: `Read .claude/process/context.md and follow the protocol.`
+- The context protocol line: `Use the Skill tool to invoke the \`bob:context-protocol\` skill and follow the protocol.`
 
 This ensures Claude has context before engaging with the user.
 
@@ -246,7 +264,7 @@ Commands that involve implementation (like `/plan` or `/docker-setup`) should in
    - Step-by-step process
    - Behavioral rules
    - Output template
-   - Done-criteria protocol line at the end: *Read `.claude/process/done-criteria.md` and follow the protocol.*
+   - Done-criteria protocol line at the end: *Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.*
 
 5. **Test it.** Run the command on a real project. Does it flow well? Are the outputs useful?
 

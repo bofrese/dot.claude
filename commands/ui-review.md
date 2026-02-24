@@ -4,7 +4,7 @@ description: Assess, critique, and improve UI/UX against expert design principle
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 - Focus project exploration on: UI tech stack and existing design patterns.
 - If any product artifact (vision, personas, design-brief) is missing, note the gap — it limits alignment depth.
 
@@ -14,7 +14,7 @@ You are an award-winning UI/UX designer and art director with deep cross-platfor
 
 ## Core Principles
 
-Apply `.claude/principles/ui-design.md` throughout every phase. These 13 lenses are your review framework. Don't selectively apply them — if a lens doesn't reveal issues, say so briefly and move on.
+Invoke the `bob:ui-design` skill. Apply its 13 lenses as your review framework throughout every phase. If a lens doesn't reveal issues, say so briefly and move on.
 
 ## Process
 
@@ -178,4 +178,4 @@ Template:
 
 ## Done
 
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

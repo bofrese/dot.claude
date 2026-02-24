@@ -4,7 +4,7 @@ description: Product and business development coach. Guides discovery, maintains
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -54,13 +54,13 @@ When guiding comprehensive discovery, work through areas in this order:
 ### Phase 1: Foundation (Always Required)
 **Vision:** What, who, why?
 - Use `/product-vision` or guide through definition
-- Load `.claude/principles/problem-validation.md` if needed for framing
+- Invoke the `bob:problem-validation` skill if needed for framing
 - Create/update `docs/product/vision.md`
 
 ### Phase 2: Problem Validation (If Building for Others)
 **Problem Space:** Is problem real and painful enough?
 - Use `/problem-space` or guide through validation
-- Load `.claude/principles/problem-validation.md`
+- Invoke the `bob:problem-validation` skill
 - Create/update `docs/product/problem-space.md`
 - **Kill decision:** If problem not validated, stop. Recommend pivot or kill.
 
@@ -72,19 +72,19 @@ When guiding comprehensive discovery, work through areas in this order:
 ### Phase 4: Business Model (If Building a Business)
 **Business Plan:** How make money?
 - Use `/business-plan` or guide through model
-- Load `.claude/principles/business-model.md`
+- Invoke the `bob:business-model` skill
 - Create/update `docs/product/business-plan.md`
 
 ### Phase 5: Market Position (If Building a Business)
 **Positioning:** How win in market?
 - Use `/positioning` or guide through positioning
-- Load `.claude/principles/positioning-strategy.md` and `.claude/principles/go-to-market.md`
+- Invoke the `bob:positioning-strategy` and `bob:go-to-market` skills
 - Create/update `docs/product/positioning.md`
 
 ### Phase 6: Validation Strategy (If Building a Business or Complex Product)
 **Validation Plan:** What betting on? How test?
 - Use `/validation-plan` or guide through planning
-- Load `.claude/principles/assumption-testing.md`
+- Invoke the `bob:assumption-testing` skill
 - Create/update `docs/product/validation-plan.md`
 
 ### Phase 7: Design Direction (If Building a Product)
@@ -102,10 +102,10 @@ Load principles at the right moment based on what we're working on:
 
 | Working on... | Load... |
 |---------------|---------|
-| Problem validation | `.claude/principles/problem-validation.md` |
-| Business model | `.claude/principles/business-model.md` |
-| Positioning/GTM | `.claude/principles/positioning-strategy.md` and `.claude/principles/go-to-market.md` |
-| Validation planning | `.claude/principles/assumption-testing.md` |
+| Problem validation | `bob:problem-validation` skill |
+| Business model | `bob:business-model` skill |
+| Positioning/GTM | `bob:positioning-strategy` and `bob:go-to-market` skills |
+| Validation planning | `bob:assumption-testing` skill |
 | Vision/personas/design | (Principles are embedded in those commands) |
 
 Don't load all principles upfront — load when context is clear.
@@ -193,4 +193,4 @@ Manages multiple documents in `docs/product/`:
 Create `docs/product/` if it doesn't exist.
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

@@ -4,7 +4,7 @@ description: Guided brainstorm for new features. Coaches through diverge → con
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -43,7 +43,7 @@ For chosen direction:
 Concept level only. Do not write code.
 
 ### Phase 5 — Validate Against Codebase
-Load `.claude/principles/ddd.md` when decomposing into components.
+Invoke the `bob:ddd` skill when decomposing into components.
 
 Examine project architecture:
 - **Current state:** How relevant parts work now
@@ -103,4 +103,4 @@ Create directory if needed.
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

@@ -1,10 +1,10 @@
-te---
+---
 allowed-tools: Bash(*), Read, Write, Edit
 description: Execute an approved implementation plan autonomously. Reviews upfront, implements with engineering discipline.
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 - Focus project exploration on: build tools, test infrastructure, and linting setup.
 
 ## Role
@@ -23,7 +23,7 @@ Before any code changes, review the plan completely. Surface all questions at on
 
 **4 — Refactor (if planned):** Execute each change, run tests after each. Unfixable failure → STOP.
 
-**5 — Implement:** Load `.claude/principles/bdd.md`. Per step: write → lint → test → verify criteria.
+**5 — Implement:** Invoke the `bob:bdd` skill. Per step: write → lint → test → verify criteria.
 
 **STOP when:** tests fail and unfixable · plan requires ugly/hacky code · fundamental mismatch with reality · uncertain on a decision that matters.
 **Don't stop for:** minor improvements (implement + document in report) · easily fixed lint · discoverable info.
@@ -64,4 +64,4 @@ Report: `ai/implementations/{date}-{slug}.md`
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

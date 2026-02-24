@@ -4,7 +4,7 @@ description: Define market positioning, competitive strategy, and go-to-market a
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -41,7 +41,7 @@ Clarify before proceeding. One question at a time.
 
 ### Phase 2 — Competitive Alternatives
 
-Load `.claude/principles/positioning-strategy.md` (Positioning Framework section).
+Invoke the `bob:positioning-strategy` skill (focus on Positioning Framework section).
 
 What would customers use if your product didn't exist?
 
@@ -51,7 +51,7 @@ Critical question: "What did you use before this?"
 
 ### Phase 3 — Unique Attributes
 
-Load `.claude/principles/positioning-strategy.md` (Differentiation Strategies section).
+Invoke the `bob:positioning-strategy` skill (focus on Differentiation Strategies section).
 
 What capabilities do you have that alternatives don't?
 
@@ -69,7 +69,7 @@ Translate attributes into outcomes. Focus on outcomes, not features.
 
 ### Phase 5 — Target Customer (Positioning Angle)
 
-Load `.claude/principles/positioning-strategy.md` (The Wedge Strategy section).
+Invoke the `bob:positioning-strategy` skill (focus on The Wedge Strategy section).
 
 Who cares most about this value? Not "anyone who needs X" — the segment where your unique value matters most.
 
@@ -87,7 +87,7 @@ Ask: "When a customer describes you to someone else, what category do they put y
 
 ### Phase 7 — Messaging & Positioning Statement
 
-Load `.claude/principles/positioning-strategy.md` (Messaging Hierarchy section).
+Invoke the `bob:positioning-strategy` skill (focus on Messaging Hierarchy section).
 
 Craft positioning statement (internal):
 "For [target customer] who [statement of need], [product name] is a [market category] that [key benefit]. Unlike [competitive alternatives], our product [unique differentiator]."
@@ -96,7 +96,7 @@ Then distill into value proposition (external): One sentence that captures what 
 
 ### Phase 8 — Go-to-Market Strategy
 
-Load `.claude/principles/go-to-market.md`.
+Invoke the `bob:go-to-market` skill.
 
 How will customers discover and buy?
 
@@ -221,4 +221,4 @@ For [target customer] who [statement of need], [product name] is a [market categ
 **Note:** Token-efficient output. Informs marketing, sales, and product decisions.
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

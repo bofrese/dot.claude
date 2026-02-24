@@ -4,7 +4,7 @@ description: Review a Claude command for AI optimization — token efficiency, c
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 

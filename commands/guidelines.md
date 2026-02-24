@@ -4,7 +4,7 @@ description: Create and maintain best practice guidelines for languages, framewo
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -426,4 +426,4 @@ After writing, provide:
 - Suggestion for next guideline
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

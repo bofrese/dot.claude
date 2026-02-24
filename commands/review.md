@@ -4,7 +4,7 @@ description: Review code changes critically. Auto-detects scope, checks guidelin
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -97,4 +97,4 @@ Direct. File:line for all findings. **DO NOT FIX THE CODE.**
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

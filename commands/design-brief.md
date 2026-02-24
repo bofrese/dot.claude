@@ -4,7 +4,7 @@ description: Create the design brief from vision and personas. Bridges product i
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -123,4 +123,4 @@ A brief description of the experience when everything is working. Not a wirefram
 ```
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

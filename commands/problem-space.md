@@ -4,7 +4,7 @@ description: Validate and document the problem space before building solutions.
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -38,7 +38,7 @@ Clarify the problem space before proceeding. One question at a time.
 
 ### Phase 2 — Define the Problem
 
-Load `.claude/principles/problem-validation.md` (Problem Before Solution section).
+Invoke the `bob:problem-validation` skill (focus on Problem Before Solution section).
 
 Separate problem space (pain, cost, friction) from solution space (how we fix it — save for later).
 
@@ -48,7 +48,7 @@ Challenge solution-jumping. Stay in problem space.
 
 ### Phase 3 — Jobs-to-be-Done
 
-Load `.claude/principles/problem-validation.md` (JTBD section).
+Invoke the `bob:problem-validation` skill (focus on JTBD section).
 
 Understand the job: Functional (task), Emotional (feeling), Social (perception).
 
@@ -56,7 +56,7 @@ Example questions: "Walk me through last time you experienced this." "What were 
 
 ### Phase 4 — Problem Severity Assessment
 
-Load `.claude/principles/problem-validation.md` (Problem Severity section).
+Invoke the `bob:problem-validation` skill (focus on Problem Severity section).
 
 Assess: Frequency × Intensity = Priority
 
@@ -66,7 +66,7 @@ Be direct about classification.
 
 ### Phase 5 — Current Alternatives
 
-Load `.claude/principles/problem-validation.md` (Current Alternatives section).
+Invoke the `bob:problem-validation` skill (focus on Current Alternatives section).
 
 What are people doing TODAY? Existing solutions, workarounds, nothing.
 
@@ -76,7 +76,7 @@ Critical questions: "Why aren't existing solutions good enough?" "If workarounds
 
 ### Phase 6 — Validation Evidence
 
-Load `.claude/principles/problem-validation.md` (Validation Tests section).
+Invoke the `bob:problem-validation` skill (focus on Validation Tests section).
 
 What evidence that problem is real?
 
@@ -86,7 +86,7 @@ Ask: "Talked to people with this problem?" "What did they say?" "Paying for solu
 
 ### Phase 7 — The Mom Test
 
-Load `.claude/principles/problem-validation.md` (The Mom Test section).
+Invoke the `bob:problem-validation` skill (focus on The Mom Test section).
 
 If validation evidence weak, suggest better questions.
 
@@ -98,7 +98,7 @@ Guide toward evidence-based validation.
 
 ### Phase 8 — Kill Decision
 
-Load `.claude/principles/problem-validation.md` (When to Kill Ideas section).
+Invoke the `bob:problem-validation` skill (focus on When to Kill Ideas section).
 
 Based on evidence, kill this idea or proceed?
 
@@ -190,4 +190,4 @@ Living document — updated as validation progresses.
 **Note:** Token-efficient output. Future sessions read this to understand if problem worth solving.
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

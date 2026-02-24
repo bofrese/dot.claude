@@ -4,7 +4,7 @@ description: Extract learnings from a session to improve a command for future us
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -117,4 +117,4 @@ Create `ai/reviews/` if needed.
 
 ## Done
 
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

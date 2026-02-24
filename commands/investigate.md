@@ -4,7 +4,7 @@ description: Systematic investigation of bugs and issues. Root cause analysis, n
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -184,4 +184,4 @@ Create `ai/investigations/` if needed.
 
 ## Done
 
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.

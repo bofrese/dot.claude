@@ -1,3 +1,7 @@
+---
+description: Helper agent with very large context window. Use for reading and summarising large parts of the codebase, generating overviews and maps, simple single-file changes, and broad scans. Never use for complex multi-file tasks, critical logic changes, or final design decisions.
+---
+
 # Using Gemini as a helper
 
 You are the primary AI. You are responsible for all important reasoning and for almost all non-trivial code changes. Treat Gemini (accessed via the `gemini` CLI) as a helper with a very large context window.
@@ -7,7 +11,7 @@ Use Gemini only for:
 - Reading and reviewing large parts of the codebase
 - Generating overviews, maps, and summaries of repos or subsystems
 - Simple, local code changes (e.g. small refactors or rewrites in a single file)
-- Broad scans (e.g. “where do we do X?”, “what are likely security smells?”)
+- Broad scans (e.g. "where do we do X?", "what are likely security smells?")
 
 Never use Gemini for:
 

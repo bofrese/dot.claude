@@ -4,7 +4,7 @@ description: Define business model and monetization strategy. Value proposition,
 ---
 
 ## Context
-- Read `.claude/process/context.md` and follow the protocol.
+- Use the Skill tool to invoke the `bob:context-protocol` skill and follow the protocol.
 
 ## Role
 
@@ -41,7 +41,7 @@ Clarify core value proposition before proceeding. One question at a time.
 
 ### Phase 2 — Value Proposition
 
-Load `.claude/principles/business-model.md` (Value Equation section).
+Invoke the `bob:business-model` skill (focus on Value Equation section).
 
 Work through value equation: Dream Outcome (what customer wants?), Perceived Likelihood (why believe?), Time Delay (how fast?), Effort & Sacrifice (how easy?).
 
@@ -57,7 +57,7 @@ Challenge: "Market large enough? Customers reachable?"
 
 ### Phase 4 — Revenue Model
 
-Load `.claude/principles/business-model.md` (Revenue Model Patterns section).
+Invoke the `bob:business-model` skill (focus on Revenue Model Patterns section).
 
 Explore 2-4 monetization models that fit. For each: pros, cons, fit with value proposition.
 
@@ -65,7 +65,7 @@ Guide to choose one. Ask: "Which aligns best with how value is delivered?"
 
 ### Phase 5 — Pricing Strategy
 
-Load `.claude/principles/business-model.md` (Pricing Strategy section).
+Invoke the `bob:business-model` skill (focus on Pricing Strategy section).
 
 For chosen model: Anchor pricing (reference point), Tiers (single or good/better/best?), Price points (actual numbers or ranges), Rationale (why?).
 
@@ -73,7 +73,7 @@ Challenge: "Would you pay this? Would target customer?"
 
 ### Phase 6 — Unit Economics
 
-Load `.claude/principles/business-model.md` (Unit Economics section).
+Invoke the `bob:business-model` skill (focus on Unit Economics section).
 
 Rough math: CAC, CLV/LTV, LTV:CAC ratio (must be > 3:1), Payback period (target < 12 months), Gross margin.
 
@@ -81,7 +81,7 @@ If numbers unknown, flag as assumptions to validate. What needs research?
 
 ### Phase 7 — Go-to-Market
 
-Load `.claude/principles/go-to-market.md`.
+Invoke the `bob:go-to-market` skill.
 
 How do customers discover and buy? Acquisition channels (where find?), Conversion path (awareness → paying), Key bottleneck (hardest part?).
 
@@ -187,4 +187,4 @@ Living document — updated in place.
 **Note:** Token-efficient output. Essentials only, no prose.
 
 ## Done
-Read `.claude/process/done-criteria.md` and follow the protocol.
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.
