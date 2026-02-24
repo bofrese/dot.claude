@@ -4,11 +4,6 @@ description: Create the design brief from vision and personas. Bridges product i
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is an existing project. Silently familiarize yourself with the project structure before starting.
-- Read `docs/product/vision.md` if it exists — the design brief must be grounded in the vision.
-- Read `docs/product/personas.md` if it exists — the brief must serve the personas.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role

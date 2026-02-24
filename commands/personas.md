@@ -4,11 +4,6 @@ description: Define user personas grounded in the product vision.
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is an existing project. Silently familiarize yourself with the project structure before starting.
-- Read `docs/product/vision.md` if it exists — personas must be grounded in the vision.
-- Read `docs/product/design-brief.md` if it exists — personas inform the brief, but the brief may already constrain who we're designing for.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role

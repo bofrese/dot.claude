@@ -4,7 +4,11 @@
       "Bash(python3:*)",
       "Bash(grep:*)",
       "Bash(find:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(make test:*)",
+      "Bash(make build:*)",
+      "Bash(xcodebuild build:*)",
+      "Bash(xcbeautify:*)"
     ]
   }
 }

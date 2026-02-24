@@ -4,11 +4,8 @@ description: Create a new slash command for this repository. Guides through desi
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is the dot.claude repository. Read CLAUDE.md for command development guidelines and README.md for current command inventory before starting.
 - Read `.claude/process/context.md` and follow the protocol.
-- Load `.claude/principles/prompt-engineering.md` — new command must follow these.
+- Also read `CLAUDE.md` (command dev guidelines) and `README.md` (current command inventory).
 
 ## Role
 

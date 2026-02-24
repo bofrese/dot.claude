@@ -4,11 +4,6 @@ description: Product and business development coach. Guides discovery, maintains
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is an existing project. Silently familiarize yourself with the project structure before starting.
-- Read `docs/product/README.md` if it exists — this shows what product docs exist and their status.
-- Read `docs/product/vision.md` if it exists — ground all work in the vision.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role

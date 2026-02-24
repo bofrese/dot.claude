@@ -4,9 +4,6 @@ description: Generate or update developer documentation for a concept or subsyst
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is an existing project. Silently familiarize yourself with the project structure, key architectural patterns, and UI conventions before starting.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role
@@ -21,6 +18,12 @@ The markdown documentation is a **navigation layer** — it provides the big pic
 - **In the source files:** Implementation details, documented close to the code itself via inline comments, docstrings, and doc comments.
 
 If explicitly instructed otherwise, detailed implementation docs can go in markdown — but the default is: keep details in the source.
+
+**C4 zoom discipline** — Before writing, identify which level you're producing:
+- **L2 (system map):** How the whole system or a domain is structured — layers, containers, data flow, who calls what, where new code goes. Minimal code; mostly diagrams and prose. Must include a "Where to Put New Code" table.
+- **L3 (subsystem):** One subsystem's internals — design decisions, component relationships, key flows, gotchas. Appropriate code snippets for API surfaces and non-obvious constraints.
+
+Don't mix levels. An L2 doc doesn't contain implementation examples. An L3 doc doesn't try to explain the whole system. If it's unclear which level to write, ask before starting.
 
 ## Modes
 
@@ -76,6 +79,8 @@ Walk me through what you found. This is conversational — one topic at a time:
 - Identify gaps: Are there aspects that are poorly defined, inconsistent, or undocumented for a reason?
 - Ask me about intent and rationale for non-obvious decisions — these are the most valuable things to capture.
 - Discuss whether this concept warrants its own doc or belongs as part of a broader subsystem doc.
+- **"Where to put new code?"** — Walk through what someone would add to this area and exactly where it lands. This becomes the "Where to Put New Code" table in L2 docs.
+- **Gotchas** — Ask explicitly: "What would trip up a developer or AI working here for the first time?" These rarely appear in the code.
 
 ### Step 4 — Write
 
@@ -107,6 +112,10 @@ After writing or updating:
 - Keep markdown docs lean. If you're writing implementation details, ask yourself: should this be a code comment instead?
 - Be honest about limitations, tech debt, and rough edges.
 - **DO NOT REFACTOR OR MODIFY APPLICATION CODE. We are documenting, not changing.** (Adding doc comments to source files is fine.)
+- **Line budget**: Target 150–200 lines per doc. Going over usually means code examples belong in guidelines, zoom levels are mixed, or operational detail belongs in source comments.
+- **L2 docs**: No code examples. Architecture describes structure. Exception: a compact struct/enum that IS the API surface (5–10 lines, genuinely architectural).
+- **L3 docs**: Code appropriate for API surfaces and non-obvious constraints. If it's a pattern (how to use something), it belongs in a guidelines doc — link there instead.
+- **Key Files tables**: File path and purpose only. No line numbers — they go stale immediately.
 
 ## Output
 
@@ -125,39 +134,74 @@ Use subfolders when it makes sense to partition — don't force it for a single 
 
 ### Template
 
+The template has two variants depending on zoom level. Identify which applies before writing.
+
+**L2 — System Map** (architecture overview, domain overview):
+
 ```
-# {Concept Name}
+# {System/Domain Name}
 *Last verified: {YYYY-MM-DD}*
 
 ## Overview
-What this concept/subsystem is and why it exists. One paragraph.
+One paragraph: what it is, who uses it, external touchpoints.
 
-## Architecture
+## Container Map / Layer Diagram
+Mermaid diagram showing containers/layers and relationships.
 
-### Design Decisions
-Key choices and their rationale. Why this approach, not another.
+## Layers / Components
+| Layer | Location | Role |
+|-------|----------|------|
 
-### Component Relationships
-How the pieces fit together.
+## Where to Put New Code
+| Adding... | Goes in... | See... |
+|-----------|-----------|--------|
 
-```mermaid
-graph TD
-    A[Component] --> B[Component]
+## Key Architectural Decisions
+WHY rationale for non-obvious choices. No code examples.
+
+## Constraints
+Hard rules that must never be violated.
+
+## Current State Notes *(optional)*
+Active schema version, active vs. legacy implementations, known migration debt.
+
+## See Also
+Links to L3 subsystem docs and guidelines.
 ```
 
+**L3 — Subsystem** (tag system, navigation, data layer, etc.):
+
+```
+# {Subsystem Name}
+*Last verified: {YYYY-MM-DD}*
+
+## Overview
+One paragraph: what problem, what solution, why this approach.
+
+## Architecture
+Mermaid diagram of internals. Component relationships.
+
+## Design Decisions
+WHY for each key choice. Code only for API surfaces and non-obvious constraints.
+
 ## Key Flows
-The important behaviors and scenarios, briefly. Enough to understand the system — not a line-by-line walkthrough. Use Mermaid sequence diagrams for complex interactions.
+The important behaviors, briefly. Mermaid sequence diagrams for complex interactions.
 
 ## Key Files
-| File | Responsibility |
-|------|---------------|
-| `path/to/file` | Role in this concept — start here for details |
+| File | Purpose |
+|------|---------|
+| `path/to/file` | Role — start here for details |
 
-## Limitations & Known Issues
+*(Path and purpose only. No line numbers.)*
+
+## Gotchas
+Non-obvious behaviors, sharp edges, common pitfalls that aren't in the code.
+
+## Current Limitations
 What's not supported. Rough edges. Things that should change.
 
-## Related
-Links to related docs and concepts.
+## See Also
+Links to related docs.
 ```
 
 ### docs/README.md Structure

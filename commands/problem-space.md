@@ -4,10 +4,6 @@ description: Validate and document the problem space before building solutions.
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- If the date above is blank, determine today's date in YYYY-MM-DD format using any available command.
-- This is an existing project. Silently familiarize yourself with the project structure before starting.
-- If `docs/product/problem-space.md` exists, read it. We may be refining, not creating from scratch.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role

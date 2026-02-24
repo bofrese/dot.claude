@@ -4,9 +4,6 @@ description: Art direction coaching for product visuals, UI, brand, and marketin
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- Fallback: determine date in YYYY-MM-DD via any available command.
-- Silently review project structure and existing visual assets before starting.
 - Read `.claude/process/context.md` and follow the protocol.
 
 ## Role

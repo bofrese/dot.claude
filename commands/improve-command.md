@@ -4,10 +4,7 @@ description: Extract learnings from a session to improve a command for future us
 ---
 
 ## Context
-- Today's date: `python3 -c "from datetime import date;print(date.today().isoformat(),end='')"`
-- Fallback: determine date in YYYY-MM-DD via any available command.
 - Read `.claude/process/context.md` and follow the protocol.
-- Load `.claude/principles/prompt-engineering.md` — apply when suggesting improvements.
 
 ## Role
 
