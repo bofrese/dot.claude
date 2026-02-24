@@ -24,7 +24,7 @@ Apply prompt-engineering.md principles:
 
 **Contradictions:** Instructions that conflict or unnecessarily constrain.
 
-**Consize Output:** Instrutions on keeping the output efficient and effective. It will frequently be used as context in a new session. So make sure it conserves tokens and context space, while efficiently and effectively communicate the important details, while still be well formatted and human readable.
+**Consize Output:** Instrutions on keeping the output efficient and effective. It will frequently be used as context in a new session. So make sure it conserves tokens and context space, while efficiently and effectively communicate the important details, while still be well formatted and human readable. Avoid repetitions. Keep it as short and focused as at all possible. Aim at an experienced developer.
 
 ## Process
 
