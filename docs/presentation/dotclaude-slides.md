@@ -1,4 +1,4 @@
-# dot.claude
+# bob
 > Own your code. Not just generate it.
 > AI as a thinking tool. Not a replacement.
 
@@ -125,7 +125,7 @@ They don't maintain docs.
 
 ===
 
-## dot.claude is that structure {.center .thesis}
+## bob is that structure {.center .thesis}
 
 The discipline. The documentation. The commands.
 
@@ -165,7 +165,7 @@ Each phase reads what the last one wrote.
 
 :::compare
 bad | The Pleaser Problem | AI tells you your idea is great | The longer the session, the less it pushes back | You end up agreeing with yourself
-good | How dot.claude fixes it | Hand the document to a fresh session | Frame it as someone else's work | Session boundaries kill the agreeing
+good | How bob fixes it | Hand the document to a fresh session | Frame it as someone else's work | Session boundaries kill the agreeing
 :::
 
 ---
@@ -179,9 +179,9 @@ Here's what it looks like in practice.
 ## The week {.left}
 
 :::journey
-Mon | `/brainstorm` | Explore the idea. The AI reads your product vision first. You decide the direction. Everything written down.
-Tue | `/plan` | Fresh session. Reads Monday's file. Turns the idea into a reviewable plan. You approve.
-Wed | `/review-plan` | Another fresh session stress-tests the plan. Catches bad assumptions before they become code.
+Mon | `/bob:brainstorm` | Explore the idea. The AI reads your product vision first. You decide the direction. Everything written down.
+Tue | `/bob:plan` | Fresh session. Reads Monday's file. Turns the idea into a reviewable plan. You approve.
+Wed | `/bob:review-plan` | Another fresh session stress-tests the plan. Catches bad assumptions before they become code.
 :::
 
 ===
@@ -189,8 +189,8 @@ Wed | `/review-plan` | Another fresh session stress-tests the plan. Catches bad 
 ## The week {.left}
 
 :::journey
-Thu | `/implement` | Builds step by step. Tests after each change. Stops if it needs a human call.
-Fri | `/review` | Reviews what was built. Compares intent vs reality. Handoff document anyone can own.
+Thu | `/bob:implement` | Builds step by step. Tests after each change. Stops if it needs a human call.
+Fri | `/bob:review` | Reviews what was built. Compares intent vs reality. Handoff document anyone can own.
 :::
 
 ===
@@ -199,7 +199,7 @@ Fri | `/review` | Reviews what was built. Compares intent vs reality. Handoff do
 
 This is not one-off commands that fully automate the step.
 
-It thinks critically, challenges you, interviews you. 
+It thinks critically, challenges you, interviews you.
 
 Acts as you partner, guide, coach, mentor, and assistant.
 
@@ -218,10 +218,10 @@ Not *"AI does the work."*
 
 ## Where to start {.center}
 
-**New product?** → `/product-vision`
-**New feature?** → `/brainstorm`
-**Have a plan?** → `/implement`
-**No docs yet?** → `/document`
+**New product?** → `/bob:product-vision`
+**New feature?** → `/bob:brainstorm`
+**Have a plan?** → `/bob:implement`
+**No docs yet?** → `/bob:document`
 
 *No wrong place to start. Commands read what's available.*
 
@@ -229,7 +229,7 @@ Not *"AI does the work."*
 
 ## Let's talk {.center .closing}
 
-[GitHub →](https://github.com/bofrese/dot.claude)
-[Discussions →](https://github.com/bofrese/dot.claude/discussions)
+[GitHub →](https://github.com/bofrese/bob)
+[Discussions →](https://github.com/bofrese/bob/discussions)
 
 *Created by [Bo Frese](https://bofrese.dk)*
