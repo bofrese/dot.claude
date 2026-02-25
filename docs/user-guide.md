@@ -1,4 +1,4 @@
-# bob
+# Bob
 
 ## AI-Assisted Product Development — From First Idea to Shipped Code
 
@@ -18,13 +18,13 @@ Most developers who work regularly with AI hit the same three walls.
 
 These aren't edge cases. They're the default. And they compound — the longer you work with AI without structure, the worse they get.
 
-bob is the structure. A set of slash commands that turn AI-assisted development into a disciplined process — one where each phase has its own command, each command loads the right principles and reads the right context, and each step produces a clear artifact that the next step builds on. The AI does the heavy lifting. You make the decisions. The files remember everything.
+Bob is the structure. A set of slash commands that turn AI-assisted development into a disciplined process — one where each phase has its own command, each command loads the right principles and reads the right context, and each step produces a clear artifact that the next step builds on. The AI does the heavy lifting. You make the decisions. The files remember everything.
 
 ---
 
 ## Use What You Need
 
-bob has two independent layers:
+Bob has two independent layers:
 
 **Discovery** — Product strategy and validation. Vision, personas, business model, positioning, validation planning. Use these if you're figuring out *what* to build and *why*. Perfect for founders, product people, or anyone thinking through strategy. Works standalone — no code required.
 
@@ -56,7 +56,7 @@ The first time you run certain commands, they register what they've created into
 
 ## The Big Picture
 
-A product starts as an idea and ends as running code. Between those two points there's a lot of thinking, deciding, planning, building, checking, and documenting. bob has a command for each phase — and they're designed to flow into each other.
+A product starts as an idea and ends as running code. Between those two points there's a lot of thinking, deciding, planning, building, checking, and documenting. Bob has a command for each phase — and they're designed to flow into each other.
 
 ```mermaid
 flowchart TD
@@ -218,7 +218,7 @@ Do it again next week with a different feature. And the week after. The tenth fe
 
 ### 💡 Discovery — What to Build and Why
 
-**These commands are completely optional.** You can use bob purely for engineering workflows (brainstorm → plan → implement → review) without ever touching Discovery. Or use Discovery to design and validate your product strategy without implementing any code. Or use both together. They're independent layers that work better when connected.
+**These commands are completely optional.** You can use Bob purely for engineering workflows (brainstorm → plan → implement → review) without ever touching Discovery. Or use Discovery to design and validate your product strategy without implementing any code. Or use both together. They're independent layers that work better when connected.
 
 Discovery commands produce product artifacts that answer strategic questions: What are we building? Who is it for? Why does it matter? Is the problem real? How will we make money? How will we win in the market? Their output lives in `docs/product/` — authoritative documents that ground all future work, whether done by humans or AI.
 
@@ -401,14 +401,14 @@ Create best-practice guidelines for the technologies in your project. Research-f
 
 ### 🛠️ Meta — The Toolkit Maintains Itself
 
-#### `/bob:dot`
-Project mentor that guides you through the bob workflow. Assesses project state, identifies gaps, recommends next steps, and helps optimize session context. Your go-to command when you're unsure what to do next or how to structure your work.
+#### `/bob:bob`
+Project mentor that guides you through the Bob workflow. Assesses project state, identifies gaps, recommends next steps, and helps optimize session context. Your go-to command when you're unsure what to do next or how to structure your work.
 
 | | |
 |---|---|
 | **Reads** | Project structure, existing artifacts, recent work |
 | **Writes** | `ai/{date}-project-status.md` (optional status report mode) |
-| **Start here when** | You're new to bob, unsure what to do next, or starting a new session |
+| **Start here when** | You're new to Bob, unsure what to do next, or starting a new session |
 
 #### `/bob:new-command`
 Create a new slash command that fits the existing patterns. Guides you through design, creates the file, updates the README. Use this when the toolkit is missing something your workflow needs.
@@ -515,52 +515,66 @@ The first time you run a feature through the pipeline, the done-criteria contrac
 
 ## Getting Started
 
-### New to bob? Start with `/bob:dot`
+### New to bob? Start with `/bob:bob`
 
-Before diving into individual commands, meet your guide: **`/bob:dot`** — your project mentor.
+Before diving into individual commands, meet your guide: **`/bob:bob`** — your project mentor.
 
-Think of `/bob:dot` as your personal coach who understands the entire bob system. Run it anytime to:
+Think of `/bob:bob` as your personal coach who understands the entire bob system. Run it anytime to:
 
 - **Get oriented** — What's the current state of your project? What foundational work exists?
 - **Identify gaps** — What's missing? What needs attention?
 - **Get specific guidance** — Which command should you run next and why?
-- **Optimize context** — Starting a new session? `/bob:dot` tells you exactly what to load and what to skip.
+- **Optimize context** — Starting a new session? `/bob:bob` tells you exactly what to load and what to skip.
 
 **Try it now:**
 ```
-/bob:dot
+/bob:bob
 ```
 
-It will assess where you are, what you're missing, and suggest concrete next steps with specific commands. As you work through the toolkit, come back to `/bob:dot` whenever you're unsure what to do next. It's designed to teach you the workflow through use.
+It will assess where you are, what you're missing, and suggest concrete next steps with specific commands. As you work through the toolkit, come back to `/bob:bob` whenever you're unsure what to do next. It's designed to teach you the workflow through use.
 
-New projects start with `/bob:product-vision`, but `/bob:dot` will tell you that — and explain why it matters.
+New projects start with `/bob:product-vision`, but `/bob:bob` will tell you that — and explain why it matters.
 
 ---
 
 ### 1. Add the plugin
 
-Install bob as a Claude Code plugin in your project:
-
-```bash
-# Clone the bob plugin
-git clone https://github.com/bofrese/bob.git bob
-
-# Copy to your project's Claude plugins directory
-cp -r bob your-project/.claude/plugins/bob
-```
-
-Or install at user level to make bob available across all your projects:
+**User-level** — available across all your projects:
 
 ```bash
 git clone https://github.com/bofrese/bob.git ~/.claude/plugins/bob
 ```
 
+**Project-level** — only in the current project:
+
+```bash
+git clone https://github.com/bofrese/bob.git .claude/plugins/bob
+```
+
 To update later:
 
 ```bash
-cd ~/.claude/plugins/bob
+cd ~/.claude/plugins/bob   # or .claude/plugins/bob
 git pull
 ```
+
+#### Developing bob
+
+To work on bob itself, clone it and pass the directory as a plugin when starting Claude:
+
+```bash
+git clone https://github.com/bofrese/bob.git
+cd bob
+claude --plugin-dir .
+```
+
+An alias makes this faster — add to your `~/.zshrc` or `~/.bashrc`:
+
+```bash
+alias claude-bob='claude --plugin-dir ~/path/to/bob'
+```
+
+With the alias, `claude-bob` anywhere opens Claude with your local bob loaded. Changes to commands and skills take effect immediately without reinstalling.
 
 ### 2. Set up guidelines (optional but recommended)
 
@@ -572,9 +586,9 @@ Scans your project, identifies the technologies, and helps you create best-pract
 
 Once created, guidelines load automatically when Engineering commands work in relevant areas — no extra configuration needed.
 
-### 3. Let `/bob:dot` guide you (or pick your own entry point)
+### 3. Let `/bob:bob` guide you (or pick your own entry point)
 
-Not sure where to start? Just run `/bob:dot` — it will assess your project and tell you exactly what to do first.
+Not sure where to start? Just run `/bob:bob` — it will assess your project and tell you exactly what to do first.
 
 If you prefer to jump in directly:
 
@@ -590,7 +604,7 @@ If you prefer to jump in directly:
 
 **Inherited a codebase with no docs?** Start with `/bob:document`.
 
-There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/bob:brainstorm` simply won't try to read one. But `/bob:dot` will recommend the optimal path based on what you actually have.
+There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/bob:brainstorm` simply won't try to read one. But `/bob:bob` will recommend the optimal path based on what you actually have.
 
 ---
 

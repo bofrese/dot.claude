@@ -1,4 +1,4 @@
-# bob
+# Bob
 > Own your code. Not just generate it.
 > AI as a thinking tool. Not a replacement.
 

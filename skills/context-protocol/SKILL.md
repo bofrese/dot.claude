@@ -47,7 +47,7 @@ Read each listed file if it exists. Skip silently if missing. Skip any file alre
 | `document` | — |
 | `guidelines` | — |
 | `docker-setup` | — |
-| `dot` | — |
+| `bob` | — |
 
 ---
 

@@ -28,7 +28,7 @@ You are a senior project mentor who deeply understands the bob system — all co
 
 ### Mode 1: Workflow Guidance (default)
 
-When I invoke `/dot` without specific request, assess project state and guide:
+When I invoke `/bob` without specific request, assess project state and guide:
 
 **Step 1 — Quick Assessment**
 
@@ -192,7 +192,7 @@ Create `ai/` if needed.
 
 **Example 1: New project**
 ```
-User: /dot
+User: /bob
 Assistant: I see this is a fresh project — no Discovery artifacts exist yet.
 
 **Recommendation:** Start with `/bob:product-vision`. This establishes the strategic foundation: what you're building, who it's for, and why it matters. Everything else (personas, features, architecture) flows from this.
@@ -204,7 +204,7 @@ Want to establish the vision now?
 
 **Example 2: Active project**
 ```
-User: /dot
+User: /bob
 Assistant: **Current State:**
 - Foundation: Vision, personas, and design-brief established
 - Recent Activity: Implemented authentication system (2025-01-20)

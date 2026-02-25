@@ -1,8 +1,8 @@
-# bob
+# Bob
 
 AI knows how to write good code. The problem is it rarely does — unless you give it a reason to.
 
-bob is a set of slash commands for Claude Code that bring discipline to AI-assisted product development — from strategic discovery through shipped, tested, documented code. Each command loads the right principles, reads the right context, follows the right process. Reliably, every time.
+Bob is a set of slash commands for Claude Code that bring discipline to AI-assisted product development — from strategic discovery through shipped, tested, documented code. Each command loads the right principles, reads the right context, follows the right process. Reliably, every time.
 
 **Two independent layers:** Product strategy commands (vision, validation, business model, positioning) and engineering commands (brainstorm, plan, implement, review). Use one, use both, or start where it matters most to you.
 
@@ -20,7 +20,7 @@ Three things that happen when you work with AI without structure:
 
 **Context disappears.** New session, start over. Decisions lost. Guidelines forgotten. The AI makes the same mistakes it made last week because it has no memory of last week.
 
-bob solves all three. Deliberately. By design.
+Bob solves all three. Deliberately. By design.
 
 ---
 
@@ -86,7 +86,7 @@ All commands follow a coaching style — they work as thinking partners, not jus
 
 | Command | Purpose | Output |
 |---------|---------|--------|
-| `/bob:dot` | Project mentor that guides you through bob workflow and optimizes session context. | Conversational or `ai/{date}-project-status.md` |
+| `/bob:bob` | Project mentor that guides you through the Bob workflow and optimizes session context. | Conversational or `ai/{date}-project-status.md` |
 | `/bob:new-command` | Create a new slash command. Guides through design, creates the file, updates README. | `bob/commands/{name}.md` |
 | `/bob:review-command` | Review a command for token efficiency, clarity, actionability. | `ai/reviews/{date}-command-review-{slug}.md` |
 | `/bob:improve-command` | Extract learnings from a session to improve a command for future use. | `ai/reviews/{date}-improve-{command-name}.md` |
@@ -123,7 +123,7 @@ graph TD
 **Discovery Flow:** Start with `/bob:product-coach` for comprehensive guidance, or use individual commands (`/bob:product-vision`, `/bob:problem-space`, `/bob:business-plan`, etc.) for targeted work. The coach maintains `docs/product/README.md` to track what's done and what's missing.
 
 **Commands outside the main flow:**
-- `/bob:dot` — Your project mentor. Use it anytime to get oriented, identify gaps, and get guidance on what to do next.
+- `/bob:bob` — Your project mentor. Use it anytime to get oriented, identify gaps, and get guidance on what to do next.
 - `/bob:docker-setup` — Use whenever you need to set up or update the dev environment.
 - `/bob:new-command`, `/bob:review-command`, `/bob:improve-command` — Meta-commands for extending and maintaining the toolkit itself.
 
@@ -131,49 +131,64 @@ graph TD
 
 ## Installation
 
-Install bob as a Claude Code plugin in your project:
-
-```bash
-# Clone the bob plugin
-git clone https://github.com/bofrese/bob.git bob
-
-# Copy to your project's Claude plugins directory
-cp -r bob your-project/.claude/plugins/bob
-```
-
-Or install at user level to make bob available across all your projects:
+**User-level** — available across all your projects:
 
 ```bash
 git clone https://github.com/bofrese/bob.git ~/.claude/plugins/bob
 ```
 
+**Project-level** — only in the current project:
+
+```bash
+git clone https://github.com/bofrese/bob.git .claude/plugins/bob
+```
+
 To update later:
 
 ```bash
-cd ~/.claude/plugins/bob
+cd ~/.claude/plugins/bob   # or .claude/plugins/bob
 git pull
 ```
+
+### Developing bob
+
+To work on bob itself, clone the repo and pass the directory as a plugin when starting Claude:
+
+```bash
+git clone https://github.com/bofrese/bob.git
+cd bob
+claude --plugin-dir .
+```
+
+An alias makes this faster:
+
+```bash
+# Add to ~/.zshrc or ~/.bashrc
+alias claude-bob='claude --plugin-dir ~/path/to/bob'
+```
+
+With the alias, `claude-bob` anywhere opens Claude with your local bob loaded — changes take effect immediately without reinstalling.
 
 ---
 
 ## Quick Start — Your First Command
 
-After installation, start with `/bob:dot`:
+After installation, start with `/bob:bob`:
 
 ```
-/bob:dot
+/bob:bob
 ```
 
-**`/bob:dot` is your project mentor** — it assesses where you are, identifies what's missing, and suggests exactly which commands to run next.
+**`/bob:bob` is your project mentor** — it assesses where you are, identifies what's missing, and suggests exactly which commands to run next.
 
-New to bob? `/bob:dot` will guide you through the workflow step by step, explaining why each command matters. Already working on a project? `/bob:dot` identifies gaps (missing docs, unreviewed plans, patterns that should be captured) and recommends specific next steps.
+New to bob? `/bob:bob` will guide you through the workflow step by step, explaining why each command matters. Already working on a project? `/bob:bob` identifies gaps (missing docs, unreviewed plans, patterns that should be captured) and recommends specific next steps.
 
 **Common starting points:**
 - **Product strategy work?** Run `/bob:product-coach` for comprehensive discovery guidance
 - **Just better development?** Run `/bob:brainstorm` for your first feature
 - **Inherited codebase?** Run `/bob:document` to capture what exists
 
-Think of `/bob:dot` as the command that teaches you how to use all the other commands. Start there whenever you're unsure what to do next.
+Think of `/bob:bob` as the command that teaches you how to use all the other commands. Start there whenever you're unsure what to do next.
 
 ---
 
@@ -198,7 +213,7 @@ If important decisions emerge during a session, done-criteria will flag them for
 | `ai/implementations/` | Implementation execution reports |
 | `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |
-| `ai/` | Project status reports from `/bob:dot` (optional) |
+| `ai/` | Project status reports from `/bob:bob` (optional) |
 | `docs/product/` | Product vision, problem space, personas, business plan, positioning, validation plan, design brief. `README.md` (maintained by `/bob:product-coach`) tracks status and gaps. |
 | `docs/process/` | Done criteria and process contracts |
 | `docs/` | Developer documentation |
