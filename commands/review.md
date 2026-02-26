@@ -36,7 +36,11 @@ Correlate plans with changed files. Form a scope hypothesis.
 - **Plan alignment:** Intent matched? Deviations justified? All steps done?
 - **Done criteria:** Read `docs/process/done-criteria.md`. Verify each applicable item.
 
-**6 — Discuss:** One topic at a time. 🔴 Critical (must fix) · 🟡 Important (should fix) · 🟢 Suggestion. Briefly acknowledge good work. Ask before writing report.
+**6 — Discuss:** One topic at a time. 🔴 Critical (must fix) · 🟡 Important (should fix) · 🟢 Suggestion. Briefly acknowledge good work.
+
+Before writing the report: identify any patterns in the findings that should become guidelines — especially if the same type of issue appeared more than once or reflects a convention worth codifying. If found, name the pattern and suggest `/bob:guidelines` with a specific topic.
+
+Ask before writing report.
 
 **7 — Save.**
 

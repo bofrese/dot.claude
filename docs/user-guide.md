@@ -370,6 +370,15 @@ Code review of what was built. Auto-detects scope from git — uncommitted chang
 | **Writes** | `ai/reviews/{date}-review-{slug}.md` |
 | **Start here when** | After implementation. Before merging. |
 
+#### `/bob:ui-review`
+UI/UX review against expert design principles and product artifacts. Uses 13 design lenses to critique what's on screen, connects findings to user impact, and coaches toward better solutions. If vision, personas, or design brief exist, the review checks for alignment. If they don't, it notes the gap.
+
+| | |
+|---|---|
+| **Reads** | `docs/product/vision.md`, `docs/product/personas.md`, `docs/product/design-brief.md` (if present) |
+| **Writes** | `ai/reviews/{date}-ui-review-{slug}.md` |
+| **Start here when** | Before shipping UI changes, or when something feels off visually or interactionally |
+
 #### `/bob:investigate`
 Systematic investigation of bugs and issues. Root cause analysis, not quick fixes. Explores the problem thoroughly, identifies contributing factors, and produces a clear diagnosis that can inform a proper solution.
 

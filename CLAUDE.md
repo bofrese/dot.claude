@@ -8,20 +8,7 @@ This file guides Claude (and human contributors) in creating new commands and ma
 .claude/                       ← bob plugin root
 ├── .claude-plugin/
 │   └── plugin.json            ← plugin manifest
-├── commands/                  ← all slash commands (flat — no subfolders)
-│   ├── product-vision.md      ← Discovery tier
-│   ├── design-brief.md        ← Discovery tier
-│   ├── personas.md            ← Discovery tier
-│   ├── brainstorm.md          ← Engineering tier
-│   ├── plan.md                ← Engineering tier
-│   ├── review-plan.md         ← Engineering tier
-│   ├── implement.md           ← Engineering tier
-│   ├── review.md              ← Engineering tier
-│   ├── document.md            ← Knowledge tier
-│   ├── guidelines.md          ← Knowledge tier
-│   ├── new-command.md         ← Meta
-│   ├── review-command.md      ← Meta
-│   └── docker-setup.md        ← DevOps
+├── commands/                  ← slash commands (flat — no subfolders); see README for full list
 ├── skills/                    ← framework skills (loaded by commands via Skill tool)
 │   ├── context-protocol/      ← what context each command loads
 │   ├── done-criteria/         ← done system protocol + bootstrap template
@@ -37,8 +24,6 @@ This file guides Claude (and human contributors) in creating new commands and ma
 │   └── domain-knowledge/      ← captures project-specific domain nuance
 ├── agents/                    ← subagent definitions
 │   └── gemini.md              ← Gemini as a helper agent
-├── principles/                ← DEPRECATED: superseded by skills/
-├── process/                   ← DEPRECATED: superseded by skills/context-protocol and skills/done-criteria
 ├── docs/                      ← user guide and documentation
 │   └── user-guide.md
 ├── CLAUDE.md                  ← You are here
@@ -297,20 +282,11 @@ Commands that involve implementation (like `/plan` or `/docker-setup`) should in
 
 ## Commands That Implement vs. Commands That Plan
 
-Some commands only analyze and produce reports or artifacts:
-- `/product-vision` — produces/updates the product vision (`docs/product/`)
-- `/design-brief` — produces/updates the design brief (`docs/product/`)
-- `/personas` — produces/updates personas (`docs/product/`)
-- `/brainstorm` — produces an idea report
-- `/plan` — produces an implementation plan
-- `/review-plan` — produces a review report
-- `/review` — produces a code review report
-- `/document` — produces/updates documentation (but doesn't change application code)
-- `/guidelines` — produces/updates best practice guidelines (but doesn't change application code)
+Commands fall into two categories:
 
-Some commands actually modify the project:
-- `/implement` — writes code, runs tests, modifies project files
-- `/docker-setup` — creates/modifies Dockerfile, Makefile, etc.
+**Analysis/artifact commands** — produce reports or docs but never change application code (e.g. `plan`, `review`, `document`, Discovery commands). Include a clear "DO NOT IMPLEMENT" guardrail in these.
+
+**Execution commands** — actually modify project files (e.g. `implement`, `docker-setup`). These need verification steps and graceful failure handling.
 
 For implementing commands:
 - Include verification steps (did it actually work?)

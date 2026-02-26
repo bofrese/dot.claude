@@ -1,150 +1,160 @@
 # Bob
-> Own your code. Not just generate it.
-> AI as a thinking tool. Not a replacement.
+> The AI partner that pushes back.
+> AI that thinks *with* you. Not *for* you.
 
 ---
 
+:::charimage
+../img/bob.jpg | Meet Bob.
+:::
+
+===
+
 ## The promise is real {.center}
 
-AI writes code now. Fast. Confident.
+AI writes code. Fast. Confident.
 
 *You've seen the demos. For simple things, it genuinely works.*
 
 ===
 
-## For the first version… it's impressive {.center}
+## For the first version — impressive {.center}
 
 Everything fits in one context window.
-The AI sees the whole picture — the code is coherent, it moves fast.
+The AI sees the whole picture. The code is coherent.
 
-*No wonder people are saying: "We don't need developers anymore."*
+*No wonder people are saying "we don't need developers anymore."*
 
----
+===
 
 ## Then the system grows {.center .warn}
 
-New features. More code. More decisions made months ago.
-The codebase is no longer something one person — or one AI — can hold in their head.
+New features. More code. Decisions made months ago.
 
-**The AI can no longer see it all at once.**
+The AI can no longer hold it all at once.
 
-===
+**Three problems start quietly compounding.**
 
-## The discovery problem {.center}
+---
 
-Code dependencies? Sure, it finds those.
+## Problem 1 — Average {.center}
 
-But it misses:
-- That utility someone wrote last month
-- How this component is *supposed* to be used
-- The pattern everyone follows
+AI *knows* BDD, DDD, clean architecture.
 
-**It reinvents the wheel. Every time.**
+But when you just ask it to solve a problem,
+it falls back to the patterns most common in its training data.
 
-===
-
-## The amnesia problem {.center}
-
-Code describes **WHAT** the system does.
-
-Rarely **WHY**.
-
-*All those discussions, trade-offs, decisions?*
-*Gone.*
+*Competent code. Rarely principled code.*
 
 ===
 
-## A developer who's been here for months just knows {.center}
+## Problem 2 — Pleaser {.center}
 
-How the pieces connect. What the conventions are.
-Why something was built that way last quarter.
+It agrees with you.
 
-They build that knowledge **over time**.
+Applauds your thinking.
+The longer the conversation, the less it pushes back.
+
+*You asked for a thinking partner.
+You got an enthusiastic yes-person.*
 
 ===
 
-## Day one. Every. Single. Time. {.center .warn}
+## Problem 3 {.center .warn}
 
-The AI starts fresh. Every single session.
+## Day one. Every. Single. Session.
+
+The AI starts fresh.
+Every. Single. Time.
 
 No memory. No context. No understanding.
 
-*That's not a bug. It's a fundamental limit.*
-
-
-===
-
-## It gets worse {.center}
-
-The code works — on day one. But it's not the kind that holds up as the system grows.
-
-It tells you your plan is great. Even when it isn't.
-
-**These problems don't just exist — they compound.**
+*That's not a bug. It's fundamental.*
 
 ---
 
+## You know this feeling {.center}
 
-<section data-state="full-image">
-  <img src="plane.png" class="full-image">
-</section>
+Landing in a new project.
+
+Not productive from day one.
+Reading the code isn't enough.
+
+Docs too verbose about things that don't matter.
+Out of date on the things that do.
+
+*You guess. You ask questions that feel obvious.
+You slowly piece it together.*
 
 ===
 
-## Would you board a plane… {.center .question}
+## For an AI — that's every conversation {.center .warn-title}
 
-…designed and built entirely by AI,
-with no engineer reviewing it?
+## For an AI, it's *day one* in your project. Every session.
 
-**Your software isn't different.**
+If you manually re-introduce your codebase every time —
+explaining context, repeating decisions, re-establishing conventions —
+
+**you've already lost the productivity benefit.**
 
 ===
 
-## AI is a thinking tool {.center}
+## The documentation you've always dreamed of {.center}
 
-It should **amplify** your thinking. Not replace it.
+**Not too much. Just enough.**
 
-*Structure is what makes that possible.*
+Current. Purposeful. Direct.
+Not repeating what the code already says.
+Not so elaborate it becomes a burden to maintain.
+
+*An experienced developer who reads fast — up to speed in minutes.
+Not days.*
+
+**Now you have to build it. To stay productive.
+Bob helps you do exactly that.**
 
 ---
 
+## Bob is the structure {.center .thesis}
 
-## The documentation gap {.center}
+Discipline. Documentation. Explicit commands.
 
-For humans: Documentation helps you get up to speed.
-
-For AI: **Documentation IS the context.**
-
-*It needs structured knowledge. Discoverable. Systematic.*
-
-But vibe coding AIs don't read docs.
-They don't write docs.
-They don't maintain docs.
-
-**Unless you tell them to.**
-
-===
-
-## bob is that structure {.center .thesis}
-
-The discipline. The documentation. The commands.
-
-**AI that reads context. Updates context. Builds on context.**
+**AI that reads context. Builds on context. Keeps context alive.**
 
 *Not vibe coding. Engineering.*
 
-
 ---
+
+:::charimage
+../img/bob-team.jpg | One partner. Every phase. | wide
+:::
+
+===
+
+## Bob wears many hats {.center}
+
+:::cards
+/bob:product-coach | Product strategist
+/bob:brainstorm | Thinking partner
+/bob:plan | Implementation planner
+/bob:review-plan | Critical reviewer
+/bob:implement | Disciplined executor
+/bob:review | Code reviewer
+/bob:investigate | Bug investigator
+/bob:document | Documentation writer
+:::
+
+===
 
 ## Three things that make it work {.center}
 
 :::pillars
-🎯 | Humans Decide | AI explores options. You pick the direction. Nothing ships without your sign-off.
-📄 | Files Remember | Close the laptop. Context survives — in files, not chat history.
+🎯 | Humans Decide | AI explores options. You pick direction. Nothing ships without your sign-off.
+📄 | Files Remember | Close the laptop. Context survives in git — not in chat history.
 📐 | Explicit Phases | You invoke a phase. The AI knows exactly what to do.
 :::
 
-===
+---
 
 ## The pipeline {.center}
 
@@ -152,10 +162,10 @@ Each phase produces something a human reviews.
 Each phase reads what the last one wrote.
 
 :::pipeline
-💡 | Explore | Pick direction
+💡 | Brainstorm | Pick direction
 📐 | Plan | Approve approach
-🔍 | Review | Verify assumptions
-⚙️ | Build | Sign off
+🔍 | Review Plan | Verify assumptions
+⚙️ | Implement | Sign off steps
 📝 | Review | Own the result
 :::
 
@@ -164,24 +174,27 @@ Each phase reads what the last one wrote.
 ## Honest review is built in {.center}
 
 :::compare
-bad | The Pleaser Problem | AI tells you your idea is great | The longer the session, the less it pushes back | You end up agreeing with yourself
-good | How bob fixes it | Hand the document to a fresh session | Frame it as someone else's work | Session boundaries kill the agreeing
+bad | The Pleaser Problem | Tells you your idea is great | Longer session = less pushback | You end up agreeing with yourself
+good | How Bob fixes it | Fresh session reviews the plan | No memory of what produced it | Genuine critique. By design.
 :::
 
 ---
 
-## One feature. Five days. {.center}
+## One feature. Five sessions. Clean code. {.center}
 
-Here's what it looks like in practice.
+Each session independent.
+Each one building on the last — through files.
+
+A human made every significant decision.
 
 ===
 
 ## The week {.left}
 
 :::journey
-Mon | `/bob:brainstorm` | Explore the idea. The AI reads your product vision first. You decide the direction. Everything written down.
-Tue | `/bob:plan` | Fresh session. Reads Monday's file. Turns the idea into a reviewable plan. You approve.
-Wed | `/bob:review-plan` | Another fresh session stress-tests the plan. Catches bad assumptions before they become code.
+Mon | `/bob:brainstorm` | DDD principles loaded. Hard questions asked. You push back. It pushes back harder. Direction committed to a file.
+Tue | `/bob:plan` | Fresh session. Reads Monday's file. Tests planned before code is written. You approve.
+Wed | `/bob:review-plan` | Another fresh session stress-tests the plan. Finds the schema mismatch before it becomes code.
 :::
 
 ===
@@ -189,30 +202,32 @@ Wed | `/bob:review-plan` | Another fresh session stress-tests the plan. Catches 
 ## The week {.left}
 
 :::journey
-Thu | `/bob:implement` | Builds step by step. Tests after each change. Stops if it needs a human call.
-Fri | `/bob:review` | Reviews what was built. Compares intent vs reality. Handoff document anyone can own.
+Thu | `/bob:implement` | Builds step by step. Tests after every change. Stops when it needs a human call. Reports everything.
+Fri | `/bob:review` | Checks code against guidelines. Intent vs reality. Handoff doc anyone can own.
 :::
 
 ===
 
-## Every command starts a conversation
+## Every command is a conversation {.center}
 
-This is not one-off commands that fully automate the step.
+Not one-shot automation.
 
-It thinks critically, challenges you, interviews you.
+The AI challenges you. Interviews you.
+Asks the question you forgot to ask yourself.
 
-Acts as you partner, guide, coach, mentor, and assistant.
+**Acts as your partner, reviewer, coach, and critic.**
 
+*You make the decisions. It does the groundwork.*
 
 ---
 
-## This is what sustainable AI looks like {.center}
+## The tenth feature {.center}
 
-Not *"AI does the work."*
+gets the same disciplined treatment as the first.
 
-**"AI helps you do better work. And you understand every line."**
+*That's what sustainable quality looks like.*
 
-*Quality that holds up. Not just the first week.*
+**Not impressive for a sprint. Sustainable over months.**
 
 ===
 
@@ -220,8 +235,8 @@ Not *"AI does the work."*
 
 **New product?** → `/bob:product-vision`
 **New feature?** → `/bob:brainstorm`
-**Have a plan?** → `/bob:implement`
-**No docs yet?** → `/bob:document`
+**Inherited codebase?** → `/bob:document`
+**Not sure?** → `/bob:bob`
 
 *No wrong place to start. Commands read what's available.*
 
@@ -229,6 +244,7 @@ Not *"AI does the work."*
 
 ## Let's talk {.center .closing}
 
+[Homepage →](../index.html)
 [GitHub →](https://github.com/bofrese/bob)
 [Discussions →](https://github.com/bofrese/bob/discussions)
 

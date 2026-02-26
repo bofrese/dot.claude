@@ -81,6 +81,7 @@ This is the most important part. Plans — especially AI-generated ones — freq
 - Are there missing steps or undefined behaviors?
 - Is the order of operations correct?
 - Are the verification criteria clear enough to actually test against?
+- Does every new behavior have Given/When/Then acceptance criteria? Is each "Then" observable against real system behavior — not an internal state check? Criteria that can't be verified by running the system are not acceptance criteria.
 
 ### Step 4 — Alternative Approaches
 

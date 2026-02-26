@@ -232,6 +232,19 @@
     return '<div class="bars">' + items.join('') + '</div>';
   }
 
+  function renderCharimage(lines) {
+    // line: src | caption | wide(optional)
+    const parts = (lines.find(l => l.trim()) || '').split('|').map(s => s.trim());
+    const src     = parts[0] || '';
+    const caption = parts[1] || '';
+    const wide    = (parts[2] || '').toLowerCase() === 'wide';
+    const capHtml = caption ? `<p class="char-caption">${inlineMd(caption)}</p>` : '';
+    return `<div class="charimage">
+      <img src="${src}" alt="${caption}"${wide ? ' class="wide"' : ''}>
+      ${capHtml}
+    </div>`;
+  }
+
   function renderCards(lines) {
     // each line: title | description
     // if exactly 3 cards and middle one looks like "dot.claude" or "shared…" → highlight middle
@@ -285,14 +298,15 @@
 
   // Component registry
   const COMPONENTS = {
-    pillars:  renderPillars,
-    journey:  renderJourney,
-    compare:  renderCompare,
-    ftree:    renderFtree,
-    layers:   renderLayers,
-    bars:     renderBars,
-    cards:    renderCards,
-    pipeline: renderPipeline
+    pillars:   renderPillars,
+    journey:   renderJourney,
+    compare:   renderCompare,
+    ftree:     renderFtree,
+    layers:    renderLayers,
+    bars:      renderBars,
+    cards:     renderCards,
+    pipeline:  renderPipeline,
+    charimage: renderCharimage
   };
 
   // ── Slide attribute parser  {.center .warn .aha-slide …} ──────────
@@ -485,6 +499,7 @@
     const taglineHtml = ts.tagline
       ? `<hr><p class="tagline">${inlineMd(ts.tagline)}</p>` : '';
     return `<section class="slide-center slide-title">
+      <div class="title-badge">Claude Code Plugin</div>
       <h1>${inlineMd(ts.title)}</h1>
       <p class="subtitle">${inlineMd(ts.subtitle)}</p>
       ${taglineHtml}

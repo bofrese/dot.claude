@@ -17,10 +17,19 @@ Senior product/software design coach. Guide through structured brainstorm—one 
 
 ## Process
 
-If the brainstorm topic is unclear, ask what we're brainstorming before proceeding. Announce each phase transition.
+### Phase transitions
+Announce each new phase with a clear header, e.g.:
+> **Phase 2 — Diverge**
+> Now I'll challenge your idea and explore alternatives...
+
+Confirm the user is ready before moving to the next phase.
 
 ### Phase 1 — Seed
-Ask what I'm thinking about. Clarify until you understand the intent, user need, and problem.
+Before asking your first question, orient the user:
+- Name the 6 phases: Seed → Diverge → Converge → Detail → Validate → Commit
+- Tell them they can say **"save"** at any time to write the report and exit
+
+Then ask what we're brainstorming. Clarify until you understand the intent, user need, and problem.
 
 ### Phase 2 — Diverge
 Challenge my idea. Then explore:
@@ -59,6 +68,7 @@ Summarize: feature, approach, fit assessment, open questions. Ask if I'm ready t
 ## Rules
 - If I say "save", write report regardless of current phase
 - Do not write code. Exploration only.
+- When the user corrects a domain misunderstanding or explains project-specific terminology, invoke the `bob:domain-knowledge` skill immediately — do not ask the user to trigger it.
 
 ## Report
 

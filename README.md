@@ -76,6 +76,7 @@ All commands follow a coaching style — they work as thinking partners, not jus
 | `/bob:review-plan` | Critically review a plan. Checks assumptions against the actual codebase. | `ai/reviews/{date}-review-{slug}.md` |
 | `/bob:implement` | Execute an approved plan. Tests at every step. Stops when human judgment is needed. | `ai/implementations/{date}-{slug}.md` |
 | `/bob:review` | Code review. Auto-detects scope, checks guidelines, assesses system health. | `ai/reviews/{date}-review-{slug}.md` |
+| `/bob:ui-review` | UI/UX review against expert design principles and product artifacts (vision, personas, design brief). | `ai/reviews/{date}-ui-review-{slug}.md` |
 | `/bob:investigate` | Systematic investigation of bugs and issues. Root cause analysis, not quick fixes. | `ai/investigations/{date}-{slug}.md` |
 
 ### Knowledge — Documentation & Guidelines
@@ -212,7 +213,7 @@ If important decisions emerge during a session, done-criteria will flag them for
 |--------|----------|
 | `ai/ideas/` | Brainstorm session reports |
 | `ai/plans/` | Implementation plans |
-| `ai/reviews/` | Plan reviews, command reviews, code reviews, and command improvement reports |
+| `ai/reviews/` | Plan reviews, code reviews, UI reviews, command reviews, and command improvement reports |
 | `ai/implementations/` | Implementation execution reports |
 | `ai/investigations/` | Bug and issue investigation reports |
 | `ai/docker/` | Docker setup logs |

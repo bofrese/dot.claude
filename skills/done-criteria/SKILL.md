@@ -43,11 +43,15 @@ If your command introduces an artifact type that isn't already tracked in `docs/
 
 ### 4. Flag decisions for persistence
 
-Before finishing, consider whether important decisions or conventions emerged
-during this session that aren't already in your output artifact. If so, flag
-them briefly and suggest the user runs `/bob:document` to persist them.
+Before finishing, explicitly list any of the following that emerged this session and aren't already in your output artifact:
 
-If nothing to flag: skip silently.
+1. **Terminology or naming conventions** established or clarified
+2. **Architectural decisions** made that aren't captured in the plan
+3. **Patterns discovered** that should become guidelines
+
+For each item found: name it, explain why it matters, and recommend the specific command to persist it (`/bob:document` for decisions/terminology, `/bob:guidelines` for reusable patterns).
+
+If none of the three categories apply: skip silently.
 
 ### 5. Track discovered issues (if applicable)
 

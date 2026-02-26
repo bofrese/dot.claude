@@ -64,3 +64,6 @@ Template:
 ```
 
 Create `ai/reviews/` if needed.
+
+## Done
+Use the Skill tool to invoke the `bob:done-criteria` skill and follow the protocol.
