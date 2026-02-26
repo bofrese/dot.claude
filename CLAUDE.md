@@ -10,18 +10,10 @@ This file guides Claude (and human contributors) in creating new commands and ma
 │   └── plugin.json            ← plugin manifest
 ├── commands/                  ← slash commands (flat — no subfolders); see README for full list
 ├── skills/                    ← framework skills (loaded by commands via Skill tool)
+│   ├── bob/                   ← authoritative catalog of all commands and skills (SKILL.md + references/)
 │   ├── context-protocol/      ← what context each command loads
 │   ├── done-criteria/         ← done system protocol + bootstrap template
-│   ├── bdd/                   ← Behaviour-Driven Development
-│   ├── ddd/                   ← Domain-Driven Design
-│   ├── prompt-engineering/    ← principles for writing commands
-│   ├── problem-validation/    ← problem validation framework
-│   ├── assumption-testing/    ← assumption testing + MVP
-│   ├── business-model/        ← unit economics + revenue models
-│   ├── go-to-market/          ← distribution + channel strategy
-│   ├── positioning-strategy/  ← market positioning + differentiation
-│   ├── ui-design/             ← UI/UX evaluation framework
-│   └── domain-knowledge/      ← captures project-specific domain nuance
+│   └── ...                    ← see skills/bob/references/skills.md for the full catalog
 ├── agents/                    ← subagent definitions
 │   └── gemini.md              ← Gemini as a helper agent
 ├── docs/                      ← user guide and documentation
@@ -39,6 +31,11 @@ This file guides Claude (and human contributors) in creating new commands and ma
 - Update Report Locations if the command writes to a new folder
 - Update any other affected sections
 
+**Always keep the bob skill in sync.** When you add, rename, or significantly change a command or skill, update:
+- `skills/bob/SKILL.md` — the quick-reference tables (commands by layer, skills table)
+- `skills/bob/references/commands.md` — the per-command detail entry
+- `skills/bob/references/skills.md` — the per-skill detail entry (if a skill changed)
+
 ## The Two Tiers
 
 Commands fall into two conceptual tiers. Both live in the same `commands/` folder. The distinction is about what they're concerned with, not where they live.
@@ -55,9 +52,11 @@ Skills in `skills/` encode core thinking frameworks and interaction protocols. N
 
 **How commands use them:** A command invokes a skill at the specific point in its process where the framework applies using the Skill tool. Example: `/bob:plan` invokes `bob:bdd` when defining the testing strategy. `/bob:brainstorm` invokes `bob:ddd` when decomposing a problem.
 
-**Framework skills** (bdd, ddd, prompt-engineering, etc.) — generic thinking frameworks. Work for any project.
+**Framework skills** (bdd, ddd, prompt-engineering, business-model, etc.) — generic thinking frameworks. Work for any project.
 
 **Protocol skills** (context-protocol, done-criteria) — define how commands interact with the project context and done system.
+
+**Reference skill** (`bob/`) — the authoritative catalog of every command and skill: what each does, what it reads/writes, its process phases. See `skills/bob/SKILL.md` and `skills/bob/references/`.
 
 **What goes here vs `docs/guidelines/`:**
 - `skills/` = generic frameworks. "How to think about BDD." Works for any project. Ships with the plugin.

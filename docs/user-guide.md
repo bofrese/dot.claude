@@ -416,14 +416,14 @@ Create best-practice guidelines for the technologies in your project. Research-f
 
 ### 🛠️ Meta — The Toolkit Maintains Itself
 
-#### `/bob:bob`
-Project mentor that guides you through the Bob workflow. Assesses project state, identifies gaps, recommends next steps, and helps optimize session context. Your go-to command when you're unsure what to do next or how to structure your work.
+#### `/bob:pm`
+Project mentor and manager. Assesses project state, identifies gaps in artifacts and process, recommends next steps, and helps optimize session context. Use it when you want a structured read of where the project stands and what to do next.
 
 | | |
 |---|---|
 | **Reads** | Project structure, existing artifacts, recent work |
 | **Writes** | `ai/{date}-project-status.md` (optional status report mode) |
-| **Start here when** | You're new to Bob, unsure what to do next, or starting a new session |
+| **Start here when** | You want a project status overview, are unsure what to do next, or are starting a new session |
 
 #### `/bob:new-command`
 Create a new slash command that fits the existing patterns. Guides you through design, creates the file, updates the README. Use this when the toolkit is missing something your workflow needs.
@@ -530,25 +530,31 @@ The first time you run a feature through the pipeline, the done-criteria contrac
 
 ## Getting Started
 
-### New to bob? Start with `/bob:bob`
+### New to bob? Just talk to Bob
 
-Before diving into individual commands, meet your guide: **`/bob:bob`** — your project mentor.
+The simplest way into the toolkit: just talk to Bob naturally.
 
-Think of `/bob:bob` as your personal coach who understands the entire bob system. Run it anytime to:
-
-- **Get oriented** — What's the current state of your project? What foundational work exists?
-- **Identify gaps** — What's missing? What needs attention?
-- **Get specific guidance** — Which command should you run next and why?
-- **Optimize context** — Starting a new session? `/bob:bob` tells you exactly what to load and what to skip.
-
-**Try it now:**
 ```
-/bob:bob
+Hi Bob, what can you help me with?
 ```
 
-It will assess where you are, what you're missing, and suggest concrete next steps with specific commands. As you work through the toolkit, come back to `/bob:bob` whenever you're unsure what to do next. It's designed to teach you the workflow through use.
+```
+Bob, I'm starting a new project — where do I begin?
+```
 
-New projects start with `/bob:product-vision`, but `/bob:bob` will tell you that — and explain why it matters.
+```
+Hey Bob, I've got a feature idea I want to build.
+```
+
+Bob will respond with exactly the right guidance for where you are. No command memorization needed. The `bob` skill activates on any natural mention of Bob's name and knows the entire framework — every command, how they connect, what they produce.
+
+When you want a structured **project status** — what exists, what's missing, what to do next — use the project mentor command:
+
+```
+/bob:pm
+```
+
+`/bob:pm` scans your project artifacts, identifies gaps, and recommends specific next steps with the commands to run them. Come back to it at the start of sessions or whenever you want a clear read on where things stand.
 
 ---
 
@@ -601,9 +607,9 @@ Scans your project, identifies the technologies, and helps you create best-pract
 
 Once created, guidelines load automatically when Engineering commands work in relevant areas — no extra configuration needed.
 
-### 3. Let `/bob:bob` guide you (or pick your own entry point)
+### 3. Talk to Bob or pick your own entry point
 
-Not sure where to start? Just run `/bob:bob` — it will assess your project and tell you exactly what to do first.
+Not sure where to start? Just say "Hi Bob, where should I begin?" and Bob will assess your project and tell you exactly what to do first. Or use `/bob:pm` for a structured status report.
 
 If you prefer to jump in directly:
 
@@ -619,7 +625,7 @@ If you prefer to jump in directly:
 
 **Inherited a codebase with no docs?** Start with `/bob:document`.
 
-There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/bob:brainstorm` simply won't try to read one. But `/bob:bob` will recommend the optimal path based on what you actually have.
+There's no wrong place to start. Commands read what's available and work with what they find. If a product vision doesn't exist yet, `/bob:brainstorm` simply won't try to read one. But asking Bob will get you the optimal path based on what you actually have.
 
 ---
 

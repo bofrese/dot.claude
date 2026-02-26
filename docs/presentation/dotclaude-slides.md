@@ -236,7 +236,7 @@ gets the same disciplined treatment as the first.
 **New product?** → `/bob:product-vision`
 **New feature?** → `/bob:brainstorm`
 **Inherited codebase?** → `/bob:document`
-**Not sure?** → `/bob:bob`
+**Not sure?** → *"Hi Bob, where do I start?"*
 
 *No wrong place to start. Commands read what's available.*
 
