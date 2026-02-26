@@ -14,7 +14,9 @@ Most developers who work regularly with AI hit the same three walls.
 
 **AI is a pleaser.** It agrees with you. The longer your conversation goes, the less likely it pushes back on a bad idea. You open a session expecting a thinking partner. You get an enthusiastic yes-person. And the quality of your decisions suffers for it.
 
-**Context disappears.** New session, start over. Decisions lost. Guidelines forgotten. Next week the AI makes the same mistake it made this week — because it has no memory of this week. Projects that start well degrade quietly as context accumulates and vanishes.
+**Context disappears.** You know how it feels to join a new project. You're not productive from day one — reading the code isn't enough. The documentation is either too verbose about things that don't matter to you, or out of date on the things that do. So you guess. You ask questions. You slowly piece together why things were built the way they were, where to find things, which architectural decisions are already settled.
+
+For an AI, that's every session. New conversation, new employee — day one in your project, every single day, sometimes several times per day. If you have to manually re-introduce your codebase every time you open Claude — explaining context, repeating decisions, re-establishing conventions — you've already lost most of the productivity benefit. Projects that start well degrade quietly as context accumulates and vanishes.
 
 These aren't edge cases. They're the default. And they compound — the longer you work with AI without structure, the worse they get.
 
@@ -85,6 +87,10 @@ Three layers, not three stages. **Discovery** establishes what you're building a
 ## How Memory Works
 
 This is the key insight. Everything else follows from it.
+
+It has always been a good idea to keep documentation in git alongside your code. Now it's essential. Not because AI needs it to function — but because you need it to stay productive across sessions.
+
+Not too much. Just enough. The documentation you've always dreamed of finding when joining a new team — current, purposeful, direct. Not repeating what the code already says. Not so elaborate it becomes a burden to maintain. An experienced developer who reads fast should be up to speed in minutes. That's the bar. Bob is an opinionated framework for what to document, where to put it, and how to keep it alive — so you never have to re-introduce your project from scratch again.
 
 Files live in three places, each with a distinct purpose:
 

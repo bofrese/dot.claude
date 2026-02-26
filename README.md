@@ -8,6 +8,8 @@ Bob is a set of slash commands for Claude Code that bring discipline to AI-assis
 
 Language-agnostic. Platform-agnostic. Works across any stack.
 
+👉 [Homepage](index.html) · [User Guide](docs/user-guide.md) · [Presentation](https://bofrese.github.io/bob/presentation/index.html)
+
 ---
 
 ## The Problem
@@ -18,7 +20,7 @@ Three things that happen when you work with AI without structure:
 
 **AI is a pleaser.** It agrees with you. Applauds your thinking. Confirms you're right. The longer the conversation, the less likely it pushes back on a bad idea. You need critical distance — and you need it built into the workflow, not hoped for.
 
-**Context disappears.** New session, start over. Decisions lost. Guidelines forgotten. The AI makes the same mistakes it made last week because it has no memory of last week.
+**Context disappears.** For an AI, it's day one in your project every session. You know how it feels to join a new project — the guessing, the questions, slowly piecing together why things were built the way they were. For an AI, that's every conversation. New session, new employee. If you have to re-introduce your codebase every time you open Claude, you've already lost the productivity benefit.
 
 Bob solves all three. Deliberately. By design.
 
@@ -42,6 +44,7 @@ This isn't a toolkit that runs commands for you. It's a toolkit that thinks *wit
 The full story — how commands connect, how memory works, how a feature travels from idea to shipped code — is all in one place:
 
 👉 [Read the User Guide](docs/user-guide.md)
+👉 [See the Homepage](index.html)
 👉 [See the Presentation](https://bofrese.github.io/bob/presentation/index.html)
 
 ---
